@@ -1,0 +1,19 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %} Accueil {% endblock %}
+
+{% block corps %}
+
+{% for post in posts %}
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default" style=" margin-top: 10px;">
+				<div class="panel-title"> {{ post.titre }} </div>
+				<div class="panel-body"> {{ post.contenu }} </div>
+			</div>
+		</div>
+	</div>
+{% endfor %}
+
+{% endblock %}

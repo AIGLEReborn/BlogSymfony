@@ -1,19 +1,19 @@
 blog_homepage:
     path:     /
-    defaults: { _controller: BlogBundle:Default:index }
+    defaults: { _controller: BlogBundle:Blog:index }
 
 blog_afficheOnePost:
     path:     /post/{id}
-    defaults: { _controller: BlogBundle:Default:displayPost }
+    defaults: { _controller: BlogBundle:Blog:displayPost }
 
 blog_AddPost:
     path:     /add
-    defaults: { _controller: BlogBundle:Default:addPost }
+    defaults: { _controller: BlogBundle:Blog:addPost }
 
 blog_EditPost:
     path:     /Edit/{id}
-    defaults: { _controller: BlogBundle:Default:editPost }
+    defaults: { _controller: BlogBundle:Blog:editPost }
 
 blog_DeletePost:
     path:     /Delete/{id}
-    defaults: { _controller: BlogBundle:Default:deletePost }
+    defaults: { _controller: BlogBundle:Blog:deletePost }
