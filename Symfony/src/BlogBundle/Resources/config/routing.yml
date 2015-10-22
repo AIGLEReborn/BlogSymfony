@@ -16,4 +16,4 @@ blog_EditPost:
 
 blog_DeletePost:
     path:     /Delete/{id}
-    defaults: { _controller: BlogBundle:Default:deletePost }	
+    defaults: { _controller: BlogBundle:Default:deletePost }

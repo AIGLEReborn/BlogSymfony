@@ -6,8 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-    public function indexAction($name)
+    public function indexAction()
     {
-        return $this->render('BlogBundle:Default:index.html.twig', array('name' => $name));
+        return $this->render('BlogBundle:Default:index.html.twig', array('name' => "COUCOU LES REBORN"));
     }
+
+    public function 
 }
