@@ -1,0 +1,21 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %} Accueil {% endblock %}
+
+{% block corps %}
+
+{% for post in posts %}
+
+	<div class="row">
+		<div class="col-md-12 panel panel-heading">
+			<div class="panel panel-default" >
+				<div class="panel-titre"> <a href="{{path('blog_afficheOnePost', {'id' : post.id})}}">{{ post.titre }} </a></div>
+				<div class="panel-body"> {{ post.contenu }} </div>
+				<div class="btn"><a href={{path('blog_EditPost', {'id' : post.id})}}> Modifier cet article </a></div> - <div class="btn"><a href={{path('blog_DeletePost', {'id' : post.id})}}> Supprimer cet article </a></div>
+			</div>
+		</div>
+	</div>
+
+{% endfor %}
+
+{% endblock %}
