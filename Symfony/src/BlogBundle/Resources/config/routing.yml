@@ -2,6 +2,10 @@ blog_homepage:
     path:     /
     defaults: { _controller: BlogBundle:Blog:index }
 
+blog_pageX:
+    path:     /page/{value}
+    defaults: { _controller: BlogBundle:Blog:pageX }
+
 blog_afficheOnePost:
     path:     /post/{id}
     defaults: { _controller: BlogBundle:Blog:displayPost }
