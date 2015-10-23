@@ -1,0 +1,20 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %} Accueil {% endblock %}
+
+{% block corps %}
+
+{% if post is not null or post is not empty %}
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default" style=" margin-top: 10px;">
+				<a href="{{path('blog_afficheOnePost', {'id' : post.id})}}"><div class="panel-title"> {{ post.titre }} </div></a>
+				<div class="panel-body"> {{ post.contenu }} </div>
+			</div>
+		</div>
+	</div>
+
+{% endif %}
+
+{% endblock %}

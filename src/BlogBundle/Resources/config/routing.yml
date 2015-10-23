@@ -1,0 +1,23 @@
+blog_homepage:
+    path:     /
+    defaults: { _controller: BlogBundle:Blog:index }
+
+blog_pageX:
+    path:     /page/{value}
+    defaults: { _controller: BlogBundle:Blog:pageX }
+
+blog_afficheOnePost:
+    path:     /post/{id}
+    defaults: { _controller: BlogBundle:Blog:displayPost }
+
+blog_AddPost:
+    path:     /add
+    defaults: { _controller: BlogBundle:Blog:addPost }
+
+blog_EditPost:
+    path:     /Edit/{id}
+    defaults: { _controller: BlogBundle:Blog:editPost }
+
+blog_DeletePost:
+    path:     /Delete/{id}
+    defaults: { _controller: BlogBundle:Blog:deletePost }
