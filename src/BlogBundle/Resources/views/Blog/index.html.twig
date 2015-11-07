@@ -18,4 +18,13 @@
 
 {% endfor %}
 
+
+
+	{% for i in 1..count %}
+
+		<a href={{path('blog_pageX', {'value' : i }) }} > {{ i }} </a> 
+
+	{% endfor %}
+
+
 {% endblock %}

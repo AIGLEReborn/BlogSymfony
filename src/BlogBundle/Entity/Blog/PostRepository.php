@@ -10,4 +10,17 @@ namespace BlogBundle\Entity\Blog;
  */
 class PostRepository extends \Doctrine\ORM\EntityRepository
 {
+	public function getCountPosts() {
+		$em = $this->getEntityManager();
+		$query = $em->createQuery('SELECT count(p) FROM BlogBundle:Post p');
+		return $posts = $query->getResult();
+	}
+
+	public function deletePost($id) {
+		$em = $this->getEntityManager();
+		$post = $this->find($id);
+
+		$em->remove($post);
+		$em->flush();
+	}
 }
