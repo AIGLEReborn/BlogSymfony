@@ -102,4 +102,5 @@ class BlogController extends Controller
 
     	return $this->redirectToRoute('blog_homepage');
     }
+
 }

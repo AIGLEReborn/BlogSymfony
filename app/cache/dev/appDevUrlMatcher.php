@@ -167,11 +167,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // blog_Deco
-        if ($pathinfo === '/logout') {
-            return array (  '_controller' => 'BlogBundle\\Controller\\BlogController::logoutAction',  '_route' => 'blog_Deco',);
-        }
-
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

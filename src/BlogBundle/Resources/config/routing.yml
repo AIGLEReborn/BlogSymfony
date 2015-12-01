@@ -21,7 +21,3 @@ blog_EditPost:
 blog_DeletePost:
     path:     /admin/Delete/{id}
     defaults: { _controller: BlogBundle:Blog:deletePost }
-
-blog_Deco:
-    path:     /logout
-    defaults: { _controller: BlogBundle:Blog:logout }

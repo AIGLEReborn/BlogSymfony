@@ -3,23 +3,32 @@
 {% block title %} Accueil {% endblock %}
 
 {% block corps %}
-
+<div class="container">
 {% for post in posts %}
 
 	<div class="row">
-		<div class="col-md-12 panel panel-heading">
-			<div class="panel panel-default" >
-				<div class="panel-titre"> <a href="{{path('blog_afficheOnePost', {'id' : post.id})}}">{{ post.titre }} </a></div>
-				<div class="panel-body"> {{ post.contenu }} </div>
-				 {% if is_granted("ROLE_ADMIN") %}
+		<div class="col-md-8">
+                <h2>
+                    <a href="{{path('blog_afficheOnePost', {'id' : post.id})}}">{{ post.titre }} </a>
+                </h2>
+                <p class="lead">
+                    par <a href="index.php"> TODO   Start Bootstrap</a>
+                </p>
+                <p><span class="glyphicon glyphicon-time"></span>  TODOOOOOOO Posted on August 28, 2013 at 10:00 PM</p>
+                <hr>
+
+                <p> {{ post.contenu }} </p>
+                <a class="btn btn-primary" href="{{path('blog_afficheOnePost', {'id' : post.id})}}">Lire et commenter <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+                <hr>
+
+                 {% if is_granted("ROLE_ADMIN") %}
 				<div class="btn"><a href={{path('blog_EditPost', {'id' : post.id})}}> Modifier cet article </a></div> - <div class="btn"><a href={{path('blog_DeletePost', {'id' : post.id})}}> Supprimer cet article </a></div>{% endif %}
-			</div>
 		</div>
 	</div>
 
 {% endfor %}
-
-
+</div>
 
 	{% for i in 1..count %}
 
