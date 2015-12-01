@@ -156,4 +156,3 @@ class Post
         return $this->datePublication;
     }
 }
-

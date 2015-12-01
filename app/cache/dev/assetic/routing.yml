@@ -2,4 +2,4 @@ _assetic:
     resource: .
     type: assetic
 _app:
-    resource: 'C:\wamp\www\AigleReborn\BlogSymfony\app/config/routing_dev.yml'
+    resource: 'C:\wamp\www\BlogSymfony\app/config/routing_dev.yml'
