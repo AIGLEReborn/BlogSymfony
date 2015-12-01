@@ -25,7 +25,12 @@
                  {% if is_granted("ROLE_ADMIN") %}
 				<div class="btn"><a href={{path('blog_EditPost', {'id' : post.id})}}> Modifier cet article </a></div> - <div class="btn"><a href={{path('blog_DeletePost', {'id' : post.id})}}> Supprimer cet article </a></div>{% endif %}
 		</div>
-		<div class="well">
+
+	</div>
+
+{% endif %}
+</div>
+<div class="well">
  
     <h4>Leave a comment</h4>
  
@@ -51,9 +56,5 @@
         </div>
  
     </form>
-</div>
-	</div>
-
-{% endif %}
 </div>
 {% endblock %}

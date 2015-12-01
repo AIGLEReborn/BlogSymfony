@@ -67,3 +67,9 @@ c5b804,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/,1448983985,,200
 1d74a7,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/post/1,1448984885,,200
 00acae,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/post/1,1448984920,,200
 281198,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/post/1,1448984956,,200
+3e4137,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/post/1,1448996163,,200
+fd181d,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/post/1,1448996245,,200
+bf2718,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/,1448996303,,200
+0547ab,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/logout,1448996461,,302
+fef1fa,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/,1448996462,,200
+7a6bfe,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/post/3,1448996504,,200
