@@ -29,6 +29,14 @@ class Comment
      */
     private $user;
 
+        /**
+     * @var integer
+     *
+     * @ORM\Column(name="post", type="integer")
+     * @ORM\OneToOne(targetEntity="BlogSymfony\BlogBundle\Entity\Post", cascade={"remove"})
+     */
+    private $post;
+
     /**
      * @var string
      *
@@ -48,9 +56,9 @@ class Comment
     }
 
     /**
-     * Set idUser
+     * Set user
      *
-     * @param integer $idUser
+     * @param integer $user
      *
      * @return Comment
      */
@@ -68,7 +76,31 @@ class Comment
      */
     public function getUser()
     {
-        return $this->User;
+        return $this->user;
+    }
+
+     /**
+     * Set post
+     *
+     * @param integer $post
+     *
+     * @return Comment
+     */
+    public function setPost($post)
+    {
+        $this->post = $post;
+    
+        return $this;
+    }
+
+    /**
+     * Get post
+     *
+     * @return integer
+     */
+    public function getPost()
+    {
+        return $this->$post;
     }
 
     /**

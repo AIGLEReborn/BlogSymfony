@@ -165,6 +165,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'blog_DeletePost')), array (  '_controller' => 'BlogBundle\\Controller\\BlogController::deletePostAction',));
             }
 
+            // blog_addAdmin
+            if ($pathinfo === '/admin/addAdmin') {
+                return array (  '_controller' => 'BlogBundle\\Controller\\BlogController::addAdminAction',  '_route' => 'blog_addAdmin',);
+            }
+
         }
 
         // homepage

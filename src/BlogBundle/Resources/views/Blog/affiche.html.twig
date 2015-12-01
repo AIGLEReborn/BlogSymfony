@@ -34,17 +34,16 @@
  
     <h4>Leave a comment</h4>
  
-    <form role="form" class="clearfix">
+    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+    <div class="col-md-12 form-group">
+        {{ form_label(form.comment, "Write some comments", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_errors(form.comment) }}
+    </div>
+
+    <div class="col-md-12 form-group text-right">
+        {{ form_label(form.add, "Comment !", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+    </div>
  
-        <div class="col-md-12 form-group">
-            <label class="sr-only" for="email">Comment</label>
-            <textarea class="form-control" id="comment" placeholder="Comment"></textarea>
-        </div>
- 
-        <div class="col-md-12 form-group text-right">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
- 
-    </form>
 </div>
 {% endblock %}

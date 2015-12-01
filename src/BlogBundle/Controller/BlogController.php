@@ -40,26 +40,24 @@ class BlogController extends Controller
     public function displayPostAction($id) {
         $repo = $this->getDoctrine()->getRepository('BlogBundle:Post');
         $post = $repo->find($id);
-    	return $this->render('BlogBundle:Blog:affiche.html.twig', array('post' => $post));
-    }
 
-    public function addCommentAction(Request $request) {
-        $commentaire = new Commentaire();
-        $formBuilder = $this->get('form.factory')->createBuilder('form',$commentaire);
+        $comment = new Comment();
+        $comment->setPost($id);
+        $formBuilder = $this->get('form.factory')->createBuilder('form',$comment);
         $formBuilder
-                ->add('Write a Comment', 'textarea', array('required' => true))
-                ->add('Comment!','submit');
+                ->add('comment', 'textarea', array('required' => true))
+                ->add('add','submit');
         $form = $formBuilder->getForm();
-
         if($form->handleRequest($Request)->isValid()) {
             $em = $this->getDoctrine()->getManager();
             //Récuppération de l'id current user
             $currentUser = $this->container->get('security.context')->getToken()->getUser();
-            $commentaire->setUser($currentUser);
-            $em->persist($commentaire);
+            $comment->setUser($currentUser);
+            $em->persist($comment);
             $em->flush();
-            return $this->render('BlogBundle:Blog:affiche.html.twig')
         }
+        
+    	return $this->render('BlogBundle:Blog:affiche.html.twig', array('post' => $post,'comment'=>$comment));
     }
 
     public function addPostAction(Request $request) {
