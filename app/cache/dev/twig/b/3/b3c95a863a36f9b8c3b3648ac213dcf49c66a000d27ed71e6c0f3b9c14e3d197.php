@@ -22,32 +22,32 @@ class __TwigTemplate_f7b320c847104ad35a5ba2eef4871667d3c468f0f22764a92da18686556
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_856b9b9ff43e80d67b824f62a4d670f57ba20981763ca450668ad7668fb48b27 = $this->env->getExtension("native_profiler");
-        $__internal_856b9b9ff43e80d67b824f62a4d670f57ba20981763ca450668ad7668fb48b27->enter($__internal_856b9b9ff43e80d67b824f62a4d670f57ba20981763ca450668ad7668fb48b27_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:addPost.html.twig"));
+        $__internal_00f8a0e6e9efbd0f4a3582f72498f6662f9c1ce177d2af8aac82c95eb97cce5c = $this->env->getExtension("native_profiler");
+        $__internal_00f8a0e6e9efbd0f4a3582f72498f6662f9c1ce177d2af8aac82c95eb97cce5c->enter($__internal_00f8a0e6e9efbd0f4a3582f72498f6662f9c1ce177d2af8aac82c95eb97cce5c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:addPost.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_856b9b9ff43e80d67b824f62a4d670f57ba20981763ca450668ad7668fb48b27->leave($__internal_856b9b9ff43e80d67b824f62a4d670f57ba20981763ca450668ad7668fb48b27_prof);
+        $__internal_00f8a0e6e9efbd0f4a3582f72498f6662f9c1ce177d2af8aac82c95eb97cce5c->leave($__internal_00f8a0e6e9efbd0f4a3582f72498f6662f9c1ce177d2af8aac82c95eb97cce5c_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_533e9e08ea08665e917b78399727418addae37fc0c75ebace5073f0860c19d52 = $this->env->getExtension("native_profiler");
-        $__internal_533e9e08ea08665e917b78399727418addae37fc0c75ebace5073f0860c19d52->enter($__internal_533e9e08ea08665e917b78399727418addae37fc0c75ebace5073f0860c19d52_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_191a5e5bc9358be3e4996bc51ecb36be45ab554445744d3b7dece9f4460e0560 = $this->env->getExtension("native_profiler");
+        $__internal_191a5e5bc9358be3e4996bc51ecb36be45ab554445744d3b7dece9f4460e0560->enter($__internal_191a5e5bc9358be3e4996bc51ecb36be45ab554445744d3b7dece9f4460e0560_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo " Accueil ";
         
-        $__internal_533e9e08ea08665e917b78399727418addae37fc0c75ebace5073f0860c19d52->leave($__internal_533e9e08ea08665e917b78399727418addae37fc0c75ebace5073f0860c19d52_prof);
+        $__internal_191a5e5bc9358be3e4996bc51ecb36be45ab554445744d3b7dece9f4460e0560->leave($__internal_191a5e5bc9358be3e4996bc51ecb36be45ab554445744d3b7dece9f4460e0560_prof);
 
     }
 
     // line 5
     public function block_corps($context, array $blocks = array())
     {
-        $__internal_d2aff7b66f5bad353377afb87ade4fb491879512751625f8635625b0e7433c38 = $this->env->getExtension("native_profiler");
-        $__internal_d2aff7b66f5bad353377afb87ade4fb491879512751625f8635625b0e7433c38->enter($__internal_d2aff7b66f5bad353377afb87ade4fb491879512751625f8635625b0e7433c38_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
+        $__internal_e10c3fac1840eaa4cc046b47785ebbded2bec75ef889956da65cad89b6999998 = $this->env->getExtension("native_profiler");
+        $__internal_e10c3fac1840eaa4cc046b47785ebbded2bec75ef889956da65cad89b6999998->enter($__internal_e10c3fac1840eaa4cc046b47785ebbded2bec75ef889956da65cad89b6999998_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
 
         // line 6
         echo "
@@ -90,9 +90,10 @@ class __TwigTemplate_f7b320c847104ad35a5ba2eef4871667d3c468f0f22764a92da18686556
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "contenu", array()), 'errors');
         echo "
 
+
 \t\t\t\t\t\t<div class=\"col-sm-4\">
 \t\t\t\t\t\t\t";
-        // line 29
+        // line 30
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "contenu", array()), 'widget', array("attr" => array("class" => "form-control")));
         echo "
 \t\t\t\t\t\t</div>
@@ -100,17 +101,17 @@ class __TwigTemplate_f7b320c847104ad35a5ba2eef4871667d3c468f0f22764a92da18686556
 
 \t\t\t\t\t<div class=\"form-group\">
 \t\t\t\t\t";
-        // line 34
+        // line 35
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "datePublication", array()), 'label', array("label_attr" => array("class" => "col-sm-3 control-label"), "label" => "Date de l'article"));
         echo "
 \t\t\t\t\t";
-        // line 35
+        // line 36
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "datePublication", array()), 'errors');
         echo "
 
 \t\t\t\t\t\t<div class=\"col-sm-4\">
 \t\t\t\t\t\t\t";
-        // line 38
+        // line 39
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "datePublication", array()), 'widget');
         echo "
 \t\t\t\t\t\t</div>
@@ -118,24 +119,24 @@ class __TwigTemplate_f7b320c847104ad35a5ba2eef4871667d3c468f0f22764a92da18686556
 
 \t\t\t\t\t<div class=\"form-group\">
 \t\t\t\t\t";
-        // line 43
+        // line 44
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Valider", array()), 'label', array("label_attr" => array("class" => "col-sm-3 control-label"), "label" => "Enregistrer l'article"));
         echo "
 \t\t\t\t\t";
-        // line 44
+        // line 45
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "titre", array()), 'errors');
         echo "
 
 \t\t\t\t\t\t<div class=\"col-sm-4\">
 \t\t\t\t\t\t\t";
-        // line 47
+        // line 48
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Valider", array()), 'widget', array("attr" => array("class" => "btn btn-primary pull-right")));
         echo "
 \t\t\t\t\t\t</div>
 \t\t\t\t\t
 
 \t\t\t\t\t";
-        // line 51
+        // line 52
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
 \t\t\t\t\t</div>
@@ -146,7 +147,7 @@ class __TwigTemplate_f7b320c847104ad35a5ba2eef4871667d3c468f0f22764a92da18686556
 
 ";
         
-        $__internal_d2aff7b66f5bad353377afb87ade4fb491879512751625f8635625b0e7433c38->leave($__internal_d2aff7b66f5bad353377afb87ade4fb491879512751625f8635625b0e7433c38_prof);
+        $__internal_e10c3fac1840eaa4cc046b47785ebbded2bec75ef889956da65cad89b6999998->leave($__internal_e10c3fac1840eaa4cc046b47785ebbded2bec75ef889956da65cad89b6999998_prof);
 
     }
 
@@ -162,7 +163,7 @@ class __TwigTemplate_f7b320c847104ad35a5ba2eef4871667d3c468f0f22764a92da18686556
 
     public function getDebugInfo()
     {
-        return array (  139 => 51,  132 => 47,  126 => 44,  122 => 43,  114 => 38,  108 => 35,  104 => 34,  96 => 29,  90 => 26,  86 => 25,  78 => 20,  72 => 17,  68 => 16,  62 => 13,  53 => 6,  47 => 5,  35 => 3,  11 => 1,);
+        return array (  140 => 52,  133 => 48,  127 => 45,  123 => 44,  115 => 39,  109 => 36,  105 => 35,  97 => 30,  90 => 26,  86 => 25,  78 => 20,  72 => 17,  68 => 16,  62 => 13,  53 => 6,  47 => 5,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends '::layout.html.twig' %}*/
@@ -191,6 +192,7 @@ class __TwigTemplate_f7b320c847104ad35a5ba2eef4871667d3c468f0f22764a92da18686556
 /* 					<div class="form-group">*/
 /* 					{{ form_label(form.contenu, "Contenu de l'article", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}*/
 /* 					{{ form_errors(form.contenu) }}*/
+/* */
 /* */
 /* 						<div class="col-sm-4">*/
 /* 							{{ form_widget(form.contenu, {'attr': {'class':'form-control'}}) }}*/

@@ -75,3 +75,14 @@ fef1fa,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/,1448996462,,200
 7a6bfe,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/post/3,1448996504,,200
 b98cc5,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/post/3,1448996964,,200
 b21673,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/post/3,1448997465,,200
+7d705a,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/post/3,1448998108,,200
+c5d5bb,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/post/3,1448998229,,200
+46199b,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/,1448998234,,200
+c4a7ae,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/admin/add,1448998996,,302
+e03ad9,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/login,1448998997,,200
+23bf4d,::1,POST,http://localhost/BlogSymfony/web/app_dev.php/login_check,1448999001,,302
+a38a03,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/admin/add,1448999003,,200
+fa419f,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/,1448999109,,200
+1ed21d,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/post/1,1448999118,,200
+320bb2,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/post/1,1449000576,,200
+0ca57a,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/post/1,1449001035,,200

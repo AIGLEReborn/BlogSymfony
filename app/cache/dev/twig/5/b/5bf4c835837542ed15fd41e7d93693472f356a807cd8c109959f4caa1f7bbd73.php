@@ -22,32 +22,32 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_3fd27a0b69d481b85c19b61ad74b62080bafffb22d5302be2b2c240bcd1e7789 = $this->env->getExtension("native_profiler");
-        $__internal_3fd27a0b69d481b85c19b61ad74b62080bafffb22d5302be2b2c240bcd1e7789->enter($__internal_3fd27a0b69d481b85c19b61ad74b62080bafffb22d5302be2b2c240bcd1e7789_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:affiche.html.twig"));
+        $__internal_15c6facce0c848d5def841419fc570e5d561096e6dccd2a36da8590801df7883 = $this->env->getExtension("native_profiler");
+        $__internal_15c6facce0c848d5def841419fc570e5d561096e6dccd2a36da8590801df7883->enter($__internal_15c6facce0c848d5def841419fc570e5d561096e6dccd2a36da8590801df7883_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:affiche.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_3fd27a0b69d481b85c19b61ad74b62080bafffb22d5302be2b2c240bcd1e7789->leave($__internal_3fd27a0b69d481b85c19b61ad74b62080bafffb22d5302be2b2c240bcd1e7789_prof);
+        $__internal_15c6facce0c848d5def841419fc570e5d561096e6dccd2a36da8590801df7883->leave($__internal_15c6facce0c848d5def841419fc570e5d561096e6dccd2a36da8590801df7883_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_227f0a1eaac276b21cd926532263a732d189fd2f222ffba282fbd944b81a244f = $this->env->getExtension("native_profiler");
-        $__internal_227f0a1eaac276b21cd926532263a732d189fd2f222ffba282fbd944b81a244f->enter($__internal_227f0a1eaac276b21cd926532263a732d189fd2f222ffba282fbd944b81a244f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_f39958ba035bfa7d2f5140f44947ee5ba113df7a9d4fe5739a848c5307d66e2d = $this->env->getExtension("native_profiler");
+        $__internal_f39958ba035bfa7d2f5140f44947ee5ba113df7a9d4fe5739a848c5307d66e2d->enter($__internal_f39958ba035bfa7d2f5140f44947ee5ba113df7a9d4fe5739a848c5307d66e2d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo " Accueil ";
         
-        $__internal_227f0a1eaac276b21cd926532263a732d189fd2f222ffba282fbd944b81a244f->leave($__internal_227f0a1eaac276b21cd926532263a732d189fd2f222ffba282fbd944b81a244f_prof);
+        $__internal_f39958ba035bfa7d2f5140f44947ee5ba113df7a9d4fe5739a848c5307d66e2d->leave($__internal_f39958ba035bfa7d2f5140f44947ee5ba113df7a9d4fe5739a848c5307d66e2d_prof);
 
     }
 
     // line 5
     public function block_corps($context, array $blocks = array())
     {
-        $__internal_a17a96a6d363592c80ec9b8a612013592bd61c94fe6131edec8c91ae9d6be66d = $this->env->getExtension("native_profiler");
-        $__internal_a17a96a6d363592c80ec9b8a612013592bd61c94fe6131edec8c91ae9d6be66d->enter($__internal_a17a96a6d363592c80ec9b8a612013592bd61c94fe6131edec8c91ae9d6be66d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
+        $__internal_bf212ca4db57f28aad7db6de40f89f4c3c08f91d35dbc285f7a5c370d91cb5b5 = $this->env->getExtension("native_profiler");
+        $__internal_bf212ca4db57f28aad7db6de40f89f4c3c08f91d35dbc285f7a5c370d91cb5b5->enter($__internal_bf212ca4db57f28aad7db6de40f89f4c3c08f91d35dbc285f7a5c370d91cb5b5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
 
         // line 6
         echo "<div class=\"container\">
@@ -107,16 +107,7 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
     <h4>Leave a comment</h4>
  
     <form role=\"form\" class=\"clearfix\">
- 
-        <div class=\"col-md-6 form-group\">
-            <label class=\"sr-only\" for=\"name\">Name</label>
-            <input type=\"text\" class=\"form-control\" id=\"name\" placeholder=\"Name\">
-        </div>
- 
-        <div class=\"col-md-6 form-group\">
-            <label class=\"sr-only\" for=\"email\">Email</label>
-            <input type=\"email\" class=\"form-control\" id=\"email\" placeholder=\"Email\">
-        </div>
+
  
         <div class=\"col-md-12 form-group\">
             <label class=\"sr-only\" for=\"email\">Comment</label>
@@ -131,7 +122,7 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 </div>
 ";
         
-        $__internal_a17a96a6d363592c80ec9b8a612013592bd61c94fe6131edec8c91ae9d6be66d->leave($__internal_a17a96a6d363592c80ec9b8a612013592bd61c94fe6131edec8c91ae9d6be66d_prof);
+        $__internal_bf212ca4db57f28aad7db6de40f89f4c3c08f91d35dbc285f7a5c370d91cb5b5->leave($__internal_bf212ca4db57f28aad7db6de40f89f4c3c08f91d35dbc285f7a5c370d91cb5b5_prof);
 
     }
 
@@ -187,16 +178,7 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 /*     <h4>Leave a comment</h4>*/
 /*  */
 /*     <form role="form" class="clearfix">*/
-/*  */
-/*         <div class="col-md-6 form-group">*/
-/*             <label class="sr-only" for="name">Name</label>*/
-/*             <input type="text" class="form-control" id="name" placeholder="Name">*/
-/*         </div>*/
-/*  */
-/*         <div class="col-md-6 form-group">*/
-/*             <label class="sr-only" for="email">Email</label>*/
-/*             <input type="email" class="form-control" id="email" placeholder="Email">*/
-/*         </div>*/
+/* */
 /*  */
 /*         <div class="col-md-12 form-group">*/
 /*             <label class="sr-only" for="email">Comment</label>*/

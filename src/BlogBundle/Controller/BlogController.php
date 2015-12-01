@@ -4,6 +4,7 @@ namespace BlogBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use BlogBundle\Entity\Post;
+use BlogBundle\Entity\Comment;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManager;
 
@@ -40,6 +41,15 @@ class BlogController extends Controller
         $repo = $this->getDoctrine()->getRepository('BlogBundle:Post');
         $post = $repo->find($id);
     	return $this->render('BlogBundle:Blog:affiche.html.twig', array('post' => $post));
+    }
+
+    public function addCommentAction(Request $request) {
+        $commentaire = new Commentaire();
+        $formBuilder = $this->get('form.factory')->createBuilder('form',$commentaire);
+        $formBuilder
+                ->add('Comment', 'textarea', array('required' => true))
+                ->add('Comment!','submit');
+        $form = $formBuilder->getForm();
     }
 
     public function addPostAction(Request $request) {
