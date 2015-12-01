@@ -30,20 +30,31 @@
 
 {% endif %}
 </div>
+
+{% if comments|length > 0 %}
+    <ul> <!-- Pour le moment, trouver du bootstrap après -->
+        {% for comment in comments %}
+            <li> {{ comment.user.username }} dit : {{ comment.commentaire }} <br/> ({{ comment.user.email }}) </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
 <div class="well">
  
     <h4>Leave a comment</h4>
  
     {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
 
-    <div class="col-md-12 form-group">
-        {{ form_label(form.comment, "Write some comments", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
-        {{ form_errors(form.comment) }}
-    </div>
+        <div class="col-md-12 form-group">
+            {{ form_label(form.commentaire, "Write some comments", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            {{ form_errors(form.commentaire) }}
+        </div>
 
-    <div class="col-md-12 form-group text-right">
-        {{ form_label(form.add, "Comment !", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
-    </div>
+        <div class="col-md-12 form-group text-right">
+            {{ form_label(form.add, "Comment !", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+        </div>
  
+    {{ form_end(form) }}
+
 </div>
 {% endblock %}

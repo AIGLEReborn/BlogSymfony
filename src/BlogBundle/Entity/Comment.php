@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Comment
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity()
  */
 class Comment
 {
@@ -22,23 +22,19 @@ class Comment
     private $id;
 
     /**
-     * @var integer
      *
-     * @ORM\Column(name="user", type="integer")
-     * @ORM\OneToOne(targetEntity="BlogSymfony\BlogBundle\Entity\User", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="comments", cascade={"persist"})
      */
     private $user;
 
-        /**
-     * @var integer
+    /**
      *
-     * @ORM\Column(name="post", type="integer")
-     * @ORM\OneToOne(targetEntity="BlogSymfony\BlogBundle\Entity\Post", cascade={"remove"})
+     * @ORM\ManyToOne(targetEntity="Post", inversedBy="comments" , cascade={"remove"})
+     *
      */
     private $post;
 
     /**
-     * @var string
      *
      * @ORM\Column(name="commentaire", type="string", length=255)
      */
@@ -58,11 +54,11 @@ class Comment
     /**
      * Set user
      *
-     * @param integer $user
+     * @param User $user
      *
      * @return Comment
      */
-    public function setUser($user)
+    public function setUser(User $user = null)
     {
         $this->user = $user;
     
@@ -70,9 +66,9 @@ class Comment
     }
 
     /**
-     * Get idUser
+     * Get user
      *
-     * @return integer
+     * @return User
      */
     public function getUser()
     {
@@ -82,11 +78,11 @@ class Comment
      /**
      * Set post
      *
-     * @param integer $post
+     * @param Post $post
      *
      * @return Comment
      */
-    public function setPost($post)
+    public function setPost(Post $post = null)
     {
         $this->post = $post;
     
@@ -96,7 +92,7 @@ class Comment
     /**
      * Get post
      *
-     * @return integer
+     * @return Post
      */
     public function getPost()
     {
@@ -127,4 +123,3 @@ class Comment
         return $this->commentaire;
     }
 }
-

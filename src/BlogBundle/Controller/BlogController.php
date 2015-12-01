@@ -4,6 +4,7 @@ namespace BlogBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use BlogBundle\Entity\Post;
+use BlogBundle\Entity\User;
 use BlogBundle\Entity\Comment;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManager;
@@ -37,27 +38,39 @@ class BlogController extends Controller
             'count' => $count));
     }
 
-    public function displayPostAction($id) {
+    public function displayPostAction(Request $request,$id) {
         $repo = $this->getDoctrine()->getRepository('BlogBundle:Post');
         $post = $repo->find($id);
 
+        $manager = $this->getDoctrine()->getManager();
+        $query = $manager->createQuery(
+            ' SELECT c
+            FROM BlogBundle:Comment c
+            WHERE c.post = :id'
+            )->setParameter('id',$id);
+        $comments = $query->getResult();
+
         $comment = new Comment();
-        $comment->setPost($id);
+        $comment->setPost($post);
         $formBuilder = $this->get('form.factory')->createBuilder('form',$comment);
         $formBuilder
-                ->add('comment', 'textarea', array('required' => true))
+                ->add('commentaire', 'textarea', array('required' => true))
                 ->add('add','submit');
         $form = $formBuilder->getForm();
-        if($form->handleRequest($Request)->isValid()) {
+        if($form->handleRequest($request)->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            //Récuppération de l'id current user
+            //Récuppération du current user
             $currentUser = $this->container->get('security.context')->getToken()->getUser();
             $comment->setUser($currentUser);
             $em->persist($comment);
             $em->flush();
         }
-        
-    	return $this->render('BlogBundle:Blog:affiche.html.twig', array('post' => $post,'comment'=>$comment));
+
+    	return $this->render('BlogBundle:Blog:affiche.html.twig', array(
+            'post' => $post,
+            'form'=>$form->createView(),
+            'comments'=>$comments
+            ));
     }
 
     public function addPostAction(Request $request) {

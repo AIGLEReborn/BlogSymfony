@@ -22,32 +22,32 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_15c6facce0c848d5def841419fc570e5d561096e6dccd2a36da8590801df7883 = $this->env->getExtension("native_profiler");
-        $__internal_15c6facce0c848d5def841419fc570e5d561096e6dccd2a36da8590801df7883->enter($__internal_15c6facce0c848d5def841419fc570e5d561096e6dccd2a36da8590801df7883_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:affiche.html.twig"));
+        $__internal_457baa72f8eff9b26c7973b9fe16a815ce484c17fd8709f4b585f93fb215fed4 = $this->env->getExtension("native_profiler");
+        $__internal_457baa72f8eff9b26c7973b9fe16a815ce484c17fd8709f4b585f93fb215fed4->enter($__internal_457baa72f8eff9b26c7973b9fe16a815ce484c17fd8709f4b585f93fb215fed4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:affiche.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_15c6facce0c848d5def841419fc570e5d561096e6dccd2a36da8590801df7883->leave($__internal_15c6facce0c848d5def841419fc570e5d561096e6dccd2a36da8590801df7883_prof);
+        $__internal_457baa72f8eff9b26c7973b9fe16a815ce484c17fd8709f4b585f93fb215fed4->leave($__internal_457baa72f8eff9b26c7973b9fe16a815ce484c17fd8709f4b585f93fb215fed4_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_f39958ba035bfa7d2f5140f44947ee5ba113df7a9d4fe5739a848c5307d66e2d = $this->env->getExtension("native_profiler");
-        $__internal_f39958ba035bfa7d2f5140f44947ee5ba113df7a9d4fe5739a848c5307d66e2d->enter($__internal_f39958ba035bfa7d2f5140f44947ee5ba113df7a9d4fe5739a848c5307d66e2d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_0ee1d1d0f92477a7c746d2fa85159654298ca6d113ad0cc746054ccbf646b61a = $this->env->getExtension("native_profiler");
+        $__internal_0ee1d1d0f92477a7c746d2fa85159654298ca6d113ad0cc746054ccbf646b61a->enter($__internal_0ee1d1d0f92477a7c746d2fa85159654298ca6d113ad0cc746054ccbf646b61a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo " Accueil ";
         
-        $__internal_f39958ba035bfa7d2f5140f44947ee5ba113df7a9d4fe5739a848c5307d66e2d->leave($__internal_f39958ba035bfa7d2f5140f44947ee5ba113df7a9d4fe5739a848c5307d66e2d_prof);
+        $__internal_0ee1d1d0f92477a7c746d2fa85159654298ca6d113ad0cc746054ccbf646b61a->leave($__internal_0ee1d1d0f92477a7c746d2fa85159654298ca6d113ad0cc746054ccbf646b61a_prof);
 
     }
 
     // line 5
     public function block_corps($context, array $blocks = array())
     {
-        $__internal_bf212ca4db57f28aad7db6de40f89f4c3c08f91d35dbc285f7a5c370d91cb5b5 = $this->env->getExtension("native_profiler");
-        $__internal_bf212ca4db57f28aad7db6de40f89f4c3c08f91d35dbc285f7a5c370d91cb5b5->enter($__internal_bf212ca4db57f28aad7db6de40f89f4c3c08f91d35dbc285f7a5c370d91cb5b5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
+        $__internal_6981323e108ef365c99143317a10f952f8fa6ce675e516079afce7d46c28468c = $this->env->getExtension("native_profiler");
+        $__internal_6981323e108ef365c99143317a10f952f8fa6ce675e516079afce7d46c28468c->enter($__internal_6981323e108ef365c99143317a10f952f8fa6ce675e516079afce7d46c28468c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
 
         // line 6
         echo "<div class=\"container\">
@@ -102,27 +102,72 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
         }
         // line 32
         echo "</div>
+
+";
+        // line 34
+        if ((twig_length_filter($this->env, (isset($context["comments"]) ? $context["comments"] : $this->getContext($context, "comments"))) > 0)) {
+            // line 35
+            echo "    <ul> <!-- Pour le moment, trouver du bootstrap après -->
+        ";
+            // line 36
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["comments"]) ? $context["comments"] : $this->getContext($context, "comments")));
+            foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
+                // line 37
+                echo "            <li> ";
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["comment"], "user", array()), "username", array()), "html", null, true);
+                echo " dit : ";
+                echo twig_escape_filter($this->env, $this->getAttribute($context["comment"], "commentaire", array()), "html", null, true);
+                echo " <br/> (";
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["comment"], "user", array()), "email", array()), "html", null, true);
+                echo ") </li>
+        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 39
+            echo "    </ul>
+";
+        }
+        // line 41
+        echo "
 <div class=\"well\">
  
     <h4>Leave a comment</h4>
  
-    <form role=\"form\" class=\"clearfix\">
+    ";
+        // line 46
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("attr" => array("class" => "form-horizontal")));
+        echo "
 
- 
         <div class=\"col-md-12 form-group\">
-            <label class=\"sr-only\" for=\"email\">Comment</label>
-            <textarea class=\"form-control\" id=\"comment\" placeholder=\"Comment\"></textarea>
+            ";
+        // line 49
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "commentaire", array()), 'label', array("label_attr" => array("class" => "col-sm-3 control-label"), "label" => "Write some comments"));
+        echo "
+            ";
+        // line 50
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "commentaire", array()), 'errors');
+        echo "
         </div>
- 
+
         <div class=\"col-md-12 form-group text-right\">
-            <button type=\"submit\" class=\"btn btn-primary\">Submit</button>
+            ";
+        // line 54
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "add", array()), 'label', array("label_attr" => array("class" => "col-sm-3 control-label"), "label" => "Comment !"));
+        echo "
         </div>
  
-    </form>
+    ";
+        // line 57
+        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
+        echo "
+
 </div>
 ";
         
-        $__internal_bf212ca4db57f28aad7db6de40f89f4c3c08f91d35dbc285f7a5c370d91cb5b5->leave($__internal_bf212ca4db57f28aad7db6de40f89f4c3c08f91d35dbc285f7a5c370d91cb5b5_prof);
+        $__internal_6981323e108ef365c99143317a10f952f8fa6ce675e516079afce7d46c28468c->leave($__internal_6981323e108ef365c99143317a10f952f8fa6ce675e516079afce7d46c28468c_prof);
 
     }
 
@@ -138,7 +183,7 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 
     public function getDebugInfo()
     {
-        return array (  104 => 32,  97 => 27,  90 => 26,  88 => 25,  81 => 21,  77 => 20,  64 => 12,  58 => 8,  56 => 7,  53 => 6,  47 => 5,  35 => 3,  11 => 1,);
+        return array (  164 => 57,  158 => 54,  151 => 50,  147 => 49,  141 => 46,  134 => 41,  130 => 39,  117 => 37,  113 => 36,  110 => 35,  108 => 34,  104 => 32,  97 => 27,  90 => 26,  88 => 25,  81 => 21,  77 => 20,  64 => 12,  58 => 8,  56 => 7,  53 => 6,  47 => 5,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends '::layout.html.twig' %}*/
@@ -173,22 +218,31 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 /* */
 /* {% endif %}*/
 /* </div>*/
+/* */
+/* {% if comments|length > 0 %}*/
+/*     <ul> <!-- Pour le moment, trouver du bootstrap après -->*/
+/*         {% for comment in comments %}*/
+/*             <li> {{ comment.user.username }} dit : {{ comment.commentaire }} <br/> ({{ comment.user.email }}) </li>*/
+/*         {% endfor %}*/
+/*     </ul>*/
+/* {% endif %}*/
+/* */
 /* <div class="well">*/
 /*  */
 /*     <h4>Leave a comment</h4>*/
 /*  */
-/*     <form role="form" class="clearfix">*/
+/*     {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}*/
 /* */
-/*  */
 /*         <div class="col-md-12 form-group">*/
-/*             <label class="sr-only" for="email">Comment</label>*/
-/*             <textarea class="form-control" id="comment" placeholder="Comment"></textarea>*/
+/*             {{ form_label(form.commentaire, "Write some comments", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}*/
+/*             {{ form_errors(form.commentaire) }}*/
 /*         </div>*/
-/*  */
+/* */
 /*         <div class="col-md-12 form-group text-right">*/
-/*             <button type="submit" class="btn btn-primary">Submit</button>*/
+/*             {{ form_label(form.add, "Comment !", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}*/
 /*         </div>*/
 /*  */
-/*     </form>*/
+/*     {{ form_end(form) }}*/
+/* */
 /* </div>*/
 /* {% endblock %}*/

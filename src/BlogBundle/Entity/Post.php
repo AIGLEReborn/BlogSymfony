@@ -49,6 +49,30 @@ class Post
      */
     private $datePublication;
 
+    /**
+    *
+    * @ORM\OneToMany(targetEntity="Comment", mappedBy="post")
+    **/
+    private $comments;
+
+    public function __construct() {
+        $this->comments = new ArrayCollection();
+    }
+
+    public function addComment(Comment $comment) {
+        $this->comments[] = $comment;
+        //On lie de l'autre côté aussi :
+        $comment->setPost($this);
+        return $this;
+    }
+
+    public function removeComment(Comment $comment) {
+        $this->comments->removeElement($comment);
+    }
+
+    public function getComments() {
+        return $this->comments;
+    }
 
     /**
      * Get id
@@ -155,4 +179,6 @@ class Post
     {
         return $this->datePublication;
     }
+
+
 }

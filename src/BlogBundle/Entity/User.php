@@ -9,7 +9,7 @@ use FOS\UserBundle\Model\User as BaseUser;
  * User
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity()
  */
 class User extends BaseUser
 {
@@ -22,10 +22,30 @@ class User extends BaseUser
      */
     protected $id;
 
-    public function __construct()
-    {
-        parent::__construct();
-        // your own logic
+    /**
+    *
+    * @ORM\OneToMany(targetEntity="Comment", mappedBy="user")
+    **/
+    private $comments;
+
+    public function __construct() {
+         parent::__construct();
+        $this->comments = new ArrayCollection();
+    }
+
+    public function addComment(Comment $comment) {
+        $this->comments[] = $comment;
+        //On lie de l'autre côté aussi :
+        $comment->setUser($this);
+        return $this;
+    }
+
+    public function removeComment(Comment $comment) {
+        $this->comments->removeElement($comment);
+    }
+
+    public function getComments() {
+        return $this->comments;
     }
 
     /**
@@ -38,4 +58,3 @@ class User extends BaseUser
         return $this->id;
     }
 }
-
