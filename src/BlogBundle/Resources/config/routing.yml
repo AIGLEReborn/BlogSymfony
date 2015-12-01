@@ -21,3 +21,7 @@ blog_EditPost:
 blog_DeletePost:
     path:     /admin/Delete/{id}
     defaults: { _controller: BlogBundle:Blog:deletePost }
+
+blog_addAdmin:
+    path:     /admin/addAdmin
+    defaults: { _controller: BlogBundle:Blog:addAdmin } 
