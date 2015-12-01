@@ -56,7 +56,7 @@ class Comment
      */
     public function setUser($user)
     {
-        $this->idUser = $idUser;
+        $this->user = $user;
     
         return $this;
     }

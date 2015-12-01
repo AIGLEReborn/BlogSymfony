@@ -47,9 +47,19 @@ class BlogController extends Controller
         $commentaire = new Commentaire();
         $formBuilder = $this->get('form.factory')->createBuilder('form',$commentaire);
         $formBuilder
-                ->add('Comment', 'textarea', array('required' => true))
+                ->add('Write a Comment', 'textarea', array('required' => true))
                 ->add('Comment!','submit');
         $form = $formBuilder->getForm();
+
+        if($form->handleRequest($Request)->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            //Récuppération de l'id current user
+            $currentUser = $this->container->get('security.context')->getToken()->getUser();
+            $commentaire->setUser($currentUser);
+            $em->persist($commentaire);
+            $em->flush();
+            return $this->render('BlogBundle:Blog:affiche.html.twig')
+        }
     }
 
     public function addPostAction(Request $request) {
