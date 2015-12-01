@@ -73,3 +73,5 @@ bf2718,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/,1448996303,,200
 0547ab,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/logout,1448996461,,302
 fef1fa,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/,1448996462,,200
 7a6bfe,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/post/3,1448996504,,200
+b98cc5,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/post/3,1448996964,,200
+b21673,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/post/3,1448997465,,200
