@@ -11,13 +11,17 @@ blog_afficheOnePost:
     defaults: { _controller: BlogBundle:Blog:displayPost }
 
 blog_AddPost:
-    path:     /add
+    path:     /admin/add
     defaults: { _controller: BlogBundle:Blog:addPost }
 
 blog_EditPost:
-    path:     /Edit/{id}
+    path:     /admin/Edit/{id}
     defaults: { _controller: BlogBundle:Blog:editPost }
 
 blog_DeletePost:
-    path:     /Delete/{id}
+    path:     /admin/Delete/{id}
     defaults: { _controller: BlogBundle:Blog:deletePost }
+
+blog_Deco:
+    path:     /logout
+    defaults: { _controller: BlogBundle:Blog:logout }
