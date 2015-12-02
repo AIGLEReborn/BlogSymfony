@@ -1,1 +1,14 @@
-{{ success }}
+{% extends '::layout.html.twig' %}
+
+{% block title %} Accueil {% endblock %}
+
+{% block corps %}
+	<div class="container">
+
+		{% if afficherFlash %}
+		    <div class="alert alert-{{typeFlash}}">
+		        <strong>{{typeFlash}}! </strong> {{flash|e}}
+		    </div>
+		{% endif %}
+	</div>
+{% endblock %}

@@ -53,7 +53,7 @@ class BlogController extends Controller
     public function displayPostAction(Request $request,$id) {
         $repo = $this->getDoctrine()->getRepository('BlogBundle:Post');
         $post = $repo->find($id);
-
+        $postR = $repo->find('Post',$id);
         $comments = $post->getComments();
         $count = sizeof($comments); 
 
@@ -91,12 +91,14 @@ class BlogController extends Controller
            
         }
 
-    	return $this->render('BlogBundle:Blog:affiche.html.twig', array(
+            return $this->render('BlogBundle:Blog:affiche.html.twig', array(
             'post' => $post,
             'form'=>$form->createView(),
             'comments'=>$comments,
             'count' => $count
             ));
+
+    	
     }
 
     public function addPostAction(Request $request) {
@@ -198,7 +200,7 @@ class BlogController extends Controller
         return $this->render('BlogBundle:Blog:editComment.html.twig', array('form' => $form->createView()));
     }
 
-    public function deleteCommentAction($id, Request $request) {
+    public function deleteCommentAction($idP,$id, Request $request) {
 
         $manager = $this->getDoctrine()->getManager();
         $query = $manager->createQuery(
@@ -217,10 +219,15 @@ class BlogController extends Controller
         }
         
         //TODO : Refresh sur la page actuelle.. JSPfaire
-        return $this->redirectToRoute('blog_homepage');
+        //return $this->redirectToRoute('blog_homepage');
         //return $this->redirect($this->generateUrl($request->get('_route'), $request->query->all()));
         /*3 - On redirige vers la lecture de l'article*/
-        //return $this->redirect($this->generateUrl('blog_afficheOnePost',array('id'=>$idPost)));
+        //$flash = "Commentaire supprimé !";
+        //return $this->redirectToRoute('blog_afficheOnePost',);
+        return $this->redirect($this->generateUrl('blog_afficheOnePost', array('id'=>$idP)));
+        //return $this->redirect($this->generateUrl('blog_afficheOnePost',array('id'=>$idP,'info'=>1)));
+        //return $this->redirect($this->generateUrl('blog_afficheOnePost',array('id'=>$idP,'afficherFlash' => 1 ,'flash' => $flash, 'typeFlash' => 'warning')));
+        //return $this->render('BlogBundle:Blog:affiche.html.twig',array('id'=>$idP,'afficherFlash' => 1 ,'flash' => $flash, 'typeFlash' => 'warning'));
         //return $this->redirectToRoute('blog_afficheOnePost', array('id' => $post->getId()));
     }
 
@@ -242,9 +249,9 @@ class BlogController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($user);
                 $em->flush();
-                return $this->render('BlogBundle:Blog:addAdminDone.html.twig', array('success' => "True"));
+                return $this->render('BlogBundle:Blog:addAdminDone.html.twig', array('afficherFlash'=>1,'typeFlash'=>'success','flash'=> 'Success for rights !'));
             } else {
-                return $this->render('BlogBundle:Blog:addAdminDone.html.twig', array('success' => "False"));
+                return $this->render('BlogBundle:Blog:addAdminDone.html.twig', array('afficherFlash'=>1,'typeFlash'=>'warning','flash'=> 'Failure for rights !'));
             }
            
         }

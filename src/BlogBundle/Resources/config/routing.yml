@@ -31,5 +31,5 @@ blog_EditComment:
     defaults: { _controller: BlogBundle:Blog:editComment }
 
 blog_DeleteComment:
-    path:     /admin/DeleteComment/{id}
+    path:     /admin/DeleteComment/{idP}/{id}
     defaults: { _controller: BlogBundle:Blog:deleteComment }

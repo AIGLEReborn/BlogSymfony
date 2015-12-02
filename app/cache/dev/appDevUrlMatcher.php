@@ -176,7 +176,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             // blog_DeleteComment
-            if (0 === strpos($pathinfo, '/admin/DeleteComment') && preg_match('#^/admin/DeleteComment/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/admin/DeleteComment') && preg_match('#^/admin/DeleteComment/(?P<idP>[^/]++)/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'blog_DeleteComment')), array (  '_controller' => 'BlogBundle\\Controller\\BlogController::deleteCommentAction',));
             }
 
