@@ -3,6 +3,7 @@
 namespace BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Post
@@ -57,6 +58,7 @@ class Post
 
     public function __construct() {
         $this->comments = new ArrayCollection();
+        $this->datePublication = new \DateTime();
     }
 
     public function addComment(Comment $comment) {

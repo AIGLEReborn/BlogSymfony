@@ -8,6 +8,7 @@ use BlogBundle\Entity\User;
 use BlogBundle\Entity\Comment;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManager;
+use Doctrine\Common\Collections\ArrayCollection;
 
 class BlogController extends Controller
 {
@@ -64,6 +65,7 @@ class BlogController extends Controller
         $repo = $this->getDoctrine()->getRepository('BlogBundle:Comment');
         $count = $repo->createQueryBuilder('comment')->select('COUNT(comment)')->getQuery()->getSingleScalarResult();
 
+
         $comment = new Comment();
         $comment->setPost($post);
         $formBuilder = $this->get('form.factory')->createBuilder('form',$comment);
@@ -82,8 +84,10 @@ class BlogController extends Controller
                 $em->flush();
 
                 //Raffraichissement des infos
-                $comments[] = $comment;
-                $count++;
+                //$comments[] = $comment;
+                $comments = $post->getComments();
+                //$count++;
+                $count = sizeof($comments);
 
                 return $this->render('BlogBundle:Blog:affiche.html.twig', array(
                 'post' => $post,
@@ -121,7 +125,8 @@ class BlogController extends Controller
             $post->setUrl('JSP');
             $em->persist($post);
             $em->flush();
-            return $this->render('BlogBundle:Blog:affiche.html.twig', array('post' => $post));
+            //return $this->render('BlogBundle:Blog:affiche.html.twig', array('post' => $post));
+            return $this->redirectToRoute('blog_afficheOnePost', array('id' => $post->getId()));
         }
 
     	return $this->render('BlogBundle:Blog:addPost.html.twig', array('form' => $form->createView()));
@@ -148,7 +153,8 @@ class BlogController extends Controller
 
             $request->getSession()->getFlashBag()->add('notice', 'Article modifié');
 
-            return $this->render('BlogBundle:Blog:affiche.html.twig', array('post' => $post));
+            return $this->redirectToRoute('blog_afficheOnePost', array('id' => $post->getId()));
+
         }
 
     	return $this->render('BlogBundle:Blog:editPost.html.twig', array('form' => $form->createView(), 'post' => $post));

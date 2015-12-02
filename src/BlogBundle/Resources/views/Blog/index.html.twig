@@ -12,9 +12,9 @@
                     <a href="{{path('blog_afficheOnePost', {'id' : post.id})}}">{{ post.titre }} </a>
                 </h2>
                 <p class="lead">
-                    par <a href="index.php"> TODO   Start Bootstrap</a>
+                    par Groland 
                 </p>
-                <p><span class="glyphicon glyphicon-time"></span>  TODOOOOOOO Posted on August 28, 2013 at 10:00 PM</p>
+                <p><span class="glyphicon glyphicon-time"></span> Ecrit le {{post.datePublication|date("d/m/Y")}} à {{post.datePublication|date("H:i:s")}}</p>
                     {{ countComms[post.id] }} commentaires
                 <hr>
 
