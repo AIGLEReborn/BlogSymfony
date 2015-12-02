@@ -2,6 +2,8 @@
 
 namespace BlogBundle\Entity;
 
+use BlogBundle\Entity\Post;
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -28,9 +30,9 @@ class Comment
     private $user;
 
     /**
-     *
+     * @var Post
      * @ORM\ManyToOne(targetEntity="Post", inversedBy="comments")
-     *@ORM\JoinColumn(name="post_id", onDelete="CASCADE")
+     * @ORM\JoinColumn(name="post_id", referencedColumnName="id" ,onDelete="CASCADE")
      */
     private $post;
 

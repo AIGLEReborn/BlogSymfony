@@ -56,20 +56,9 @@ class BlogController extends Controller
 
         $comments = $post->getComments();
         $count = sizeof($comments); 
-        /*$manager = $this->getDoctrine()->getManager();
-        $query = $manager->createQuery(
-            ' SELECT c
-            FROM BlogBundle:Comment c
-            WHERE c.post = :id'
-            )->setParameter('id',$id);
-        $comments = $query->getResult();
-
-        $repo = $this->getDoctrine()->getRepository('BlogBundle:Comment');
-        $count = $repo->createQueryBuilder('comment')->select('COUNT(comment)')->getQuery()->getSingleScalarResult();*/
-
 
         $comment = new Comment();
-        $comment->setPost($post);
+        //$comment->setPost($post);
         $formBuilder = $this->get('form.factory')->createBuilder('form',$comment);
         $formBuilder
                 ->add('commentaire', 'textarea', array('required' => true))
@@ -82,6 +71,7 @@ class BlogController extends Controller
             $currentUser = $this->container->get('security.context')->getToken()->getUser();
             if ($currentUser != 'anon.') {
                 $comment->setUser($currentUser);
+                $comment->setPost($post);
                 $em->persist($comment);
                 $em->flush();
 
@@ -209,6 +199,7 @@ class BlogController extends Controller
     }
 
     public function deleteCommentAction($id, Request $request) {
+
         $manager = $this->getDoctrine()->getManager();
         $query = $manager->createQuery(
             ' SELECT c
@@ -227,6 +218,38 @@ class BlogController extends Controller
         
         //TODO : Refresh sur la page actuelle.. JSPfaire
         return $this->redirectToRoute('blog_homepage');
+        //return $this->redirect($this->generateUrl($request->get('_route'), $request->query->all()));
+        /*3 - On redirige vers la lecture de l'article*/
+        //return $this->redirect($this->generateUrl('blog_afficheOnePost',array('id'=>$idPost)));
+        //return $this->redirectToRoute('blog_afficheOnePost', array('id' => $post->getId()));
+    }
+
+    public function addAdminAction(Request $request) {
+        $data = array('user' => 'test');
+        $form = $this->createFormBuilder($data)
+        ->add('user', 'text')
+        ->add('Valider', 'submit')
+        ->getForm();
+ 
+        if ($form->handleRequest($request)->isValid()) {
+            //Callback sur le submit
+            $userManager = $this->get('fos_user.user_manager');
+            $data = $form->getData();
+            //return $this->render('BlogBundle:Blog:addAdminDone.html.twig', array('success' => json_encode($data)));
+            $user = $userManager->findUserByUsername($data['user']);
+            if ($user != null) {
+                $user->setRoles(array('ROLE_ADMIN'));
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($user);
+                $em->flush();
+                return $this->render('BlogBundle:Blog:addAdminDone.html.twig', array('success' => "True"));
+            } else {
+                return $this->render('BlogBundle:Blog:addAdminDone.html.twig', array('success' => "False"));
+            }
+           
+        }
+ 
+        return $this->render('BlogBundle:Blog:addAdmin.html.twig', array('form' => $form->createView()));
     }
 
 }
