@@ -54,7 +54,9 @@ class BlogController extends Controller
         $repo = $this->getDoctrine()->getRepository('BlogBundle:Post');
         $post = $repo->find($id);
 
-        $manager = $this->getDoctrine()->getManager();
+        $comments = $post->getComments();
+        $count = sizeof($comments); 
+        /*$manager = $this->getDoctrine()->getManager();
         $query = $manager->createQuery(
             ' SELECT c
             FROM BlogBundle:Comment c
@@ -63,7 +65,7 @@ class BlogController extends Controller
         $comments = $query->getResult();
 
         $repo = $this->getDoctrine()->getRepository('BlogBundle:Comment');
-        $count = $repo->createQueryBuilder('comment')->select('COUNT(comment)')->getQuery()->getSingleScalarResult();
+        $count = $repo->createQueryBuilder('comment')->select('COUNT(comment)')->getQuery()->getSingleScalarResult();*/
 
 
         $comment = new Comment();

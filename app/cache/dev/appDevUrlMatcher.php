@@ -170,6 +170,16 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'BlogBundle\\Controller\\BlogController::addAdminAction',  '_route' => 'blog_addAdmin',);
             }
 
+            // blog_EditComment
+            if (0 === strpos($pathinfo, '/admin/EditComment') && preg_match('#^/admin/EditComment/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'blog_EditComment')), array (  '_controller' => 'BlogBundle\\Controller\\BlogController::editCommentAction',));
+            }
+
+            // blog_DeleteComment
+            if (0 === strpos($pathinfo, '/admin/DeleteComment') && preg_match('#^/admin/DeleteComment/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'blog_DeleteComment')), array (  '_controller' => 'BlogBundle\\Controller\\BlogController::deleteCommentAction',));
+            }
+
         }
 
         // homepage
