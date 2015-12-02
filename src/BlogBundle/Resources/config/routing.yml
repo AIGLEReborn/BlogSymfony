@@ -24,4 +24,12 @@ blog_DeletePost:
 
 blog_addAdmin:
     path:     /admin/addAdmin
-    defaults: { _controller: BlogBundle:Blog:addAdmin } 
+    defaults: { _controller: BlogBundle:Blog:addAdmin }
+
+blog_EditComment:
+    path:     /admin/EditComment/{id}
+    defaults: { _controller: BlogBundle:Blog:editComment }
+
+blog_DeleteComment:
+    path:     /admin/DeleteComment/{id}
+    defaults: { _controller: BlogBundle:Blog:deleteComment }

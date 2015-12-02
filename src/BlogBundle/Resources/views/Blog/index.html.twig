@@ -15,11 +15,12 @@
                     par <a href="index.php"> TODO   Start Bootstrap</a>
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span>  TODOOOOOOO Posted on August 28, 2013 at 10:00 PM</p>
+                    {{ countComms[post.id] }} commentaires
                 <hr>
 
                 <p> {{ post.contenu }} </p>
                 <a class="btn btn-primary" href="{{path('blog_afficheOnePost', {'id' : post.id})}}">Lire et commenter <span class="glyphicon glyphicon-chevron-right"></span></a>
-
+                
                 <hr>
 
                  {% if is_granted("ROLE_ADMIN") %}

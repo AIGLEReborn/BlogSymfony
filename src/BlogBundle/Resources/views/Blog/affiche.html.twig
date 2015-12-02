@@ -15,6 +15,7 @@
                     par <a href="index.php"> TODO   Start Bootstrap</a>
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span>  TODOOOOOOO Posted on August 28, 2013 at 10:00 PM</p>
+                {{ count }} commentaires
                 <hr>
 
                 <p> {{ post.contenu }} </p>
@@ -34,7 +35,12 @@
 {% if comments|length > 0 %}
     <ul> <!-- Pour le moment, trouver du bootstrap après -->
         {% for comment in comments %}
-            <li> {{ comment.user.username }} dit : {{ comment.commentaire }} <br/> ({{ comment.user.email }}) </li>
+            <li> {{ comment.user.username }} dit : {{ comment.commentaire }} <br/> ({{ comment.user.email }}) 
+
+             {% if is_granted("ROLE_ADMIN") %}
+                <a href={{path('blog_EditComment', {'id' : comment.id})}}><img src="https://cdn4.iconfinder.com/data/icons/32x32-free-design-icons/32/Pencil.png" height="10" width="10"/></a>&nbsp;-&nbsp;<a href={{path('blog_DeleteComment', {'id' : comment.id})}}><img src="http://www.andorrasportstraining.com/resources/images/Dialog-close.png" height="10" width="10"/></a>
+            {% endif %}
+            </li>
         {% endfor %}
     </ul>
 {% endif %}

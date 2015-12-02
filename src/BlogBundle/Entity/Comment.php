@@ -29,7 +29,7 @@ class Comment
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="Post", inversedBy="comments" , cascade={"remove"})
+     * @ORM\ManyToOne(targetEntity="Post", inversedBy="comments" , cascade={"persist"})
      *
      */
     private $post;

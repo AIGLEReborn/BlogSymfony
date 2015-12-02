@@ -17,9 +17,20 @@ class BlogController extends Controller
         $posts = $repo->findBy(array(), null, 10);
         $count = $repo->createQueryBuilder('post')->select('COUNT(post)')->getQuery()->getSingleScalarResult();
         $count = ceil($count/10);
+
+        $query = "SELECT p.id, count(comment.id) as nombre FROM post p LEFT JOIN comment ON p.id = comment.post_id GROUP BY p.id";
+        $stmt = $this->getDoctrine()->getManager()->getConnection()->prepare($query);
+        $stmt->execute();
+        $results = $stmt->fetchAll();
+        $retour = array();
+        foreach ($results as $row) {
+            $retour[$row['id']] = $row['nombre'];
+        }
+
         return $this->render('BlogBundle:Blog:index.html.twig', array(
             'posts' => $posts,
-            'count' => $count));
+            'count' => $count,
+            'countComms' => $retour));
     }
 
     public function pageXAction($value) {
@@ -50,6 +61,9 @@ class BlogController extends Controller
             )->setParameter('id',$id);
         $comments = $query->getResult();
 
+        $repo = $this->getDoctrine()->getRepository('BlogBundle:Comment');
+        $count = $repo->createQueryBuilder('comment')->select('COUNT(comment)')->getQuery()->getSingleScalarResult();
+
         $comment = new Comment();
         $comment->setPost($post);
         $formBuilder = $this->get('form.factory')->createBuilder('form',$comment);
@@ -57,19 +71,35 @@ class BlogController extends Controller
                 ->add('commentaire', 'textarea', array('required' => true))
                 ->add('add','submit');
         $form = $formBuilder->getForm();
+
         if($form->handleRequest($request)->isValid()) {
             $em = $this->getDoctrine()->getManager();
             //Récuppération du current user
             $currentUser = $this->container->get('security.context')->getToken()->getUser();
-            $comment->setUser($currentUser);
-            $em->persist($comment);
-            $em->flush();
+            if ($currentUser != 'anon.') {
+                $comment->setUser($currentUser);
+                $em->persist($comment);
+                $em->flush();
+
+                //Raffraichissement des infos
+                $comments[] = $comment;
+                $count++;
+
+                return $this->render('BlogBundle:Blog:affiche.html.twig', array(
+                'post' => $post,
+                'form'=>$form->createView(),
+                'comments'=>$comments,
+                'count' => $count
+                ));
+            }
+           
         }
 
     	return $this->render('BlogBundle:Blog:affiche.html.twig', array(
             'post' => $post,
             'form'=>$form->createView(),
-            'comments'=>$comments
+            'comments'=>$comments,
+            'count' => $count
             ));
     }
 
@@ -132,6 +162,63 @@ class BlogController extends Controller
         $em->flush();
 
     	return $this->redirectToRoute('blog_homepage');
+    }
+
+    public function editCommentAction($id, Request $request) {
+
+        //Get du comm via l'id
+        $manager = $this->getDoctrine()->getManager();
+        $query = $manager->createQuery(
+            ' SELECT c
+            FROM BlogBundle:Comment c
+            WHERE c.id = :id'
+            )->setParameter('id',$id);
+
+        $comment = $query->getResult();
+        $c = $comment[0];
+
+
+
+        //Faire le form
+        $formBuilder = $this->get('form.factory')->createBuilder('form',$c);
+        $formBuilder
+                ->add('commentaire', 'textarea', array('required' => true))
+                ->add('add','submit');
+        $form = $formBuilder->getForm();
+
+        if ($form->handleRequest($request)->isValid()) {
+            //Callback sur le submit
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($c);
+            $em->flush();
+
+            //$request->getSession()->getFlashBag()->add('notice', 'Article modifié');
+
+            return $this->redirectToRoute('blog_homepage');
+        }
+
+        return $this->render('BlogBundle:Blog:editComment.html.twig', array('form' => $form->createView()));
+    }
+
+    public function deleteCommentAction($id, Request $request) {
+        $manager = $this->getDoctrine()->getManager();
+        $query = $manager->createQuery(
+            ' SELECT c
+            FROM BlogBundle:Comment c
+            WHERE c.id = :id'
+            )->setParameter('id',$id);
+
+        $comment = $query->getResult();
+        
+        if (sizeof($comment) != 0) {
+            $c = $comment[0];
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($c);
+            $em->flush();
+        }
+        
+        //TODO : Refresh sur la page actuelle.. JSPfaire
+        return $this->redirectToRoute('blog_homepage');
     }
 
 }
