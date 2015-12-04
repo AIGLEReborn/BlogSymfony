@@ -67,7 +67,7 @@
 							{% if is_granted("IS_AUTHENTICATED_FULLY") %}
                                 <li><a href="#" class="inactiveLink">{{app.user.username}}</a></li>
                                 <li>
-                                    <a href="{{ path('fos_user_security_logout') }}">Déconnection</a>
+                                    <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
                                 </li>
                             {% else %}
                                 <li><a href="{{path('fos_user_security_login') }}">Connexion</a></li>
