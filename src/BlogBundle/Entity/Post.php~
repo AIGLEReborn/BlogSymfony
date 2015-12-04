@@ -51,6 +51,12 @@ class Post
     private $datePublication;
 
     /**
+     * @var User
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="posts", cascade={"persist"})
+     */
+    private $author;
+
+    /**
     *
     * @ORM\OneToMany(targetEntity="Comment", mappedBy="post")
     **/

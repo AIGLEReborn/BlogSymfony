@@ -29,9 +29,16 @@ class User extends BaseUser
     **/
     private $comments;
 
+    /**
+    *
+    * @ORM\OneToMany(targetEntity="Post", mappedBy="user")
+    **/
+    private $posts;
+
     public function __construct() {
          parent::__construct();
         $this->comments = new ArrayCollection();
+        $this->posts = new ArrayCollection();
     }
 
     public function addComment(Comment $comment) {
@@ -57,5 +64,39 @@ class User extends BaseUser
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Add post
+     *
+     * @param \BlogBundle\Entity\Post $post
+     *
+     * @return User
+     */
+    public function addPost(Post $post)
+    {
+        $this->posts[] = $post;
+    
+        return $this;
+    }
+
+    /**
+     * Remove post
+     *
+     * @param \BlogBundle\Entity\Post $post
+     */
+    public function removePost(\BlogBundle\Entity\Post $post)
+    {
+        $this->posts->removeElement($post);
+    }
+
+    /**
+     * Get posts
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPosts()
+    {
+        return $this->posts;
     }
 }

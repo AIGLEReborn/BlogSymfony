@@ -51,6 +51,12 @@ class Post
     private $datePublication;
 
     /**
+     * @var User
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="posts", cascade={"persist"})
+     */
+    private $author;
+
+    /**
     *
     * @ORM\OneToMany(targetEntity="Comment", mappedBy="post")
     **/
@@ -183,4 +189,28 @@ class Post
     }
 
 
+
+    /**
+     * Set author
+     *
+     * @param \BlogBundle\Entity\User $author
+     *
+     * @return Post
+     */
+    public function setAuthor(\BlogBundle\Entity\User $author = null)
+    {
+        $this->author = $author;
+    
+        return $this;
+    }
+
+    /**
+     * Get author
+     *
+     * @return \BlogBundle\Entity\User
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
 }

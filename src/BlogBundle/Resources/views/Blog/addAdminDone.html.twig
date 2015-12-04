@@ -1,14 +1,21 @@
 {% extends '::layout.html.twig' %}
 
-{% block title %} Accueil {% endblock %}
+{% block title %} Confirmation {% endblock %}
 
 {% block corps %}
-	<div class="container">
-
+<section>
+	<div class="container" style=" margin-top: 10px;">
+		<article>
 		{% if afficherFlash %}
 		    <div class="alert alert-{{typeFlash}}">
-		        <strong>{{typeFlash}}! </strong> {{flash|e}}
+		        <strong>{{flash|e}}</strong>
 		    </div>
+
+		    <a href="{{path('blog_homepage')}}"><button type="submit" id="_submit" name="_submit" class="btn btn-default">
+							Retour a la page d'accueil
+						</button></a>
 		{% endif %}
+		<article>
 	</div>
+</section>
 {% endblock %}

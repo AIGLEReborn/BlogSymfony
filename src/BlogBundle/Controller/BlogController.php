@@ -3,12 +3,8 @@
 namespace BlogBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use BlogBundle\Entity\Post;
-use BlogBundle\Entity\User;
 use BlogBundle\Entity\Comment;
 use Symfony\Component\HttpFoundation\Request;
-use Doctrine\ORM\EntityManager;
-use Doctrine\Common\Collections\ArrayCollection;
 
 class BlogController extends Controller
 {
@@ -47,7 +43,7 @@ class BlogController extends Controller
         $depart = ($value-1) * 5;
 
         $repository = $this->getDoctrine()->getRepository('BlogBundle:Post');
-        $posts = $repository->findBy(array(), array('datePublication' => 'DESC'), null, $depart);
+        $posts = $repository->findBy(array(), array('datePublication' => 'DESC'), 5, $depart);
 
         $count = $repository->createQueryBuilder('post')->select('COUNT(post)')->getQuery()->getSingleScalarResult();
         $count = ceil($count/5);
@@ -81,7 +77,6 @@ class BlogController extends Controller
         $count = sizeof($comments); 
 
         $comment = new Comment();
-        //$comment->setPost($post);
         $formBuilder = $this->get('form.factory')->createBuilder('form',$comment);
         $formBuilder
                 ->add('commentaire', 'textarea', array('required' => true))

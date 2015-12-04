@@ -4,11 +4,7 @@ namespace BlogBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use BlogBundle\Entity\Post;
-use BlogBundle\Entity\User;
-use BlogBundle\Entity\Comment;
 use Symfony\Component\HttpFoundation\Request;
-use Doctrine\ORM\EntityManager;
-use Doctrine\Common\Collections\ArrayCollection;
 
 class AdminController extends Controller
 {
@@ -33,6 +29,8 @@ class AdminController extends Controller
             
             $em = $this->getDoctrine()->getManager();
             $post->setUrl('JSP');
+            $user = $this->container->get('security.context')->getToken()->getUser();
+            $post->setAuthor($user);
             $em->persist($post);
             $em->flush();
             //return $this->render('BlogBundle:Blog:affiche.html.twig', array('post' => $post));
@@ -52,7 +50,7 @@ class AdminController extends Controller
         $formBuilder
             ->add('titre', 'text', array('required' => true, 'label' => $post->getTitre()))
             ->add('contenu', 'textarea', array('required' => true, 'label' => $post->getContenu()))
-            ->add('datePublication', 'datetime', array('required' => true, 'label' => $post->getDatePublication()))
+            ->add('datePublication', 'datetime', array('date_widget' => "single_text", 'time_widget' => "single_text",'required' => true, 'label' => $post->getDatePublication()))
             ->add('Valider', 'submit');
 
         $form = $formBuilder->getForm();
@@ -138,7 +136,7 @@ class AdminController extends Controller
     }
 
     public function addAdminAction(Request $request) {
-        $data = array('user' => 'test');
+        $data = array();
         $form = $this->createFormBuilder($data)
         ->add('user', 'text')
         ->add('Valider', 'submit')
@@ -148,16 +146,15 @@ class AdminController extends Controller
             //Callback sur le submit
             $userManager = $this->get('fos_user.user_manager');
             $data = $form->getData();
-            //return $this->render('BlogBundle:Blog:addAdminDone.html.twig', array('success' => json_encode($data)));
             $user = $userManager->findUserByUsername($data['user']);
-            if ($user != null) {
+            if ($user !== null) {
                 $user->setRoles(array('ROLE_ADMIN'));
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($user);
                 $em->flush();
-                return $this->render('BlogBundle:Blog:addAdminDone.html.twig', array('afficherFlash'=>1,'typeFlash'=>'success','flash'=> 'Success for rights !'));
+                return $this->render('BlogBundle:Blog:addAdminDone.html.twig', array('afficherFlash'=>1,'typeFlash'=>'success','flash'=> 'L\'utilisateur à été désigné comme un admin. Il peut saisir des articles et moderer des articles/commentaires!'));
             } else {
-                return $this->render('BlogBundle:Blog:addAdminDone.html.twig', array('afficherFlash'=>1,'typeFlash'=>'warning','flash'=> 'Failure for rights !'));
+                return $this->render('BlogBundle:Blog:addAdminDone.html.twig', array('afficherFlash'=>1,'typeFlash'=>'warning','flash'=> 'Echet !'));
             }
            
         }
@@ -166,4 +163,3 @@ class AdminController extends Controller
     }
 
 }
-?>
