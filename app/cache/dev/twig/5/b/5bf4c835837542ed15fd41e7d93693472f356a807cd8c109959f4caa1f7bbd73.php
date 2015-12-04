@@ -22,32 +22,32 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_bbe1b7f57c1c9a91da2f4c5fffe47e0e45dca3c0d64da384471d2655bc93c620 = $this->env->getExtension("native_profiler");
-        $__internal_bbe1b7f57c1c9a91da2f4c5fffe47e0e45dca3c0d64da384471d2655bc93c620->enter($__internal_bbe1b7f57c1c9a91da2f4c5fffe47e0e45dca3c0d64da384471d2655bc93c620_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:affiche.html.twig"));
+        $__internal_b52f3e4fd61f1156bbf9a70cf189db63178e18b3cc3e5bbd03dc8c96d0b55655 = $this->env->getExtension("native_profiler");
+        $__internal_b52f3e4fd61f1156bbf9a70cf189db63178e18b3cc3e5bbd03dc8c96d0b55655->enter($__internal_b52f3e4fd61f1156bbf9a70cf189db63178e18b3cc3e5bbd03dc8c96d0b55655_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:affiche.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_bbe1b7f57c1c9a91da2f4c5fffe47e0e45dca3c0d64da384471d2655bc93c620->leave($__internal_bbe1b7f57c1c9a91da2f4c5fffe47e0e45dca3c0d64da384471d2655bc93c620_prof);
+        $__internal_b52f3e4fd61f1156bbf9a70cf189db63178e18b3cc3e5bbd03dc8c96d0b55655->leave($__internal_b52f3e4fd61f1156bbf9a70cf189db63178e18b3cc3e5bbd03dc8c96d0b55655_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_1daf815b9f4ffff129e20f243102ee26e6d5a826e69c481519a9b7c13dfece58 = $this->env->getExtension("native_profiler");
-        $__internal_1daf815b9f4ffff129e20f243102ee26e6d5a826e69c481519a9b7c13dfece58->enter($__internal_1daf815b9f4ffff129e20f243102ee26e6d5a826e69c481519a9b7c13dfece58_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_85c9c59fbc0689a6d0e9a389efbcc26da82b6601b925d35de221c40ca97b4fd3 = $this->env->getExtension("native_profiler");
+        $__internal_85c9c59fbc0689a6d0e9a389efbcc26da82b6601b925d35de221c40ca97b4fd3->enter($__internal_85c9c59fbc0689a6d0e9a389efbcc26da82b6601b925d35de221c40ca97b4fd3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo " Article ";
         
-        $__internal_1daf815b9f4ffff129e20f243102ee26e6d5a826e69c481519a9b7c13dfece58->leave($__internal_1daf815b9f4ffff129e20f243102ee26e6d5a826e69c481519a9b7c13dfece58_prof);
+        $__internal_85c9c59fbc0689a6d0e9a389efbcc26da82b6601b925d35de221c40ca97b4fd3->leave($__internal_85c9c59fbc0689a6d0e9a389efbcc26da82b6601b925d35de221c40ca97b4fd3_prof);
 
     }
 
     // line 5
     public function block_corps($context, array $blocks = array())
     {
-        $__internal_098d5b66bb0112affec5fbfecd0eb35fc91bcda7ca1b1da9efa2eb676301cd0c = $this->env->getExtension("native_profiler");
-        $__internal_098d5b66bb0112affec5fbfecd0eb35fc91bcda7ca1b1da9efa2eb676301cd0c->enter($__internal_098d5b66bb0112affec5fbfecd0eb35fc91bcda7ca1b1da9efa2eb676301cd0c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
+        $__internal_8871c610317492d406c37a7ee728f5b1381003d2906a00280c32e1397f369335 = $this->env->getExtension("native_profiler");
+        $__internal_8871c610317492d406c37a7ee728f5b1381003d2906a00280c32e1397f369335->enter($__internal_8871c610317492d406c37a7ee728f5b1381003d2906a00280c32e1397f369335_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
 
         // line 6
         echo "<div class=\"container\">
@@ -102,14 +102,14 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
         }
         // line 31
         echo "
-
+            <h4><small>Commentaire(s) :</small></h4>
 ";
         // line 33
         if ((twig_length_filter($this->env, (isset($context["comments"]) ? $context["comments"] : $this->getContext($context, "comments"))) > 0)) {
             // line 34
             echo "    <div class=\"row\">
         <div class=\"col-sm-12\">
-            <h3>Commentaire(s) :</h3>
+
         </div><!-- /col-sm-12 -->
     </div><!-- /row -->
         ";
@@ -163,8 +163,12 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
+        } else {
+            // line 60
+            echo "    <p> Il n'y a pas de commentaires à afficher. </p>
+";
         }
-        // line 60
+        // line 62
         echo "
 <!-- <div class=\"well\"> 
      <div class=\"container-fluid\">
@@ -176,15 +180,15 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
             <h4>Laisser un commentaire</h4>
             
             ";
-        // line 70
+        // line 72
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("attr" => array("class" => "form-horizontal")));
         echo "
 
                 <div class=\"form-group\">
                    ";
-        // line 74
+        // line 76
         echo "                   ";
-        // line 75
+        // line 77
         echo "                   ";
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "commentaire", array()), 'widget', array("attr" => array("class" => "form-control")));
         echo "
@@ -192,14 +196,14 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 
                 <div class=\"form-group\">
                    ";
-        // line 80
+        // line 82
         echo "                   ";
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "envoyer", array()), 'widget', array("attr" => array("class" => "btn pull-right")));
         echo "
                 </div>
          
             ";
-        // line 83
+        // line 85
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
             <!--<div class=\"col-md-2\">
@@ -215,7 +219,7 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 </div>
 ";
         
-        $__internal_098d5b66bb0112affec5fbfecd0eb35fc91bcda7ca1b1da9efa2eb676301cd0c->leave($__internal_098d5b66bb0112affec5fbfecd0eb35fc91bcda7ca1b1da9efa2eb676301cd0c_prof);
+        $__internal_8871c610317492d406c37a7ee728f5b1381003d2906a00280c32e1397f369335->leave($__internal_8871c610317492d406c37a7ee728f5b1381003d2906a00280c32e1397f369335_prof);
 
     }
 
@@ -231,7 +235,7 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 
     public function getDebugInfo()
     {
-        return array (  203 => 83,  196 => 80,  188 => 75,  186 => 74,  180 => 70,  168 => 60,  155 => 53,  148 => 50,  140 => 47,  137 => 46,  135 => 45,  127 => 44,  121 => 40,  117 => 39,  110 => 34,  108 => 33,  104 => 31,  97 => 26,  90 => 25,  88 => 24,  80 => 19,  76 => 17,  70 => 15,  64 => 12,  58 => 8,  56 => 7,  53 => 6,  47 => 5,  35 => 3,  11 => 1,);
+        return array (  207 => 85,  200 => 82,  192 => 77,  190 => 76,  184 => 72,  172 => 62,  168 => 60,  155 => 53,  148 => 50,  140 => 47,  137 => 46,  135 => 45,  127 => 44,  121 => 40,  117 => 39,  110 => 34,  108 => 33,  104 => 31,  97 => 26,  90 => 25,  88 => 24,  80 => 19,  76 => 17,  70 => 15,  64 => 12,  58 => 8,  56 => 7,  53 => 6,  47 => 5,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends '::layout.html.twig' %}*/
@@ -265,11 +269,11 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 /* */
 /* {% endif %}*/
 /* */
-/* */
+/*             <h4><small>Commentaire(s) :</small></h4>*/
 /* {% if comments|length > 0 %}*/
 /*     <div class="row">*/
 /*         <div class="col-sm-12">*/
-/*             <h3>Commentaire(s) :</h3>*/
+/* */
 /*         </div><!-- /col-sm-12 -->*/
 /*     </div><!-- /row -->*/
 /*         {% for comment in comments %}*/
@@ -292,6 +296,8 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 /*                 </div><!-- /col-sm-5 -->*/
 /*             </div><!-- /row -->*/
 /*         {% endfor %}*/
+/* {% else %}*/
+/*     <p> Il n'y a pas de commentaires à afficher. </p>*/
 /* {% endif %}*/
 /* */
 /* <!-- <div class="well"> */
