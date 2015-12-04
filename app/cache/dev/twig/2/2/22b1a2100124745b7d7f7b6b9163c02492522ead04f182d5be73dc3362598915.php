@@ -22,32 +22,32 @@ class __TwigTemplate_f4630e709ac187b26172d74282a1dcd2c93fb648fd4224a5b25035e17c8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_844e26954119bd396a1a68de2db7b1766bb5d293497f3bce4474022880020d89 = $this->env->getExtension("native_profiler");
-        $__internal_844e26954119bd396a1a68de2db7b1766bb5d293497f3bce4474022880020d89->enter($__internal_844e26954119bd396a1a68de2db7b1766bb5d293497f3bce4474022880020d89_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:index.html.twig"));
+        $__internal_7bfad4a18b00e12b57c4e68583ac30e95e0e25cc2dcbfe5e6bc96887b4b26997 = $this->env->getExtension("native_profiler");
+        $__internal_7bfad4a18b00e12b57c4e68583ac30e95e0e25cc2dcbfe5e6bc96887b4b26997->enter($__internal_7bfad4a18b00e12b57c4e68583ac30e95e0e25cc2dcbfe5e6bc96887b4b26997_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_844e26954119bd396a1a68de2db7b1766bb5d293497f3bce4474022880020d89->leave($__internal_844e26954119bd396a1a68de2db7b1766bb5d293497f3bce4474022880020d89_prof);
+        $__internal_7bfad4a18b00e12b57c4e68583ac30e95e0e25cc2dcbfe5e6bc96887b4b26997->leave($__internal_7bfad4a18b00e12b57c4e68583ac30e95e0e25cc2dcbfe5e6bc96887b4b26997_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_6292d20acd8993fd45ca64581551bb9ac34dfe3e90c51e6c32545b3d1a2db093 = $this->env->getExtension("native_profiler");
-        $__internal_6292d20acd8993fd45ca64581551bb9ac34dfe3e90c51e6c32545b3d1a2db093->enter($__internal_6292d20acd8993fd45ca64581551bb9ac34dfe3e90c51e6c32545b3d1a2db093_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_7abc7e8dd10e90807a039c515a2363d983ed516e241409b15eec984d11139356 = $this->env->getExtension("native_profiler");
+        $__internal_7abc7e8dd10e90807a039c515a2363d983ed516e241409b15eec984d11139356->enter($__internal_7abc7e8dd10e90807a039c515a2363d983ed516e241409b15eec984d11139356_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo " Accueil ";
         
-        $__internal_6292d20acd8993fd45ca64581551bb9ac34dfe3e90c51e6c32545b3d1a2db093->leave($__internal_6292d20acd8993fd45ca64581551bb9ac34dfe3e90c51e6c32545b3d1a2db093_prof);
+        $__internal_7abc7e8dd10e90807a039c515a2363d983ed516e241409b15eec984d11139356->leave($__internal_7abc7e8dd10e90807a039c515a2363d983ed516e241409b15eec984d11139356_prof);
 
     }
 
     // line 5
     public function block_corps($context, array $blocks = array())
     {
-        $__internal_fd67a78d5ae31251d3b05e71a799c791c959db499fc4140c0420e61aa769d5cc = $this->env->getExtension("native_profiler");
-        $__internal_fd67a78d5ae31251d3b05e71a799c791c959db499fc4140c0420e61aa769d5cc->enter($__internal_fd67a78d5ae31251d3b05e71a799c791c959db499fc4140c0420e61aa769d5cc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
+        $__internal_0fde9a66209a9b3b7e0f1714399d2b35479d2b669e18fb4eb9e89b7c1b0a4577 = $this->env->getExtension("native_profiler");
+        $__internal_0fde9a66209a9b3b7e0f1714399d2b35479d2b669e18fb4eb9e89b7c1b0a4577->enter($__internal_0fde9a66209a9b3b7e0f1714399d2b35479d2b669e18fb4eb9e89b7c1b0a4577_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
 
         // line 6
         echo "    <div class=\"container\">
@@ -90,9 +90,9 @@ class __TwigTemplate_f4630e709ac187b26172d74282a1dcd2c93fb648fd4224a5b25035e17c8
             if ($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) {
                 // line 21
                 echo "                        <div class=\"btn\"><a href=";
-                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("blog_EditPost", array("id" => $this->getAttribute($context["post"], "id", array()))), "html", null, true);
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("admin_EditPost", array("id" => $this->getAttribute($context["post"], "id", array()))), "html", null, true);
                 echo "> Modifier cet article </a></div> - <div class=\"btn\"><a href=";
-                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("blog_DeletePost", array("id" => $this->getAttribute($context["post"], "id", array()))), "html", null, true);
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("admin_DeletePost", array("id" => $this->getAttribute($context["post"], "id", array()))), "html", null, true);
                 echo "> Supprimer cet article </a></div>
                         ";
             }
@@ -145,7 +145,7 @@ class __TwigTemplate_f4630e709ac187b26172d74282a1dcd2c93fb648fd4224a5b25035e17c8
         echo "    </div>
 ";
         
-        $__internal_fd67a78d5ae31251d3b05e71a799c791c959db499fc4140c0420e61aa769d5cc->leave($__internal_fd67a78d5ae31251d3b05e71a799c791c959db499fc4140c0420e61aa769d5cc_prof);
+        $__internal_0fde9a66209a9b3b7e0f1714399d2b35479d2b669e18fb4eb9e89b7c1b0a4577->leave($__internal_0fde9a66209a9b3b7e0f1714399d2b35479d2b669e18fb4eb9e89b7c1b0a4577_prof);
 
     }
 
@@ -184,7 +184,7 @@ class __TwigTemplate_f4630e709ac187b26172d74282a1dcd2c93fb648fd4224a5b25035e17c8
 /*                             {{ countComms[post.id] }} commentaires <br> <br>*/
 /*                          <a class="btn btn-primary" href="{{path('blog_afficheOnePost', {'id' : post.id})}}">Lire et commenter <span class="glyphicon glyphicon-chevron-right"></span></a> <br> */
 /*                         {% if is_granted("ROLE_ADMIN") %}*/
-/*                         <div class="btn"><a href={{path('blog_EditPost', {'id' : post.id})}}> Modifier cet article </a></div> - <div class="btn"><a href={{path('blog_DeletePost', {'id' : post.id})}}> Supprimer cet article </a></div>*/
+/*                         <div class="btn"><a href={{path('admin_EditPost', {'id' : post.id})}}> Modifier cet article </a></div> - <div class="btn"><a href={{path('admin_DeletePost', {'id' : post.id})}}> Supprimer cet article </a></div>*/
 /*                         {% endif %}*/
 /* */
 /*                         <hr>*/

@@ -10,28 +10,28 @@ blog_afficheOnePost:
     path:     /post/{id}
     defaults: { _controller: BlogBundle:Blog:displayPost }
 
-blog_AddPost:
+
+
+admin_AddPost:
     path:     /admin/add
     defaults: { _controller: BlogBundle:Admin:addPost }
 
-blog_EditPost:
+admin_EditPost:
     path:     /admin/Edit/{id}
     defaults: { _controller: BlogBundle:Admin:editPost }
 
-blog_DeletePost:
+admin_DeletePost:
     path:     /admin/Delete/{id}
     defaults: { _controller: BlogBundle:Admin:deletePost }
 
-blog_addAdmin:
+admin_AddAdmin:
     path:     /admin/addAdmin
     defaults: { _controller: BlogBundle:Admin:addAdmin }
 
-blog_EditComment:
+admin_EditComment:
     path:     /admin/EditComment/{idP}/{id}
     defaults: { _controller: BlogBundle:Admin:editComment }
 
-
-
-blog_DeleteComment:
+admin_DeleteComment:
     path:     /admin/DeleteComment/{idP}/{id}
     defaults: { _controller: BlogBundle:Admin:deleteComment }

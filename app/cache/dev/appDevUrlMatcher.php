@@ -150,34 +150,34 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         if (0 === strpos($pathinfo, '/admin')) {
-            // blog_AddPost
+            // admin_AddPost
             if ($pathinfo === '/admin/add') {
-                return array (  '_controller' => 'BlogBundle\\Controller\\AdminController::addPostAction',  '_route' => 'blog_AddPost',);
+                return array (  '_controller' => 'BlogBundle\\Controller\\AdminController::addPostAction',  '_route' => 'admin_AddPost',);
             }
 
-            // blog_EditPost
+            // admin_EditPost
             if (0 === strpos($pathinfo, '/admin/Edit') && preg_match('#^/admin/Edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'blog_EditPost')), array (  '_controller' => 'BlogBundle\\Controller\\AdminController::editPostAction',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_EditPost')), array (  '_controller' => 'BlogBundle\\Controller\\AdminController::editPostAction',));
             }
 
-            // blog_DeletePost
+            // admin_DeletePost
             if (0 === strpos($pathinfo, '/admin/Delete') && preg_match('#^/admin/Delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'blog_DeletePost')), array (  '_controller' => 'BlogBundle\\Controller\\AdminController::deletePostAction',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_DeletePost')), array (  '_controller' => 'BlogBundle\\Controller\\AdminController::deletePostAction',));
             }
 
-            // blog_addAdmin
+            // admin_AddAdmin
             if ($pathinfo === '/admin/addAdmin') {
-                return array (  '_controller' => 'BlogBundle\\Controller\\AdminController::addAdminAction',  '_route' => 'blog_addAdmin',);
+                return array (  '_controller' => 'BlogBundle\\Controller\\AdminController::addAdminAction',  '_route' => 'admin_AddAdmin',);
             }
 
-            // blog_EditComment
+            // admin_EditComment
             if (0 === strpos($pathinfo, '/admin/EditComment') && preg_match('#^/admin/EditComment/(?P<idP>[^/]++)/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'blog_EditComment')), array (  '_controller' => 'BlogBundle\\Controller\\AdminController::editCommentAction',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_EditComment')), array (  '_controller' => 'BlogBundle\\Controller\\AdminController::editCommentAction',));
             }
 
-            // blog_DeleteComment
+            // admin_DeleteComment
             if (0 === strpos($pathinfo, '/admin/DeleteComment') && preg_match('#^/admin/DeleteComment/(?P<idP>[^/]++)/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'blog_DeleteComment')), array (  '_controller' => 'BlogBundle\\Controller\\AdminController::deleteCommentAction',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_DeleteComment')), array (  '_controller' => 'BlogBundle\\Controller\\AdminController::deleteCommentAction',));
             }
 
         }

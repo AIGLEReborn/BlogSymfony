@@ -17,8 +17,8 @@ class __TwigTemplate_b7804592fbc63008e40d124c9d49dba88d0963b86eafcefc4bf0b0ca923
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_4080ce0a52a509abccf65a9a30d32ec5a27609bcdf09e5590d672fd316dc22df = $this->env->getExtension("native_profiler");
-        $__internal_4080ce0a52a509abccf65a9a30d32ec5a27609bcdf09e5590d672fd316dc22df->enter($__internal_4080ce0a52a509abccf65a9a30d32ec5a27609bcdf09e5590d672fd316dc22df_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::layout.html.twig"));
+        $__internal_cfba540d9f2b724dc9093851ffcf6c58761c89024db577d5d02c2172668b118d = $this->env->getExtension("native_profiler");
+        $__internal_cfba540d9f2b724dc9093851ffcf6c58761c89024db577d5d02c2172668b118d->enter($__internal_cfba540d9f2b724dc9093851ffcf6c58761c89024db577d5d02c2172668b118d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::layout.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -95,13 +95,13 @@ class __TwigTemplate_b7804592fbc63008e40d124c9d49dba88d0963b86eafcefc4bf0b0ca923
                     <li>
                         <a href=\"";
             // line 55
-            echo $this->env->getExtension('routing')->getPath("blog_AddPost");
+            echo $this->env->getExtension('routing')->getPath("admin_AddPost");
             echo "\">Ajouter un article</a>
                     </li>
                     <li>
                         <a href=\"";
             // line 58
-            echo $this->env->getExtension('routing')->getPath("blog_addAdmin");
+            echo $this->env->getExtension('routing')->getPath("admin_AddAdmin");
             echo "\">Ajouter un administrateur</a>
                     </li>
                     <!--<li>
@@ -175,29 +175,29 @@ class __TwigTemplate_b7804592fbc63008e40d124c9d49dba88d0963b86eafcefc4bf0b0ca923
         echo "</body>
 </html>";
         
-        $__internal_4080ce0a52a509abccf65a9a30d32ec5a27609bcdf09e5590d672fd316dc22df->leave($__internal_4080ce0a52a509abccf65a9a30d32ec5a27609bcdf09e5590d672fd316dc22df_prof);
+        $__internal_cfba540d9f2b724dc9093851ffcf6c58761c89024db577d5d02c2172668b118d->leave($__internal_cfba540d9f2b724dc9093851ffcf6c58761c89024db577d5d02c2172668b118d_prof);
 
     }
 
     // line 12
     public function block_title($context, array $blocks = array())
     {
-        $__internal_d27b97f7049882dc4c789e750912add8d7e93734694f3514e763a0f49b02cf7b = $this->env->getExtension("native_profiler");
-        $__internal_d27b97f7049882dc4c789e750912add8d7e93734694f3514e763a0f49b02cf7b->enter($__internal_d27b97f7049882dc4c789e750912add8d7e93734694f3514e763a0f49b02cf7b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_224f8c8277cf83c2fbad2e554977ecd78ed837ae4fc538b522ee747879f83618 = $this->env->getExtension("native_profiler");
+        $__internal_224f8c8277cf83c2fbad2e554977ecd78ed837ae4fc538b522ee747879f83618->enter($__internal_224f8c8277cf83c2fbad2e554977ecd78ed837ae4fc538b522ee747879f83618_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         
-        $__internal_d27b97f7049882dc4c789e750912add8d7e93734694f3514e763a0f49b02cf7b->leave($__internal_d27b97f7049882dc4c789e750912add8d7e93734694f3514e763a0f49b02cf7b_prof);
+        $__internal_224f8c8277cf83c2fbad2e554977ecd78ed837ae4fc538b522ee747879f83618->leave($__internal_224f8c8277cf83c2fbad2e554977ecd78ed837ae4fc538b522ee747879f83618_prof);
 
     }
 
     // line 102
     public function block_corps($context, array $blocks = array())
     {
-        $__internal_fb8d4145a0769002bed10934887375556f78480bad7d870e78ddc3c198880744 = $this->env->getExtension("native_profiler");
-        $__internal_fb8d4145a0769002bed10934887375556f78480bad7d870e78ddc3c198880744->enter($__internal_fb8d4145a0769002bed10934887375556f78480bad7d870e78ddc3c198880744_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
+        $__internal_a95e56f1fd41c727fa14e4b9989d4509764da69d9e1809c280fdb3592794e591 = $this->env->getExtension("native_profiler");
+        $__internal_a95e56f1fd41c727fa14e4b9989d4509764da69d9e1809c280fdb3592794e591->enter($__internal_a95e56f1fd41c727fa14e4b9989d4509764da69d9e1809c280fdb3592794e591_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
 
         
-        $__internal_fb8d4145a0769002bed10934887375556f78480bad7d870e78ddc3c198880744->leave($__internal_fb8d4145a0769002bed10934887375556f78480bad7d870e78ddc3c198880744_prof);
+        $__internal_a95e56f1fd41c727fa14e4b9989d4509764da69d9e1809c280fdb3592794e591->leave($__internal_a95e56f1fd41c727fa14e4b9989d4509764da69d9e1809c280fdb3592794e591_prof);
 
     }
 
@@ -270,10 +270,10 @@ class __TwigTemplate_b7804592fbc63008e40d124c9d49dba88d0963b86eafcefc4bf0b0ca923
 /*                 {% if is_granted("ROLE_ADMIN") %}*/
 /*                 <ul class="nav navbar-nav">*/
 /*                     <li>*/
-/*                         <a href="{{path('blog_AddPost')}}">Ajouter un article</a>*/
+/*                         <a href="{{path('admin_AddPost')}}">Ajouter un article</a>*/
 /*                     </li>*/
 /*                     <li>*/
-/*                         <a href="{{path('blog_addAdmin')}}">Ajouter un administrateur</a>*/
+/*                         <a href="{{path('admin_AddAdmin')}}">Ajouter un administrateur</a>*/
 /*                     </li>*/
 /*                     <!--<li>*/
 /*                         <a href="#">Contact</a>*/

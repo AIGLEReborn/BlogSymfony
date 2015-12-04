@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Comment
  *
  * @ORM\Table()
+ * @ORM\Entity()
  */
 class Comment
 {
