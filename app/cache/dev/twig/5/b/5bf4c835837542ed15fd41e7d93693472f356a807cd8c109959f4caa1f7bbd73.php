@@ -22,32 +22,32 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_58f458567620942de319be12045943af6c62bbe2ccb9522669acfb5732caa96f = $this->env->getExtension("native_profiler");
-        $__internal_58f458567620942de319be12045943af6c62bbe2ccb9522669acfb5732caa96f->enter($__internal_58f458567620942de319be12045943af6c62bbe2ccb9522669acfb5732caa96f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:affiche.html.twig"));
+        $__internal_028fd0d39eefe6e8cf1d510c5db91298a921ab8427b8d68b292ec34f600aa003 = $this->env->getExtension("native_profiler");
+        $__internal_028fd0d39eefe6e8cf1d510c5db91298a921ab8427b8d68b292ec34f600aa003->enter($__internal_028fd0d39eefe6e8cf1d510c5db91298a921ab8427b8d68b292ec34f600aa003_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:affiche.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_58f458567620942de319be12045943af6c62bbe2ccb9522669acfb5732caa96f->leave($__internal_58f458567620942de319be12045943af6c62bbe2ccb9522669acfb5732caa96f_prof);
+        $__internal_028fd0d39eefe6e8cf1d510c5db91298a921ab8427b8d68b292ec34f600aa003->leave($__internal_028fd0d39eefe6e8cf1d510c5db91298a921ab8427b8d68b292ec34f600aa003_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_67854cdcc3522849d5de25eecb78e141f2880aaf575bae4dcb4a298978ed24d3 = $this->env->getExtension("native_profiler");
-        $__internal_67854cdcc3522849d5de25eecb78e141f2880aaf575bae4dcb4a298978ed24d3->enter($__internal_67854cdcc3522849d5de25eecb78e141f2880aaf575bae4dcb4a298978ed24d3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_27cbc0b902a10d613254c55cd53e3d8c3d78524ad91009ac0059aa43a0acedb8 = $this->env->getExtension("native_profiler");
+        $__internal_27cbc0b902a10d613254c55cd53e3d8c3d78524ad91009ac0059aa43a0acedb8->enter($__internal_27cbc0b902a10d613254c55cd53e3d8c3d78524ad91009ac0059aa43a0acedb8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        echo " Accueil ";
+        echo " Article ";
         
-        $__internal_67854cdcc3522849d5de25eecb78e141f2880aaf575bae4dcb4a298978ed24d3->leave($__internal_67854cdcc3522849d5de25eecb78e141f2880aaf575bae4dcb4a298978ed24d3_prof);
+        $__internal_27cbc0b902a10d613254c55cd53e3d8c3d78524ad91009ac0059aa43a0acedb8->leave($__internal_27cbc0b902a10d613254c55cd53e3d8c3d78524ad91009ac0059aa43a0acedb8_prof);
 
     }
 
     // line 5
     public function block_corps($context, array $blocks = array())
     {
-        $__internal_83eef2cf26c16ab313d3d1844b11bbf394a19bc5a25c88e984e743d608e26a75 = $this->env->getExtension("native_profiler");
-        $__internal_83eef2cf26c16ab313d3d1844b11bbf394a19bc5a25c88e984e743d608e26a75->enter($__internal_83eef2cf26c16ab313d3d1844b11bbf394a19bc5a25c88e984e743d608e26a75_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
+        $__internal_e85e478309151ee816fcea08f8ebb135e5f56742e8c7407e0aa25229dcd38e30 = $this->env->getExtension("native_profiler");
+        $__internal_e85e478309151ee816fcea08f8ebb135e5f56742e8c7407e0aa25229dcd38e30->enter($__internal_e85e478309151ee816fcea08f8ebb135e5f56742e8c7407e0aa25229dcd38e30_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
 
         // line 6
         echo "<div class=\"container\">
@@ -59,138 +59,163 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 \t<div class=\"row\">
 \t\t<div class=\"col-md-8\">
                 <h2>
-                    <a href=\"";
+                    ";
             // line 12
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("blog_afficheOnePost", array("id" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "id", array()))), "html", null, true);
-            echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "titre", array()), "html", null, true);
-            echo " </a>
+            echo "<small>, écrit par Groland </small>
                 </h2>
-                <p class=\"lead\">
-                    par Groland 
-                </p>
+
                 <p><span class=\"glyphicon glyphicon-time\"></span> Ecrit le ";
-            // line 17
+            // line 15
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "datePublication", array()), "d/m/Y"), "html", null, true);
             echo " à ";
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "datePublication", array()), "H:i:s"), "html", null, true);
             echo "</p>
                 ";
-            // line 18
-            echo twig_escape_filter($this->env, (isset($context["count"]) ? $context["count"] : $this->getContext($context, "count")), "html", null, true);
-            echo " commentaires
-                <hr>
+            // line 17
+            echo "                <hr>
 
                 <p> ";
-            // line 21
+            // line 19
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "contenu", array()), "html", null, true);
             echo " </p>
-                <a class=\"btn btn-primary\" href=\"";
-            // line 22
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("blog_afficheOnePost", array("id" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "id", array()))), "html", null, true);
-            echo "\">Lire et commenter <span class=\"glyphicon glyphicon-chevron-right\"></span></a>
+               
 
                 <hr>
 
                  ";
-            // line 26
+            // line 24
             if ($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) {
-                // line 27
+                // line 25
                 echo "\t\t\t\t<div class=\"btn\"><a href=";
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("blog_EditPost", array("id" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "id", array()))), "html", null, true);
                 echo "> Modifier cet article </a></div> - <div class=\"btn\"><a href=";
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("blog_DeletePost", array("id" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "id", array()))), "html", null, true);
                 echo "> Supprimer cet article </a></div>";
             }
-            // line 28
+            // line 26
             echo "\t\t</div>
 
 \t</div>
 
 ";
         }
-        // line 33
-        echo "</div>
+        // line 31
+        echo "
 
 ";
-        // line 35
+        // line 33
         if ((twig_length_filter($this->env, (isset($context["comments"]) ? $context["comments"] : $this->getContext($context, "comments"))) > 0)) {
-            // line 36
-            echo "    <ul> <!-- Pour le moment, trouver du bootstrap après -->
+            // line 34
+            echo "    <div class=\"row\">
+        <div class=\"col-sm-12\">
+            <h3>Commentaire(s) :</h3>
+        </div><!-- /col-sm-12 -->
+    </div><!-- /row -->
         ";
-            // line 37
+            // line 39
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["comments"]) ? $context["comments"] : $this->getContext($context, "comments")));
             foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
-                // line 38
-                echo "            <li> ";
-                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["comment"], "user", array()), "username", array()), "html", null, true);
-                echo " dit : ";
-                echo twig_escape_filter($this->env, $this->getAttribute($context["comment"], "commentaire", array()), "html", null, true);
-                echo " <br/> (";
-                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["comment"], "user", array()), "email", array()), "html", null, true);
-                echo ") 
-
-             ";
                 // line 40
+                echo "            <div class=\"row\">
+                <div class=\"col-sm-5\">
+                    <div class=\"panel panel-default\">
+                        <div class=\"panel-heading\">
+                            <strong>";
+                // line 44
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["comment"], "user", array()), "username", array()), "html", null, true);
+                echo "</strong> <span class=\"text-muted\"> Publié le ";
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["comment"], "datePublication", array()), "d/m/Y"), "html", null, true);
+                echo " à ";
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["comment"], "datePublication", array()), "H:i:s"), "html", null, true);
+                echo "</span> 
+                            ";
+                // line 45
                 if ($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) {
-                    // line 41
-                    echo "                <a href=";
+                    // line 46
+                    echo "                                <div class = 'pull-right'>
+                                    <a href=";
+                    // line 47
                     echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("blog_EditComment", array("id" => $this->getAttribute($context["comment"], "id", array()))), "html", null, true);
                     echo "><img src=\"https://cdn4.iconfinder.com/data/icons/32x32-free-design-icons/32/Pencil.png\" height=\"10\" width=\"10\"/></a>&nbsp;-&nbsp;<a href=";
                     echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("blog_DeleteComment", array("idP" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "id", array()), "id" => $this->getAttribute($context["comment"], "id", array()))), "html", null, true);
                     echo "><img src=\"http://www.andorrasportstraining.com/resources/images/Dialog-close.png\" height=\"10\" width=\"10\"/></a>
-            ";
+                                </div>
+                            ";
                 }
-                // line 43
-                echo "            </li>
+                // line 50
+                echo "                            <br> (";
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["comment"], "user", array()), "email", array()), "html", null, true);
+                echo ")
+                        </div>
+                        <div class=\"panel-body\">
+                            ";
+                // line 53
+                echo twig_escape_filter($this->env, $this->getAttribute($context["comment"], "commentaire", array()), "html", null, true);
+                echo "
+                        </div><!-- /panel-body -->
+                    </div><!-- /panel panel-default -->
+                </div><!-- /col-sm-5 -->
+            </div><!-- /row -->
         ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 45
-            echo "    </ul>
-";
         }
-        // line 47
+        // line 60
         echo "
-<div class=\"well\">
- 
-    <h4>Leave a comment</h4>
- 
-    ";
-        // line 52
+<!-- <div class=\"well\"> 
+     <div class=\"container-fluid\">
+         <div class=\"row\">
+            <!--<div class=\"col-md-2\">
+            </div>-->
+        <div class=\"col-md-8\">
+
+            <h4>Laisser un commentaire</h4>
+            
+            ";
+        // line 70
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("attr" => array("class" => "form-horizontal")));
         echo "
 
-        <div class=\"col-md-12 form-group\">
-            ";
-        // line 55
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "commentaire", array()), 'label', array("label_attr" => array("class" => "col-sm-3 control-label"), "label" => "Write some comments"));
+                <div class=\"form-group\">
+                   ";
+        // line 74
+        echo "                   ";
+        // line 75
+        echo "                   ";
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "commentaire", array()), 'widget', array("attr" => array("class" => "form-control")));
         echo "
-            ";
-        // line 56
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "commentaire", array()), 'errors');
-        echo "
-        </div>
+                </div>
 
-        <div class=\"col-md-12 form-group text-right\">
-            ";
-        // line 60
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "add", array()), 'label', array("label_attr" => array("class" => "col-sm-3 control-label"), "label" => "Comment !"));
+                <div class=\"form-group\">
+                   ";
+        // line 80
+        echo "                   ";
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "envoyer", array()), 'widget', array("attr" => array("class" => "btn pull-right")));
         echo "
-        </div>
- 
-    ";
-        // line 63
+                </div>
+         
+            ";
+        // line 83
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
+            <!--<div class=\"col-md-2\">
+            </div>-->
+    </div>
+</div> -->
 
+
+
+
+
+</div>
 </div>
 ";
         
-        $__internal_83eef2cf26c16ab313d3d1844b11bbf394a19bc5a25c88e984e743d608e26a75->leave($__internal_83eef2cf26c16ab313d3d1844b11bbf394a19bc5a25c88e984e743d608e26a75_prof);
+        $__internal_e85e478309151ee816fcea08f8ebb135e5f56742e8c7407e0aa25229dcd38e30->leave($__internal_e85e478309151ee816fcea08f8ebb135e5f56742e8c7407e0aa25229dcd38e30_prof);
 
     }
 
@@ -206,12 +231,12 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 
     public function getDebugInfo()
     {
-        return array (  187 => 63,  181 => 60,  174 => 56,  170 => 55,  164 => 52,  157 => 47,  153 => 45,  146 => 43,  138 => 41,  136 => 40,  126 => 38,  122 => 37,  119 => 36,  117 => 35,  113 => 33,  106 => 28,  99 => 27,  97 => 26,  90 => 22,  86 => 21,  80 => 18,  74 => 17,  64 => 12,  58 => 8,  56 => 7,  53 => 6,  47 => 5,  35 => 3,  11 => 1,);
+        return array (  203 => 83,  196 => 80,  188 => 75,  186 => 74,  180 => 70,  168 => 60,  155 => 53,  148 => 50,  140 => 47,  137 => 46,  135 => 45,  127 => 44,  121 => 40,  117 => 39,  110 => 34,  108 => 33,  104 => 31,  97 => 26,  90 => 25,  88 => 24,  80 => 19,  76 => 17,  70 => 15,  64 => 12,  58 => 8,  56 => 7,  53 => 6,  47 => 5,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends '::layout.html.twig' %}*/
 /* */
-/* {% block title %} Accueil {% endblock %}*/
+/* {% block title %} Article {% endblock %}*/
 /* */
 /* {% block corps %}*/
 /* <div class="container">*/
@@ -220,17 +245,15 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 /* 	<div class="row">*/
 /* 		<div class="col-md-8">*/
 /*                 <h2>*/
-/*                     <a href="{{path('blog_afficheOnePost', {'id' : post.id})}}">{{ post.titre }} </a>*/
+/*                     {{ post.titre }}<small>, écrit par Groland </small>*/
 /*                 </h2>*/
-/*                 <p class="lead">*/
-/*                     par Groland */
-/*                 </p>*/
+/* */
 /*                 <p><span class="glyphicon glyphicon-time"></span> Ecrit le {{post.datePublication|date("d/m/Y")}} à {{post.datePublication|date("H:i:s")}}</p>*/
-/*                 {{ count }} commentaires*/
+/*                 {# {{ count }} commentaires #}*/
 /*                 <hr>*/
 /* */
 /*                 <p> {{ post.contenu }} </p>*/
-/*                 <a class="btn btn-primary" href="{{path('blog_afficheOnePost', {'id' : post.id})}}">Lire et commenter <span class="glyphicon glyphicon-chevron-right"></span></a>*/
+/*                */
 /* */
 /*                 <hr>*/
 /* */
@@ -241,37 +264,68 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 /* 	</div>*/
 /* */
 /* {% endif %}*/
-/* </div>*/
+/* */
 /* */
 /* {% if comments|length > 0 %}*/
-/*     <ul> <!-- Pour le moment, trouver du bootstrap après -->*/
+/*     <div class="row">*/
+/*         <div class="col-sm-12">*/
+/*             <h3>Commentaire(s) :</h3>*/
+/*         </div><!-- /col-sm-12 -->*/
+/*     </div><!-- /row -->*/
 /*         {% for comment in comments %}*/
-/*             <li> {{ comment.user.username }} dit : {{ comment.commentaire }} <br/> ({{ comment.user.email }}) */
-/* */
-/*              {% if is_granted("ROLE_ADMIN") %}*/
-/*                 <a href={{path('blog_EditComment', {'id' : comment.id})}}><img src="https://cdn4.iconfinder.com/data/icons/32x32-free-design-icons/32/Pencil.png" height="10" width="10"/></a>&nbsp;-&nbsp;<a href={{path('blog_DeleteComment', {'idP' : post.id,'id' : comment.id})}}><img src="http://www.andorrasportstraining.com/resources/images/Dialog-close.png" height="10" width="10"/></a>*/
-/*             {% endif %}*/
-/*             </li>*/
+/*             <div class="row">*/
+/*                 <div class="col-sm-5">*/
+/*                     <div class="panel panel-default">*/
+/*                         <div class="panel-heading">*/
+/*                             <strong>{{ comment.user.username }}</strong> <span class="text-muted"> Publié le {{comment.datePublication|date("d/m/Y")}} à {{comment.datePublication|date("H:i:s")}}</span> */
+/*                             {% if is_granted("ROLE_ADMIN") %}*/
+/*                                 <div class = 'pull-right'>*/
+/*                                     <a href={{path('blog_EditComment', {'id' : comment.id})}}><img src="https://cdn4.iconfinder.com/data/icons/32x32-free-design-icons/32/Pencil.png" height="10" width="10"/></a>&nbsp;-&nbsp;<a href={{path('blog_DeleteComment', {'idP' : post.id,'id' : comment.id})}}><img src="http://www.andorrasportstraining.com/resources/images/Dialog-close.png" height="10" width="10"/></a>*/
+/*                                 </div>*/
+/*                             {% endif %}*/
+/*                             <br> ({{ comment.user.email }})*/
+/*                         </div>*/
+/*                         <div class="panel-body">*/
+/*                             {{ comment.commentaire }}*/
+/*                         </div><!-- /panel-body -->*/
+/*                     </div><!-- /panel panel-default -->*/
+/*                 </div><!-- /col-sm-5 -->*/
+/*             </div><!-- /row -->*/
 /*         {% endfor %}*/
-/*     </ul>*/
 /* {% endif %}*/
 /* */
-/* <div class="well">*/
-/*  */
-/*     <h4>Leave a comment</h4>*/
-/*  */
-/*     {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}*/
+/* <!-- <div class="well"> */
+/*      <div class="container-fluid">*/
+/*          <div class="row">*/
+/*             <!--<div class="col-md-2">*/
+/*             </div>-->*/
+/*         <div class="col-md-8">*/
 /* */
-/*         <div class="col-md-12 form-group">*/
-/*             {{ form_label(form.commentaire, "Write some comments", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}*/
-/*             {{ form_errors(form.commentaire) }}*/
-/*         </div>*/
+/*             <h4>Laisser un commentaire</h4>*/
+/*             */
+/*             {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}*/
 /* */
-/*         <div class="col-md-12 form-group text-right">*/
-/*             {{ form_label(form.add, "Comment !", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}*/
-/*         </div>*/
-/*  */
-/*     {{ form_end(form) }}*/
+/*                 <div class="form-group">*/
+/*                    {# {{ form_errors(form.commentaire) }} #}*/
+/*                    {# {{ form_label(form.commentaire, 'commentaire' , {'label_attr': {'class': 'col-sm-3 control-label '}}) }} #}*/
+/*                    {{ form_widget(form.commentaire, {'attr': {'class':'form-control'}}) }}*/
+/*                 </div>*/
 /* */
+/*                 <div class="form-group">*/
+/*                    {# {{ form_label(form.envoyer, "Envoyer", {'label_attr': {'class': 'btn pull-right'}}) }} #}*/
+/*                    {{ form_widget(form.envoyer, {'attr': {'class':'btn pull-right'}}) }}*/
+/*                 </div>*/
+/*          */
+/*             {{ form_end(form) }}*/
+/*             <!--<div class="col-md-2">*/
+/*             </div>-->*/
+/*     </div>*/
+/* </div> -->*/
+/* */
+/* */
+/* */
+/* */
+/* */
+/* </div>*/
 /* </div>*/
 /* {% endblock %}*/

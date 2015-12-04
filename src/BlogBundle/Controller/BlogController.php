@@ -28,8 +28,15 @@ class BlogController extends Controller
             $retour[$row['id']] = $row['nombre'];
         }
 
+        $boolAffichPagin = true;
+        if($count == 0)
+        {
+            $boolAffichPagin = false;
+        }
+
         return $this->render('BlogBundle:Blog:index.html.twig', array(
             'posts' => $posts,
+            'pagination' => $boolAffichPagin,
             'count' => $count,
             'countComms' => $retour));
     }
@@ -45,8 +52,25 @@ class BlogController extends Controller
         $count = $repository->createQueryBuilder('post')->select('COUNT(post)')->getQuery()->getSingleScalarResult();
         $count = ceil($count/10);
 
+        $query = "SELECT p.id, count(comment.id) as nombre FROM post p LEFT JOIN comment ON p.id = comment.post_id GROUP BY p.id";
+        $stmt = $this->getDoctrine()->getManager()->getConnection()->prepare($query);
+        $stmt->execute();
+        $results = $stmt->fetchAll();
+        $retour = array();
+        foreach ($results as $row) {
+            $retour[$row['id']] = $row['nombre'];
+        }
+
+        $boolAffichPagin = true;
+        if($count == 0)
+        {
+            $boolAffichPagin = false;
+        }
+
         return $this->render('BlogBundle:Blog:index.html.twig', array(
             'posts' => $posts,
+            'pagination' => $boolAffichPagin,
+            'countComms' => $retour,
             'count' => $count));
     }
 
@@ -62,7 +86,7 @@ class BlogController extends Controller
         $formBuilder = $this->get('form.factory')->createBuilder('form',$comment);
         $formBuilder
                 ->add('commentaire', 'textarea', array('required' => true))
-                ->add('add','submit');
+                ->add('envoyer','submit');
         $form = $formBuilder->getForm();
 
         if($form->handleRequest($request)->isValid()) {
@@ -72,6 +96,7 @@ class BlogController extends Controller
             if ($currentUser != 'anon.') {
                 $comment->setUser($currentUser);
                 $comment->setPost($post);
+                $comment->setDatePublication(new \DateTime());
                 $em->persist($comment);
                 $em->flush();
 
@@ -108,7 +133,7 @@ class BlogController extends Controller
         $formBuilder
             ->add('titre', 'text', array('required' => true))
             ->add('contenu', 'textarea', array('required' => true))
-            ->add('datePublication', 'datetime', array('required' => true))
+            ->add('datePublication', 'datetime', array('read_only' => 'true','date_widget' => "single_text", 'time_widget' => "single_text",'required' => true))
             ->add('Valider', 'submit');
 
         $form = $formBuilder->getForm();

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 04 Décembre 2015 à 13:46
+-- Généré le :  Ven 04 Décembre 2015 à 15:16
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -31,10 +31,19 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `user_id` int(11) DEFAULT NULL,
   `post_id` int(11) DEFAULT NULL,
   `commentaire` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `datePublication` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_9474526C4B89032C` (`post_id`),
   KEY `IDX_9474526CA76ED395` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=30 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=34 ;
+
+--
+-- Contenu de la table `comment`
+--
+
+INSERT INTO `comment` (`id`, `user_id`, `post_id`, `commentaire`, `datePublication`) VALUES
+(30, 1, 5, 'rljhskjbcvkjsdbcjk', '0000-00-00 00:00:00'),
+(31, 1, 5, 'feneskjcbsjkcbk', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -49,7 +58,35 @@ CREATE TABLE IF NOT EXISTS `post` (
   `contenu` longtext COLLATE utf8_unicode_ci NOT NULL,
   `datePublication` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=27 ;
+
+--
+-- Contenu de la table `post`
+--
+
+INSERT INTO `post` (`id`, `titre`, `url`, `contenu`, `datePublication`) VALUES
+(5, 'IFJei', 'JSP', 'cncdeqlcnqksj', '2015-12-04 14:10:00'),
+(6, 'fefqfeqfcq', 'JSP', 'feqcqecc', '2015-12-04 14:20:00'),
+(7, 'devceqceqc', '', 'vesvcsdcdscscs', '0000-00-00 00:00:00'),
+(8, 'cdscscscsc', '', 'cdsvcscscs', '0000-00-00 00:00:00'),
+(9, 'vwdwccdcdcw', 'vdsvs<cscvs', 'dsvsccsdcsd', '0000-00-00 00:00:00'),
+(10, 'dvsvdwcwcw', '', 'vdsvdwcwvcdwcw', '0000-00-00 00:00:00'),
+(11, 'dwvcdcvdc', '', 'dvwxcvbnvcx', '0000-00-00 00:00:00'),
+(12, ';,nbvcx', '', ';,nbvcxw<', '0000-00-00 00:00:00'),
+(13, 'v dxvxwv wv w', '', 'sfsdvwcscs<w', '0000-00-00 00:00:00'),
+(14, 'wvswsvwvswvw', '', 'vsvwvwvwvw', '0000-00-00 00:00:00'),
+(15, 'vswvwvcsvwv', '', 'vswvswvswvwvwvs', '0000-00-00 00:00:00'),
+(16, 'vswvswvwsvswsw', '', 'vswvswvswcwdbcxwdfgnfbvcqx', '0000-00-00 00:00:00'),
+(17, 'je suis un article', '', 'je suis un article', '2015-12-04 14:10:00'),
+(18, 'je suis un article', '', 'je suis un article', '2015-12-04 14:10:00'),
+(19, 'je suis un article', '', 'je suis un article', '2015-12-04 14:10:00'),
+(20, 'je suis un article', '', 'je suis un article', '2015-12-04 14:10:00'),
+(21, 'je suis un article', '', 'je suis un article', '2015-12-04 14:10:00'),
+(22, 'je suis un article', '', 'je suis un article', '2015-12-04 14:10:00'),
+(23, 'je suis un article', '', 'je suis un article', '2015-12-04 14:10:00'),
+(24, 'je suis un article', '', 'je suis un article', '2015-12-04 14:10:00'),
+(25, 'je suis un article', '', 'je suis un article', '2015-12-04 14:10:00'),
+(26, 'je suis un article', '', 'je suis un article', '2015-12-04 14:10:00');
 
 -- --------------------------------------------------------
 

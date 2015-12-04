@@ -36,12 +36,24 @@ class Comment
      */
     private $post;
 
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="datePublication", type="datetime")
+     */
+    private $datePublication;
+    
     /**
      *
      * @ORM\Column(name="commentaire", type="string", length=255)
      */
     private $commentaire;
 
+
+    public function __construct() {
+        $this->datePublication = new \DateTime();
+    }
 
     /**
      * Get id
@@ -123,5 +135,29 @@ class Comment
     public function getCommentaire()
     {
         return $this->commentaire;
+    }
+
+    /**
+     * Set datePublication
+     *
+     * @param \DateTime $datePublication
+     *
+     * @return Comment
+     */
+    public function setDatePublication($datePublication)
+    {
+        $this->datePublication = $datePublication;
+    
+        return $this;
+    }
+
+    /**
+     * Get datePublication
+     *
+     * @return \DateTime
+     */
+    public function getDatePublication()
+    {
+        return $this->datePublication;
     }
 }

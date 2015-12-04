@@ -22,35 +22,37 @@ class __TwigTemplate_f7b320c847104ad35a5ba2eef4871667d3c468f0f22764a92da18686556
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_00f8a0e6e9efbd0f4a3582f72498f6662f9c1ce177d2af8aac82c95eb97cce5c = $this->env->getExtension("native_profiler");
-        $__internal_00f8a0e6e9efbd0f4a3582f72498f6662f9c1ce177d2af8aac82c95eb97cce5c->enter($__internal_00f8a0e6e9efbd0f4a3582f72498f6662f9c1ce177d2af8aac82c95eb97cce5c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:addPost.html.twig"));
+        $__internal_a0773131a65fab0c6ce48eb89d26a3237a1b055fa451866a776affe8d82e8e1d = $this->env->getExtension("native_profiler");
+        $__internal_a0773131a65fab0c6ce48eb89d26a3237a1b055fa451866a776affe8d82e8e1d->enter($__internal_a0773131a65fab0c6ce48eb89d26a3237a1b055fa451866a776affe8d82e8e1d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:addPost.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_00f8a0e6e9efbd0f4a3582f72498f6662f9c1ce177d2af8aac82c95eb97cce5c->leave($__internal_00f8a0e6e9efbd0f4a3582f72498f6662f9c1ce177d2af8aac82c95eb97cce5c_prof);
+        $__internal_a0773131a65fab0c6ce48eb89d26a3237a1b055fa451866a776affe8d82e8e1d->leave($__internal_a0773131a65fab0c6ce48eb89d26a3237a1b055fa451866a776affe8d82e8e1d_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_191a5e5bc9358be3e4996bc51ecb36be45ab554445744d3b7dece9f4460e0560 = $this->env->getExtension("native_profiler");
-        $__internal_191a5e5bc9358be3e4996bc51ecb36be45ab554445744d3b7dece9f4460e0560->enter($__internal_191a5e5bc9358be3e4996bc51ecb36be45ab554445744d3b7dece9f4460e0560_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_9661c36e32468680b979ba52e91ad7358efc9dc31aff911bebc0723e2697d5c7 = $this->env->getExtension("native_profiler");
+        $__internal_9661c36e32468680b979ba52e91ad7358efc9dc31aff911bebc0723e2697d5c7->enter($__internal_9661c36e32468680b979ba52e91ad7358efc9dc31aff911bebc0723e2697d5c7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo " Accueil ";
         
-        $__internal_191a5e5bc9358be3e4996bc51ecb36be45ab554445744d3b7dece9f4460e0560->leave($__internal_191a5e5bc9358be3e4996bc51ecb36be45ab554445744d3b7dece9f4460e0560_prof);
+        $__internal_9661c36e32468680b979ba52e91ad7358efc9dc31aff911bebc0723e2697d5c7->leave($__internal_9661c36e32468680b979ba52e91ad7358efc9dc31aff911bebc0723e2697d5c7_prof);
 
     }
 
     // line 5
     public function block_corps($context, array $blocks = array())
     {
-        $__internal_e10c3fac1840eaa4cc046b47785ebbded2bec75ef889956da65cad89b6999998 = $this->env->getExtension("native_profiler");
-        $__internal_e10c3fac1840eaa4cc046b47785ebbded2bec75ef889956da65cad89b6999998->enter($__internal_e10c3fac1840eaa4cc046b47785ebbded2bec75ef889956da65cad89b6999998_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
+        $__internal_7c0e203c2c1c8bb3697198e68ec6e98943224ebb4b3f087ec387f6faf3338d72 = $this->env->getExtension("native_profiler");
+        $__internal_7c0e203c2c1c8bb3697198e68ec6e98943224ebb4b3f087ec387f6faf3338d72->enter($__internal_7c0e203c2c1c8bb3697198e68ec6e98943224ebb4b3f087ec387f6faf3338d72_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
 
         // line 6
-        echo "
+        echo "    \t<script type=\"text/javascript\" src=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/BlogBundle/js/jquery.datetimepicker.js"), "html", null, true);
+        echo "\"></script>
 \t<div class=\"row\">
 \t\t<div class=\"col-md-12\">
 \t\t\t<div class=\"panel panel-default\" style=\" margin-top: 10px;\">
@@ -100,21 +102,21 @@ class __TwigTemplate_f7b320c847104ad35a5ba2eef4871667d3c468f0f22764a92da18686556
 \t\t\t\t\t</div>
 
 \t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t";
+\t\t\t\t\t\t\t";
         // line 35
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "datePublication", array()), 'label', array("label_attr" => array("class" => "col-sm-3 control-label"), "label" => "Date de l'article"));
         echo "
-\t\t\t\t\t";
+\t\t\t\t\t\t\t";
         // line 36
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "datePublication", array()), 'errors');
         echo "
 
-\t\t\t\t\t\t<div class=\"col-sm-4\">
-\t\t\t\t\t\t\t";
+\t\t\t\t\t\t\t<div class=\"col-sm-4\">
+\t\t\t\t\t\t\t\t";
         // line 39
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "datePublication", array()), 'widget');
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "datePublication", array()), 'widget', array("attr" => array("class" => "datetime")));
         echo "
-\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
 
 \t\t\t\t\t<div class=\"form-group\">
@@ -143,11 +145,28 @@ class __TwigTemplate_f7b320c847104ad35a5ba2eef4871667d3c468f0f22764a92da18686556
 \t\t\t\t</div>
 \t\t\t</div>
 \t\t</div>
+
+    \t<script>
+    \t\t\$(function(){
+\t\t\t    \$('#form_datePublication_date').datetimepicker({
+\t\t\t        format: \"Y-m-d\",
+\t\t\t        timepicker: false,
+\t\t\t        datepicker: true,
+\t\t\t    });
+\t\t\t    \$('#form_datePublication_time').datetimepicker({
+\t\t\t        format: \"H:i\",
+\t\t\t        timepicker: true,
+\t\t\t        datepicker: false,
+\t\t\t        step:5
+\t\t\t    });
+\t\t\t});
+    \t</script>
 \t</div>
+
 
 ";
         
-        $__internal_e10c3fac1840eaa4cc046b47785ebbded2bec75ef889956da65cad89b6999998->leave($__internal_e10c3fac1840eaa4cc046b47785ebbded2bec75ef889956da65cad89b6999998_prof);
+        $__internal_7c0e203c2c1c8bb3697198e68ec6e98943224ebb4b3f087ec387f6faf3338d72->leave($__internal_7c0e203c2c1c8bb3697198e68ec6e98943224ebb4b3f087ec387f6faf3338d72_prof);
 
     }
 
@@ -163,7 +182,7 @@ class __TwigTemplate_f7b320c847104ad35a5ba2eef4871667d3c468f0f22764a92da18686556
 
     public function getDebugInfo()
     {
-        return array (  140 => 52,  133 => 48,  127 => 45,  123 => 44,  115 => 39,  109 => 36,  105 => 35,  97 => 30,  90 => 26,  86 => 25,  78 => 20,  72 => 17,  68 => 16,  62 => 13,  53 => 6,  47 => 5,  35 => 3,  11 => 1,);
+        return array (  142 => 52,  135 => 48,  129 => 45,  125 => 44,  117 => 39,  111 => 36,  107 => 35,  99 => 30,  92 => 26,  88 => 25,  80 => 20,  74 => 17,  70 => 16,  64 => 13,  53 => 6,  47 => 5,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends '::layout.html.twig' %}*/
@@ -171,7 +190,7 @@ class __TwigTemplate_f7b320c847104ad35a5ba2eef4871667d3c468f0f22764a92da18686556
 /* {% block title %} Accueil {% endblock %}*/
 /* */
 /* {% block corps %}*/
-/* */
+/*     	<script type="text/javascript" src="{{ asset('bundles/BlogBundle/js/jquery.datetimepicker.js') }}"></script>*/
 /* 	<div class="row">*/
 /* 		<div class="col-md-12">*/
 /* 			<div class="panel panel-default" style=" margin-top: 10px;">*/
@@ -200,12 +219,12 @@ class __TwigTemplate_f7b320c847104ad35a5ba2eef4871667d3c468f0f22764a92da18686556
 /* 					</div>*/
 /* */
 /* 					<div class="form-group">*/
-/* 					{{ form_label(form.datePublication, "Date de l'article", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}*/
-/* 					{{ form_errors(form.datePublication) }}*/
+/* 							{{ form_label(form.datePublication, "Date de l'article", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}*/
+/* 							{{ form_errors(form.datePublication) }}*/
 /* */
-/* 						<div class="col-sm-4">*/
-/* 							{{ form_widget(form.datePublication) }}*/
-/* 						</div>*/
+/* 							<div class="col-sm-4">*/
+/* 								{{ form_widget(form.datePublication,{'attr': {'class':'datetime'}}) }}*/
+/* 							</div>*/
 /* 					</div>*/
 /* */
 /* 					<div class="form-group">*/
@@ -222,6 +241,23 @@ class __TwigTemplate_f7b320c847104ad35a5ba2eef4871667d3c468f0f22764a92da18686556
 /* 				</div>*/
 /* 			</div>*/
 /* 		</div>*/
+/* */
+/*     	<script>*/
+/*     		$(function(){*/
+/* 			    $('#form_datePublication_date').datetimepicker({*/
+/* 			        format: "Y-m-d",*/
+/* 			        timepicker: false,*/
+/* 			        datepicker: true,*/
+/* 			    });*/
+/* 			    $('#form_datePublication_time').datetimepicker({*/
+/* 			        format: "H:i",*/
+/* 			        timepicker: true,*/
+/* 			        datepicker: false,*/
+/* 			        step:5*/
+/* 			    });*/
+/* 			});*/
+/*     	</script>*/
 /* 	</div>*/
+/* */
 /* */
 /* {% endblock %}*/

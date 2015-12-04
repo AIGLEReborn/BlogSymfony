@@ -3,39 +3,44 @@
 {% block title %} Accueil {% endblock %}
 
 {% block corps %}
-<div class="container">
-{% for post in posts %}
+    <div class="container">
 
-	<div class="row">
-		<div class="col-md-8">
-                <h2>
-                    <a href="{{path('blog_afficheOnePost', {'id' : post.id})}}">{{ post.titre }} </a>
-                </h2>
-                <p class="lead">
-                    par Groland 
-                </p>
-                <p><span class="glyphicon glyphicon-time"></span> Ecrit le {{post.datePublication|date("d/m/Y")}} à {{post.datePublication|date("H:i:s")}}</p>
-                    {{ countComms[post.id] }} commentaires
-                <hr>
+        <div class="row">
+        	<div class="col-md-8">
+                {% for post in posts %}
+                        <h2>
+                            {#<a href="{{path('blog_afficheOnePost', {'id' : post.id})}}">#} {{ post.titre }} {#</a>#}
+                        </h2>
+                        <p class="lead">
+                            par Groland 
+                        </p>
+                        <p><span class="glyphicon glyphicon-time"></span> Ecrit le {{post.datePublication|date("d/m/Y")}} à {{post.datePublication|date("H:i:s")}}</p>
+                            {{ countComms[post.id] }} commentaires <br> <br>
+                         <a class="btn btn-primary" href="{{path('blog_afficheOnePost', {'id' : post.id})}}">Lire et commenter <span class="glyphicon glyphicon-chevron-right"></span></a> <br> 
+                        {% if is_granted("ROLE_ADMIN") %}
+                        <div class="btn"><a href={{path('blog_EditPost', {'id' : post.id})}}> Modifier cet article </a></div> - <div class="btn"><a href={{path('blog_DeletePost', {'id' : post.id})}}> Supprimer cet article </a></div>
+                        {% endif %}
 
-                <p> {{ post.contenu }} </p>
-                <a class="btn btn-primary" href="{{path('blog_afficheOnePost', {'id' : post.id})}}">Lire et commenter <span class="glyphicon glyphicon-chevron-right"></span></a>
-                
-                <hr>
+                        <hr>
 
-                 {% if is_granted("ROLE_ADMIN") %}
-				<div class="btn"><a href={{path('blog_EditPost', {'id' : post.id})}}> Modifier cet article </a></div> - <div class="btn"><a href={{path('blog_DeletePost', {'id' : post.id})}}> Supprimer cet article </a></div>{% endif %}
-		</div>
-	</div>
-
-{% endfor %}
-</div>
-
-	{% for i in 1..count %}
-
-		<a href={{path('blog_pageX', {'value' : i }) }} > {{ i }} </a> 
-
-	{% endfor %}
+                        {# <p> {{ post.contenu }} </p>
+                       
+                        
+                        <hr> #}
 
 
+                {% endfor %}
+        	</div>
+        </div>
+
+        {% if pagination %}
+            <ul class="pagination">
+            	{% for i in 1..count %}
+
+            		<li><a href={{path('blog_pageX', {'value' : i }) }} > {{ i }} </a> </li>
+
+            	{% endfor %}
+            </ul>
+        {% endif %}
+    </div>
 {% endblock %}

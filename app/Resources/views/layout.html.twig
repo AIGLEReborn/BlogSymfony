@@ -10,7 +10,8 @@
     <meta name="author" content="">
 
     <title>Groland's Blog - {% block title %}{% endblock %}</title>
-
+    <!-- Pour TimePicker -->
+    <link rel="stylesheet" type="text/css" href="jquery.datetimepicker.css"/ >
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('bundles/BlogBundle/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
@@ -42,7 +43,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{path('blog_homepage')}}">Groland's Blog</a>
+                <a class="navbar-brand" href="{{path('blog_homepage')}}">Le blog de Groland</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -62,13 +63,13 @@
 
 
 							{% if is_granted("IS_AUTHENTICATED_FULLY") %}
-                                <li><a href="#">%PSEUDO%</a></li>
+                                <li><a href="#">{{app.user.username}}</a></li>
                                 <li>
-                                    <a href="{{ path('fos_user_security_logout') }}">Deconnection</a>
+                                    <a href="{{ path('fos_user_security_logout') }}">Déconnection</a>
                                 </li>
                             {% else %}
-                                <li><a href="{{path('fos_user_security_login') }}">Login</a></li>
-                                <li><a href="{{path('fos_user_registration_register') }}">Register</a></li>
+                                <li><a href="{{path('fos_user_security_login') }}">Connexion</a></li>
+                                <li><a href="{{path('fos_user_registration_register') }}">Inscription</a></li>
                             {% endif %}
 							
 							<!--<li class="dropdown">
@@ -93,10 +94,8 @@
         </div>
         <!-- /.container -->
     </nav>
-
-    {% block corps %}{% endblock %}
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    {% block corps %}{% endblock %}
 </body>
 </html>
