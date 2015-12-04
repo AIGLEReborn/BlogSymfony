@@ -15,9 +15,9 @@ class BlogController extends Controller
     public function indexAction()
     {
         $repo = $this->getDoctrine()->getRepository('BlogBundle:Post');
-        $posts = $repo->findBy(array(), null, 10);
+        $posts = $repo->findBy(array(),array('datePublication' => 'DESC'),5);
         $count = $repo->createQueryBuilder('post')->select('COUNT(post)')->getQuery()->getSingleScalarResult();
-        $count = ceil($count/10);
+        $count = ceil($count/5);
 
         $query = "SELECT p.id, count(comment.id) as nombre FROM post p LEFT JOIN comment ON p.id = comment.post_id GROUP BY p.id";
         $stmt = $this->getDoctrine()->getManager()->getConnection()->prepare($query);
@@ -44,13 +44,13 @@ class BlogController extends Controller
     public function pageXAction($value) {
         //Page/2, on prend de 11 a 20. Donc 2x10 = 20 -9 = 11
 
-        $depart = ($value-1) * 10;
+        $depart = ($value-1) * 5;
 
         $repository = $this->getDoctrine()->getRepository('BlogBundle:Post');
-        $posts = $repository->findBy(array(), array(), 10, $depart);
+        $posts = $repository->findBy(array(), array('datePublication' => 'DESC'), null, $depart);
 
         $count = $repository->createQueryBuilder('post')->select('COUNT(post)')->getQuery()->getSingleScalarResult();
-        $count = ceil($count/10);
+        $count = ceil($count/5);
 
         $query = "SELECT p.id, count(comment.id) as nombre FROM post p LEFT JOIN comment ON p.id = comment.post_id GROUP BY p.id";
         $stmt = $this->getDoctrine()->getManager()->getConnection()->prepare($query);

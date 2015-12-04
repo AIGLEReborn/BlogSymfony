@@ -22,32 +22,32 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_6c687eca9ae549a0fc501c84f3ba03a9d3dfd2699f3db24403c2f444eecf9728 = $this->env->getExtension("native_profiler");
-        $__internal_6c687eca9ae549a0fc501c84f3ba03a9d3dfd2699f3db24403c2f444eecf9728->enter($__internal_6c687eca9ae549a0fc501c84f3ba03a9d3dfd2699f3db24403c2f444eecf9728_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:affiche.html.twig"));
+        $__internal_42b4d70654d3b5ab9df8e0c0002a8221cac34e3ec71c143c42f69ec3b0c73af9 = $this->env->getExtension("native_profiler");
+        $__internal_42b4d70654d3b5ab9df8e0c0002a8221cac34e3ec71c143c42f69ec3b0c73af9->enter($__internal_42b4d70654d3b5ab9df8e0c0002a8221cac34e3ec71c143c42f69ec3b0c73af9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:affiche.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_6c687eca9ae549a0fc501c84f3ba03a9d3dfd2699f3db24403c2f444eecf9728->leave($__internal_6c687eca9ae549a0fc501c84f3ba03a9d3dfd2699f3db24403c2f444eecf9728_prof);
+        $__internal_42b4d70654d3b5ab9df8e0c0002a8221cac34e3ec71c143c42f69ec3b0c73af9->leave($__internal_42b4d70654d3b5ab9df8e0c0002a8221cac34e3ec71c143c42f69ec3b0c73af9_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_6490b4ebc5c438a4425a72fb1f42439bc6a19edaba8784fbee8a62846b1248cf = $this->env->getExtension("native_profiler");
-        $__internal_6490b4ebc5c438a4425a72fb1f42439bc6a19edaba8784fbee8a62846b1248cf->enter($__internal_6490b4ebc5c438a4425a72fb1f42439bc6a19edaba8784fbee8a62846b1248cf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_f40fdb19b8b8fb6514c34065cc44bf2bf304cf9df56fda2d0c8d3869f760e9bd = $this->env->getExtension("native_profiler");
+        $__internal_f40fdb19b8b8fb6514c34065cc44bf2bf304cf9df56fda2d0c8d3869f760e9bd->enter($__internal_f40fdb19b8b8fb6514c34065cc44bf2bf304cf9df56fda2d0c8d3869f760e9bd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo " Article ";
         
-        $__internal_6490b4ebc5c438a4425a72fb1f42439bc6a19edaba8784fbee8a62846b1248cf->leave($__internal_6490b4ebc5c438a4425a72fb1f42439bc6a19edaba8784fbee8a62846b1248cf_prof);
+        $__internal_f40fdb19b8b8fb6514c34065cc44bf2bf304cf9df56fda2d0c8d3869f760e9bd->leave($__internal_f40fdb19b8b8fb6514c34065cc44bf2bf304cf9df56fda2d0c8d3869f760e9bd_prof);
 
     }
 
     // line 5
     public function block_corps($context, array $blocks = array())
     {
-        $__internal_d4349ae994fb197a8fbf514e0a1f21b899ce19c4c744993088772700941e917c = $this->env->getExtension("native_profiler");
-        $__internal_d4349ae994fb197a8fbf514e0a1f21b899ce19c4c744993088772700941e917c->enter($__internal_d4349ae994fb197a8fbf514e0a1f21b899ce19c4c744993088772700941e917c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
+        $__internal_81b3a7e1c50fb779327c9cba2768d83a0ad3a09ae9dab8f9b9e6f0323787e9ae = $this->env->getExtension("native_profiler");
+        $__internal_81b3a7e1c50fb779327c9cba2768d83a0ad3a09ae9dab8f9b9e6f0323787e9ae->enter($__internal_81b3a7e1c50fb779327c9cba2768d83a0ad3a09ae9dab8f9b9e6f0323787e9ae_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
 
         // line 6
         echo "<div class=\"container\">
@@ -88,9 +88,9 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
             if ($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) {
                 // line 25
                 echo "\t\t\t\t<div class=\"btn\"><a href=";
-                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("blog_EditPost", array("id" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "id", array()))), "html", null, true);
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("admin_EditPost", array("id" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "id", array()))), "html", null, true);
                 echo "> Modifier cet article </a></div> - <div class=\"btn\"><a href=";
-                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("blog_DeletePost", array("id" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "id", array()))), "html", null, true);
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("admin_DeletePost", array("id" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "id", array()))), "html", null, true);
                 echo "> Supprimer cet article </a></div>";
             }
             // line 26
@@ -137,9 +137,9 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
                     echo "                                <div class = 'pull-right'>
                                     <a href=";
                     // line 47
-                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("blog_EditComment", array("idP" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "id", array()), "id" => $this->getAttribute($context["comment"], "id", array()))), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("admin_EditComment", array("idP" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "id", array()), "id" => $this->getAttribute($context["comment"], "id", array()))), "html", null, true);
                     echo "><img src=\"https://cdn4.iconfinder.com/data/icons/32x32-free-design-icons/32/Pencil.png\" height=\"10\" width=\"10\"/></a>&nbsp;-&nbsp;<a href=";
-                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("blog_DeleteComment", array("idP" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "id", array()), "id" => $this->getAttribute($context["comment"], "id", array()))), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("admin_DeleteComment", array("idP" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "id", array()), "id" => $this->getAttribute($context["comment"], "id", array()))), "html", null, true);
                     echo "><img src=\"http://www.andorrasportstraining.com/resources/images/Dialog-close.png\" height=\"10\" width=\"10\"/></a>
                                 </div>
                             ";
@@ -211,7 +211,7 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 </div>
 ";
         
-        $__internal_d4349ae994fb197a8fbf514e0a1f21b899ce19c4c744993088772700941e917c->leave($__internal_d4349ae994fb197a8fbf514e0a1f21b899ce19c4c744993088772700941e917c_prof);
+        $__internal_81b3a7e1c50fb779327c9cba2768d83a0ad3a09ae9dab8f9b9e6f0323787e9ae->leave($__internal_81b3a7e1c50fb779327c9cba2768d83a0ad3a09ae9dab8f9b9e6f0323787e9ae_prof);
 
     }
 
@@ -254,7 +254,7 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 /*                 <hr>*/
 /* */
 /*                  {% if is_granted("ROLE_ADMIN") %}*/
-/* 				<div class="btn"><a href={{path('blog_EditPost', {'id' : post.id})}}> Modifier cet article </a></div> - <div class="btn"><a href={{path('blog_DeletePost', {'id' : post.id})}}> Supprimer cet article </a></div>{% endif %}*/
+/* 				<div class="btn"><a href={{path('admin_EditPost', {'id' : post.id})}}> Modifier cet article </a></div> - <div class="btn"><a href={{path('admin_DeletePost', {'id' : post.id})}}> Supprimer cet article </a></div>{% endif %}*/
 /* 		</div>*/
 /* */
 /* 	</div>*/
@@ -276,7 +276,7 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 /*                             <strong>{{ comment.user.username }}</strong><span class="text-muted">, <i><small>publié le {{comment.datePublication|date("d/m/Y")}} à {{comment.datePublication|date("H:i:s")}}</small></i></span> */
 /*                             {% if is_granted("ROLE_ADMIN") %}*/
 /*                                 <div class = 'pull-right'>*/
-/*                                     <a href={{path('blog_EditComment', {'idP' : post.id,'id' : comment.id})}}><img src="https://cdn4.iconfinder.com/data/icons/32x32-free-design-icons/32/Pencil.png" height="10" width="10"/></a>&nbsp;-&nbsp;<a href={{path('blog_DeleteComment', {'idP' : post.id,'id' : comment.id})}}><img src="http://www.andorrasportstraining.com/resources/images/Dialog-close.png" height="10" width="10"/></a>*/
+/*                                     <a href={{path('admin_EditComment', {'idP' : post.id,'id' : comment.id})}}><img src="https://cdn4.iconfinder.com/data/icons/32x32-free-design-icons/32/Pencil.png" height="10" width="10"/></a>&nbsp;-&nbsp;<a href={{path('admin_DeleteComment', {'idP' : post.id,'id' : comment.id})}}><img src="http://www.andorrasportstraining.com/resources/images/Dialog-close.png" height="10" width="10"/></a>*/
 /*                                 </div>*/
 /*                             {% endif %}*/
 /*                             <br>*/
