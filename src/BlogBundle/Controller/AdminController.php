@@ -37,6 +37,7 @@ class AdminController extends Controller
             $em->flush();
             //return $this->render('BlogBundle:Blog:affiche.html.twig', array('post' => $post));
             return $this->redirectToRoute('blog_afficheOnePost', array('id' => $post->getId()));
+            //return $this->redirect($this->generateUrl('blog_afficheOnePost', array('id'=>$post->getId())));
         }
 
     	return $this->render('BlogBundle:Blog:addPost.html.twig', array('form' => $form->createView()));
@@ -80,7 +81,7 @@ class AdminController extends Controller
     	return $this->redirectToRoute('blog_homepage');
     }
 
-    public function editCommentAction($id, Request $request) {
+    public function editCommentAction($idP,$id, Request $request) {
 
         //Get du comm via l'id
         $manager = $this->getDoctrine()->getManager();
@@ -109,8 +110,8 @@ class AdminController extends Controller
             $em->flush();
 
             //$request->getSession()->getFlashBag()->add('notice', 'Article modifié');
-
-            return $this->redirectToRoute('blog_homepage');
+ 			return $this->redirect($this->generateUrl('blog_afficheOnePost', array('id'=>$idP)));
+            //return $this->redirectToRoute('blog_homepage');
         }
 
         return $this->render('BlogBundle:Blog:editComment.html.twig', array('form' => $form->createView()));
@@ -133,18 +134,7 @@ class AdminController extends Controller
             $em->remove($c);
             $em->flush();
         }
-        
-        //TODO : Refresh sur la page actuelle.. JSPfaire
-        //return $this->redirectToRoute('blog_homepage');
-        //return $this->redirect($this->generateUrl($request->get('_route'), $request->query->all()));
-        /*3 - On redirige vers la lecture de l'article*/
-        //$flash = "Commentaire supprimé !";
-        //return $this->redirectToRoute('blog_afficheOnePost',);
         return $this->redirect($this->generateUrl('blog_afficheOnePost', array('id'=>$idP)));
-        //return $this->redirect($this->generateUrl('blog_afficheOnePost',array('id'=>$idP,'info'=>1)));
-        //return $this->redirect($this->generateUrl('blog_afficheOnePost',array('id'=>$idP,'afficherFlash' => 1 ,'flash' => $flash, 'typeFlash' => 'warning')));
-        //return $this->render('BlogBundle:Blog:affiche.html.twig',array('id'=>$idP,'afficherFlash' => 1 ,'flash' => $flash, 'typeFlash' => 'warning'));
-        //return $this->redirectToRoute('blog_afficheOnePost', array('id' => $post->getId()));
     }
 
     public function addAdminAction(Request $request) {

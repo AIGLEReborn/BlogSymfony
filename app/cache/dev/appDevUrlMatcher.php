@@ -171,7 +171,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             // blog_EditComment
-            if (0 === strpos($pathinfo, '/admin/EditComment') && preg_match('#^/admin/EditComment/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/admin/EditComment') && preg_match('#^/admin/EditComment/(?P<idP>[^/]++)/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'blog_EditComment')), array (  '_controller' => 'BlogBundle\\Controller\\AdminController::editCommentAction',));
             }
 

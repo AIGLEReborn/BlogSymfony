@@ -77,7 +77,6 @@ class BlogController extends Controller
     public function displayPostAction(Request $request,$id) {
         $repo = $this->getDoctrine()->getRepository('BlogBundle:Post');
         $post = $repo->find($id);
-        $postR = $repo->find('Post',$id);
         $comments = $post->getComments();
         $count = sizeof($comments); 
 
@@ -99,19 +98,7 @@ class BlogController extends Controller
                 $comment->setDatePublication(new \DateTime());
                 $em->persist($comment);
                 $em->flush();
-
-                //Raffraichissement des infos
-                //$comments[] = $comment;
-                $comments = $post->getComments();
-                //$count++;
-                $count = sizeof($comments);
-
-                return $this->render('BlogBundle:Blog:affiche.html.twig', array(
-                'post' => $post,
-                'form'=>$form->createView(),
-                'comments'=>$comments,
-                'count' => $count
-                ));
+                return $this->redirect($this->generateUrl('blog_afficheOnePost', array('id'=>$id)));
             }
            
         }

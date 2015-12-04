@@ -22,32 +22,32 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_edd9dd73a52b051c82b76f9eb81d305aea8fa408b14cac84fb740c21183abf1d = $this->env->getExtension("native_profiler");
-        $__internal_edd9dd73a52b051c82b76f9eb81d305aea8fa408b14cac84fb740c21183abf1d->enter($__internal_edd9dd73a52b051c82b76f9eb81d305aea8fa408b14cac84fb740c21183abf1d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:affiche.html.twig"));
+        $__internal_6c687eca9ae549a0fc501c84f3ba03a9d3dfd2699f3db24403c2f444eecf9728 = $this->env->getExtension("native_profiler");
+        $__internal_6c687eca9ae549a0fc501c84f3ba03a9d3dfd2699f3db24403c2f444eecf9728->enter($__internal_6c687eca9ae549a0fc501c84f3ba03a9d3dfd2699f3db24403c2f444eecf9728_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:affiche.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_edd9dd73a52b051c82b76f9eb81d305aea8fa408b14cac84fb740c21183abf1d->leave($__internal_edd9dd73a52b051c82b76f9eb81d305aea8fa408b14cac84fb740c21183abf1d_prof);
+        $__internal_6c687eca9ae549a0fc501c84f3ba03a9d3dfd2699f3db24403c2f444eecf9728->leave($__internal_6c687eca9ae549a0fc501c84f3ba03a9d3dfd2699f3db24403c2f444eecf9728_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_550152d2fd546aa27d4d189e3cf1ce90b8139c55ffbf651d371412b0e2b2a796 = $this->env->getExtension("native_profiler");
-        $__internal_550152d2fd546aa27d4d189e3cf1ce90b8139c55ffbf651d371412b0e2b2a796->enter($__internal_550152d2fd546aa27d4d189e3cf1ce90b8139c55ffbf651d371412b0e2b2a796_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_6490b4ebc5c438a4425a72fb1f42439bc6a19edaba8784fbee8a62846b1248cf = $this->env->getExtension("native_profiler");
+        $__internal_6490b4ebc5c438a4425a72fb1f42439bc6a19edaba8784fbee8a62846b1248cf->enter($__internal_6490b4ebc5c438a4425a72fb1f42439bc6a19edaba8784fbee8a62846b1248cf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo " Article ";
         
-        $__internal_550152d2fd546aa27d4d189e3cf1ce90b8139c55ffbf651d371412b0e2b2a796->leave($__internal_550152d2fd546aa27d4d189e3cf1ce90b8139c55ffbf651d371412b0e2b2a796_prof);
+        $__internal_6490b4ebc5c438a4425a72fb1f42439bc6a19edaba8784fbee8a62846b1248cf->leave($__internal_6490b4ebc5c438a4425a72fb1f42439bc6a19edaba8784fbee8a62846b1248cf_prof);
 
     }
 
     // line 5
     public function block_corps($context, array $blocks = array())
     {
-        $__internal_16187796e0bfbc5937fc5be5fc8e12b02d2538e50ddd38d5294a454d2f763596 = $this->env->getExtension("native_profiler");
-        $__internal_16187796e0bfbc5937fc5be5fc8e12b02d2538e50ddd38d5294a454d2f763596->enter($__internal_16187796e0bfbc5937fc5be5fc8e12b02d2538e50ddd38d5294a454d2f763596_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
+        $__internal_d4349ae994fb197a8fbf514e0a1f21b899ce19c4c744993088772700941e917c = $this->env->getExtension("native_profiler");
+        $__internal_d4349ae994fb197a8fbf514e0a1f21b899ce19c4c744993088772700941e917c->enter($__internal_d4349ae994fb197a8fbf514e0a1f21b899ce19c4c744993088772700941e917c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
 
         // line 6
         echo "<div class=\"container\">
@@ -137,7 +137,7 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
                     echo "                                <div class = 'pull-right'>
                                     <a href=";
                     // line 47
-                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("blog_EditComment", array("id" => $this->getAttribute($context["comment"], "id", array()))), "html", null, true);
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("blog_EditComment", array("idP" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "id", array()), "id" => $this->getAttribute($context["comment"], "id", array()))), "html", null, true);
                     echo "><img src=\"https://cdn4.iconfinder.com/data/icons/32x32-free-design-icons/32/Pencil.png\" height=\"10\" width=\"10\"/></a>&nbsp;-&nbsp;<a href=";
                     echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("blog_DeleteComment", array("idP" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "id", array()), "id" => $this->getAttribute($context["comment"], "id", array()))), "html", null, true);
                     echo "><img src=\"http://www.andorrasportstraining.com/resources/images/Dialog-close.png\" height=\"10\" width=\"10\"/></a>
@@ -171,26 +171,23 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 ";
         }
         // line 63
-        echo "
-<!-- <div class=\"well\"> 
-     <div class=\"container-fluid\">
+        echo "     <div class=\"container-fluid\">
          <div class=\"row\">
-            <!--<div class=\"col-md-2\">
-            </div>-->
+
         <div class=\"col-md-8\">
 
             <h4>Laisser un commentaire</h4>
             
             ";
-        // line 73
+        // line 70
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("attr" => array("class" => "form-horizontal")));
         echo "
 
                 <div class=\"form-group\">
                    ";
-        // line 77
+        // line 74
         echo "                   ";
-        // line 78
+        // line 75
         echo "                   ";
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "commentaire", array()), 'widget', array("attr" => array("class" => "form-control")));
         echo "
@@ -198,30 +195,23 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 
                 <div class=\"form-group\">
                    ";
-        // line 83
+        // line 80
         echo "                   ";
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "envoyer", array()), 'widget', array("attr" => array("class" => "btn pull-right")));
         echo "
                 </div>
          
             ";
-        // line 86
+        // line 83
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
-            <!--<div class=\"col-md-2\">
-            </div>-->
+
     </div>
-</div> -->
-
-
-
-
-
 </div>
 </div>
 ";
         
-        $__internal_16187796e0bfbc5937fc5be5fc8e12b02d2538e50ddd38d5294a454d2f763596->leave($__internal_16187796e0bfbc5937fc5be5fc8e12b02d2538e50ddd38d5294a454d2f763596_prof);
+        $__internal_d4349ae994fb197a8fbf514e0a1f21b899ce19c4c744993088772700941e917c->leave($__internal_d4349ae994fb197a8fbf514e0a1f21b899ce19c4c744993088772700941e917c_prof);
 
     }
 
@@ -237,7 +227,7 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 
     public function getDebugInfo()
     {
-        return array (  209 => 86,  202 => 83,  194 => 78,  192 => 77,  186 => 73,  174 => 63,  170 => 61,  157 => 54,  151 => 51,  148 => 50,  140 => 47,  137 => 46,  135 => 45,  127 => 44,  121 => 40,  117 => 39,  110 => 34,  108 => 33,  104 => 31,  97 => 26,  90 => 25,  88 => 24,  80 => 19,  76 => 17,  70 => 15,  64 => 12,  58 => 8,  56 => 7,  53 => 6,  47 => 5,  35 => 3,  11 => 1,);
+        return array (  206 => 83,  199 => 80,  191 => 75,  189 => 74,  183 => 70,  174 => 63,  170 => 61,  157 => 54,  151 => 51,  148 => 50,  140 => 47,  137 => 46,  135 => 45,  127 => 44,  121 => 40,  117 => 39,  110 => 34,  108 => 33,  104 => 31,  97 => 26,  90 => 25,  88 => 24,  80 => 19,  76 => 17,  70 => 15,  64 => 12,  58 => 8,  56 => 7,  53 => 6,  47 => 5,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends '::layout.html.twig' %}*/
@@ -286,7 +276,7 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 /*                             <strong>{{ comment.user.username }}</strong><span class="text-muted">, <i><small>publié le {{comment.datePublication|date("d/m/Y")}} à {{comment.datePublication|date("H:i:s")}}</small></i></span> */
 /*                             {% if is_granted("ROLE_ADMIN") %}*/
 /*                                 <div class = 'pull-right'>*/
-/*                                     <a href={{path('blog_EditComment', {'id' : comment.id})}}><img src="https://cdn4.iconfinder.com/data/icons/32x32-free-design-icons/32/Pencil.png" height="10" width="10"/></a>&nbsp;-&nbsp;<a href={{path('blog_DeleteComment', {'idP' : post.id,'id' : comment.id})}}><img src="http://www.andorrasportstraining.com/resources/images/Dialog-close.png" height="10" width="10"/></a>*/
+/*                                     <a href={{path('blog_EditComment', {'idP' : post.id,'id' : comment.id})}}><img src="https://cdn4.iconfinder.com/data/icons/32x32-free-design-icons/32/Pencil.png" height="10" width="10"/></a>&nbsp;-&nbsp;<a href={{path('blog_DeleteComment', {'idP' : post.id,'id' : comment.id})}}><img src="http://www.andorrasportstraining.com/resources/images/Dialog-close.png" height="10" width="10"/></a>*/
 /*                                 </div>*/
 /*                             {% endif %}*/
 /*                             <br>*/
@@ -302,12 +292,9 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 /* {% else %}*/
 /*     <p> Il n'y a pas de commentaires à afficher. </p>*/
 /* {% endif %}*/
-/* */
-/* <!-- <div class="well"> */
 /*      <div class="container-fluid">*/
 /*          <div class="row">*/
-/*             <!--<div class="col-md-2">*/
-/*             </div>-->*/
+/* */
 /*         <div class="col-md-8">*/
 /* */
 /*             <h4>Laisser un commentaire</h4>*/
@@ -326,15 +313,8 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 /*                 </div>*/
 /*          */
 /*             {{ form_end(form) }}*/
-/*             <!--<div class="col-md-2">*/
-/*             </div>-->*/
+/* */
 /*     </div>*/
-/* </div> -->*/
-/* */
-/* */
-/* */
-/* */
-/* */
 /* </div>*/
 /* </div>*/
 /* {% endblock %}*/

@@ -44,7 +44,7 @@
                             <strong>{{ comment.user.username }}</strong><span class="text-muted">, <i><small>publié le {{comment.datePublication|date("d/m/Y")}} à {{comment.datePublication|date("H:i:s")}}</small></i></span> 
                             {% if is_granted("ROLE_ADMIN") %}
                                 <div class = 'pull-right'>
-                                    <a href={{path('blog_EditComment', {'id' : comment.id})}}><img src="https://cdn4.iconfinder.com/data/icons/32x32-free-design-icons/32/Pencil.png" height="10" width="10"/></a>&nbsp;-&nbsp;<a href={{path('blog_DeleteComment', {'idP' : post.id,'id' : comment.id})}}><img src="http://www.andorrasportstraining.com/resources/images/Dialog-close.png" height="10" width="10"/></a>
+                                    <a href={{path('blog_EditComment', {'idP' : post.id,'id' : comment.id})}}><img src="https://cdn4.iconfinder.com/data/icons/32x32-free-design-icons/32/Pencil.png" height="10" width="10"/></a>&nbsp;-&nbsp;<a href={{path('blog_DeleteComment', {'idP' : post.id,'id' : comment.id})}}><img src="http://www.andorrasportstraining.com/resources/images/Dialog-close.png" height="10" width="10"/></a>
                                 </div>
                             {% endif %}
                             <br>
@@ -60,12 +60,9 @@
 {% else %}
     <p> Il n'y a pas de commentaires à afficher. </p>
 {% endif %}
-
-<!-- <div class="well"> 
      <div class="container-fluid">
          <div class="row">
-            <!--<div class="col-md-2">
-            </div>-->
+
         <div class="col-md-8">
 
             <h4>Laisser un commentaire</h4>
@@ -84,15 +81,8 @@
                 </div>
          
             {{ form_end(form) }}
-            <!--<div class="col-md-2">
-            </div>-->
+
     </div>
-</div> -->
-
-
-
-
-
 </div>
 </div>
 {% endblock %}

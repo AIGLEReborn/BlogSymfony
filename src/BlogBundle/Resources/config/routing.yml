@@ -27,8 +27,10 @@ blog_addAdmin:
     defaults: { _controller: BlogBundle:Admin:addAdmin }
 
 blog_EditComment:
-    path:     /admin/EditComment/{id}
+    path:     /admin/EditComment/{idP}/{id}
     defaults: { _controller: BlogBundle:Admin:editComment }
+
+
 
 blog_DeleteComment:
     path:     /admin/DeleteComment/{idP}/{id}

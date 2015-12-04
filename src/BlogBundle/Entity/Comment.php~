@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Comment
  *
  * @ORM\Table()
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="BlogBundle\Entity\Blog\CommentRepository")
  */
 class Comment
 {
@@ -50,6 +50,10 @@ class Comment
      */
     private $commentaire;
 
+
+    public function __construct() {
+        $this->datePublication = new \DateTime();
+    }
 
     /**
      * Get id
@@ -131,5 +135,29 @@ class Comment
     public function getCommentaire()
     {
         return $this->commentaire;
+    }
+
+    /**
+     * Set datePublication
+     *
+     * @param \DateTime $datePublication
+     *
+     * @return Comment
+     */
+    public function setDatePublication($datePublication)
+    {
+        $this->datePublication = $datePublication;
+    
+        return $this;
+    }
+
+    /**
+     * Get datePublication
+     *
+     * @return \DateTime
+     */
+    public function getDatePublication()
+    {
+        return $this->datePublication;
     }
 }
