@@ -614,3 +614,16 @@ e685e8,::1,POST,http://localhost/BlogSymfony/web/app_dev.php/post/28,1449245599,
 32cb60,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/post/28,1449245709,,200
 4ff170,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/,1449245766,,200
 67e143,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/,1449245776,,200
+b61038,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/post/5,1449245963,,200
+3cebbb,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/,1449246181,,200
+6bd791,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/logout,1449246186,,302
+d27eaf,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/,1449246187,,200
+a3414a,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/register/,1449246194,,200
+e1d3d2,::1,POST,http://localhost/BlogSymfony/web/app_dev.php/register/,1449246216,,302
+8dccff,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/register/confirmed,1449246218,,200
+7f9b3b,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/,1449246225,,200
+5b82af,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/admin/add,1449246234,162677,200
+162677,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/admin/add,1449246234,,403
+7750fe,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/post/5,1449246259,,200
+c8446f,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/post/5,1449246580,,200
+eb5408,::1,GET,http://localhost/BlogSymfony/web/app_dev.php/post/5,1449246700,,200
