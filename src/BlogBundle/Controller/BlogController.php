@@ -133,7 +133,7 @@ class BlogController extends Controller
         $formBuilder
             ->add('titre', 'text', array('required' => true))
             ->add('contenu', 'textarea', array('required' => true))
-            ->add('datePublication', 'datetime', array('read_only' => 'true','date_widget' => "single_text", 'time_widget' => "single_text",'required' => true))
+            ->add('datePublication', 'datetime', array('date_widget' => "single_text", 'time_widget' => "single_text",'required' => true))
             ->add('Valider', 'submit');
 
         $form = $formBuilder->getForm();

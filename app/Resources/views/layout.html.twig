@@ -10,14 +10,15 @@
     <meta name="author" content="">
 
     <title>Groland's Blog - {% block title %}{% endblock %}</title>
-    <!-- Pour TimePicker -->
-    <link rel="stylesheet" type="text/css" href="jquery.datetimepicker.css"/ >
+
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('bundles/BlogBundle/css/bootstrap.min.css') }}" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="{{asset('bundles/BlogBundle/css/blog-home.css') }}" rel="stylesheet">
+    <!-- Custom CSS --> 
+    <!--<link href="{{asset('bundles/BlogBundle/css/jquery.datetimepicker.css') }}" rel="stylesheet">-->
+    <link href="http://176.149.93.213/jquery.datetimepicker.css" rel="stylesheet">
 
     <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
 
 
 
@@ -94,7 +95,7 @@
         </div>
         <!-- /.container -->
     </nav>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
     {% block corps %}{% endblock %}
 </body>
