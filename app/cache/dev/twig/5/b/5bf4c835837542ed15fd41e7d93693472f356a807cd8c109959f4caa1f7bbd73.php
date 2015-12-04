@@ -22,32 +22,32 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b52f3e4fd61f1156bbf9a70cf189db63178e18b3cc3e5bbd03dc8c96d0b55655 = $this->env->getExtension("native_profiler");
-        $__internal_b52f3e4fd61f1156bbf9a70cf189db63178e18b3cc3e5bbd03dc8c96d0b55655->enter($__internal_b52f3e4fd61f1156bbf9a70cf189db63178e18b3cc3e5bbd03dc8c96d0b55655_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:affiche.html.twig"));
+        $__internal_edd9dd73a52b051c82b76f9eb81d305aea8fa408b14cac84fb740c21183abf1d = $this->env->getExtension("native_profiler");
+        $__internal_edd9dd73a52b051c82b76f9eb81d305aea8fa408b14cac84fb740c21183abf1d->enter($__internal_edd9dd73a52b051c82b76f9eb81d305aea8fa408b14cac84fb740c21183abf1d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:affiche.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_b52f3e4fd61f1156bbf9a70cf189db63178e18b3cc3e5bbd03dc8c96d0b55655->leave($__internal_b52f3e4fd61f1156bbf9a70cf189db63178e18b3cc3e5bbd03dc8c96d0b55655_prof);
+        $__internal_edd9dd73a52b051c82b76f9eb81d305aea8fa408b14cac84fb740c21183abf1d->leave($__internal_edd9dd73a52b051c82b76f9eb81d305aea8fa408b14cac84fb740c21183abf1d_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_85c9c59fbc0689a6d0e9a389efbcc26da82b6601b925d35de221c40ca97b4fd3 = $this->env->getExtension("native_profiler");
-        $__internal_85c9c59fbc0689a6d0e9a389efbcc26da82b6601b925d35de221c40ca97b4fd3->enter($__internal_85c9c59fbc0689a6d0e9a389efbcc26da82b6601b925d35de221c40ca97b4fd3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_550152d2fd546aa27d4d189e3cf1ce90b8139c55ffbf651d371412b0e2b2a796 = $this->env->getExtension("native_profiler");
+        $__internal_550152d2fd546aa27d4d189e3cf1ce90b8139c55ffbf651d371412b0e2b2a796->enter($__internal_550152d2fd546aa27d4d189e3cf1ce90b8139c55ffbf651d371412b0e2b2a796_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo " Article ";
         
-        $__internal_85c9c59fbc0689a6d0e9a389efbcc26da82b6601b925d35de221c40ca97b4fd3->leave($__internal_85c9c59fbc0689a6d0e9a389efbcc26da82b6601b925d35de221c40ca97b4fd3_prof);
+        $__internal_550152d2fd546aa27d4d189e3cf1ce90b8139c55ffbf651d371412b0e2b2a796->leave($__internal_550152d2fd546aa27d4d189e3cf1ce90b8139c55ffbf651d371412b0e2b2a796_prof);
 
     }
 
     // line 5
     public function block_corps($context, array $blocks = array())
     {
-        $__internal_8871c610317492d406c37a7ee728f5b1381003d2906a00280c32e1397f369335 = $this->env->getExtension("native_profiler");
-        $__internal_8871c610317492d406c37a7ee728f5b1381003d2906a00280c32e1397f369335->enter($__internal_8871c610317492d406c37a7ee728f5b1381003d2906a00280c32e1397f369335_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
+        $__internal_16187796e0bfbc5937fc5be5fc8e12b02d2538e50ddd38d5294a454d2f763596 = $this->env->getExtension("native_profiler");
+        $__internal_16187796e0bfbc5937fc5be5fc8e12b02d2538e50ddd38d5294a454d2f763596->enter($__internal_16187796e0bfbc5937fc5be5fc8e12b02d2538e50ddd38d5294a454d2f763596_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
 
         // line 6
         echo "<div class=\"container\">
@@ -125,11 +125,11 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
                             <strong>";
                 // line 44
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["comment"], "user", array()), "username", array()), "html", null, true);
-                echo "</strong> <span class=\"text-muted\"> Publié le ";
+                echo "</strong><span class=\"text-muted\">, <i><small>publié le ";
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["comment"], "datePublication", array()), "d/m/Y"), "html", null, true);
                 echo " à ";
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["comment"], "datePublication", array()), "H:i:s"), "html", null, true);
-                echo "</span> 
+                echo "</small></i></span> 
                             ";
                 // line 45
                 if ($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) {
@@ -145,13 +145,15 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
                             ";
                 }
                 // line 50
-                echo "                            <br> (";
+                echo "                            <br>
+                            <small>(";
+                // line 51
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["comment"], "user", array()), "email", array()), "html", null, true);
-                echo ")
+                echo ")</small>
                         </div>
                         <div class=\"panel-body\">
                             ";
-                // line 53
+                // line 54
                 echo twig_escape_filter($this->env, $this->getAttribute($context["comment"], "commentaire", array()), "html", null, true);
                 echo "
                         </div><!-- /panel-body -->
@@ -164,11 +166,11 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
         } else {
-            // line 60
+            // line 61
             echo "    <p> Il n'y a pas de commentaires à afficher. </p>
 ";
         }
-        // line 62
+        // line 63
         echo "
 <!-- <div class=\"well\"> 
      <div class=\"container-fluid\">
@@ -180,15 +182,15 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
             <h4>Laisser un commentaire</h4>
             
             ";
-        // line 72
+        // line 73
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("attr" => array("class" => "form-horizontal")));
         echo "
 
                 <div class=\"form-group\">
                    ";
-        // line 76
-        echo "                   ";
         // line 77
+        echo "                   ";
+        // line 78
         echo "                   ";
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "commentaire", array()), 'widget', array("attr" => array("class" => "form-control")));
         echo "
@@ -196,14 +198,14 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 
                 <div class=\"form-group\">
                    ";
-        // line 82
+        // line 83
         echo "                   ";
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "envoyer", array()), 'widget', array("attr" => array("class" => "btn pull-right")));
         echo "
                 </div>
          
             ";
-        // line 85
+        // line 86
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
             <!--<div class=\"col-md-2\">
@@ -219,7 +221,7 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 </div>
 ";
         
-        $__internal_8871c610317492d406c37a7ee728f5b1381003d2906a00280c32e1397f369335->leave($__internal_8871c610317492d406c37a7ee728f5b1381003d2906a00280c32e1397f369335_prof);
+        $__internal_16187796e0bfbc5937fc5be5fc8e12b02d2538e50ddd38d5294a454d2f763596->leave($__internal_16187796e0bfbc5937fc5be5fc8e12b02d2538e50ddd38d5294a454d2f763596_prof);
 
     }
 
@@ -235,7 +237,7 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 
     public function getDebugInfo()
     {
-        return array (  207 => 85,  200 => 82,  192 => 77,  190 => 76,  184 => 72,  172 => 62,  168 => 60,  155 => 53,  148 => 50,  140 => 47,  137 => 46,  135 => 45,  127 => 44,  121 => 40,  117 => 39,  110 => 34,  108 => 33,  104 => 31,  97 => 26,  90 => 25,  88 => 24,  80 => 19,  76 => 17,  70 => 15,  64 => 12,  58 => 8,  56 => 7,  53 => 6,  47 => 5,  35 => 3,  11 => 1,);
+        return array (  209 => 86,  202 => 83,  194 => 78,  192 => 77,  186 => 73,  174 => 63,  170 => 61,  157 => 54,  151 => 51,  148 => 50,  140 => 47,  137 => 46,  135 => 45,  127 => 44,  121 => 40,  117 => 39,  110 => 34,  108 => 33,  104 => 31,  97 => 26,  90 => 25,  88 => 24,  80 => 19,  76 => 17,  70 => 15,  64 => 12,  58 => 8,  56 => 7,  53 => 6,  47 => 5,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends '::layout.html.twig' %}*/
@@ -281,13 +283,14 @@ class __TwigTemplate_eca1c184da6f2170e8baf1bcb12e10748ddb252a8d4c1d08cd9de0cb384
 /*                 <div class="col-sm-5">*/
 /*                     <div class="panel panel-default">*/
 /*                         <div class="panel-heading">*/
-/*                             <strong>{{ comment.user.username }}</strong> <span class="text-muted"> Publié le {{comment.datePublication|date("d/m/Y")}} à {{comment.datePublication|date("H:i:s")}}</span> */
+/*                             <strong>{{ comment.user.username }}</strong><span class="text-muted">, <i><small>publié le {{comment.datePublication|date("d/m/Y")}} à {{comment.datePublication|date("H:i:s")}}</small></i></span> */
 /*                             {% if is_granted("ROLE_ADMIN") %}*/
 /*                                 <div class = 'pull-right'>*/
 /*                                     <a href={{path('blog_EditComment', {'id' : comment.id})}}><img src="https://cdn4.iconfinder.com/data/icons/32x32-free-design-icons/32/Pencil.png" height="10" width="10"/></a>&nbsp;-&nbsp;<a href={{path('blog_DeleteComment', {'idP' : post.id,'id' : comment.id})}}><img src="http://www.andorrasportstraining.com/resources/images/Dialog-close.png" height="10" width="10"/></a>*/
 /*                                 </div>*/
 /*                             {% endif %}*/
-/*                             <br> ({{ comment.user.email }})*/
+/*                             <br>*/
+/*                             <small>({{ comment.user.email }})</small>*/
 /*                         </div>*/
 /*                         <div class="panel-body">*/
 /*                             {{ comment.commentaire }}*/

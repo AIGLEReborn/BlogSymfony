@@ -41,13 +41,14 @@
                 <div class="col-sm-5">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <strong>{{ comment.user.username }}</strong> <span class="text-muted"> Publié le {{comment.datePublication|date("d/m/Y")}} à {{comment.datePublication|date("H:i:s")}}</span> 
+                            <strong>{{ comment.user.username }}</strong><span class="text-muted">, <i><small>publié le {{comment.datePublication|date("d/m/Y")}} à {{comment.datePublication|date("H:i:s")}}</small></i></span> 
                             {% if is_granted("ROLE_ADMIN") %}
                                 <div class = 'pull-right'>
                                     <a href={{path('blog_EditComment', {'id' : comment.id})}}><img src="https://cdn4.iconfinder.com/data/icons/32x32-free-design-icons/32/Pencil.png" height="10" width="10"/></a>&nbsp;-&nbsp;<a href={{path('blog_DeleteComment', {'idP' : post.id,'id' : comment.id})}}><img src="http://www.andorrasportstraining.com/resources/images/Dialog-close.png" height="10" width="10"/></a>
                                 </div>
                             {% endif %}
-                            <br> ({{ comment.user.email }})
+                            <br>
+                            <small>({{ comment.user.email }})</small>
                         </div>
                         <div class="panel-body">
                             {{ comment.commentaire }}
