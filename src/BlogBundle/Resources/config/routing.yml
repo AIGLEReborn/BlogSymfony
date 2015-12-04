@@ -12,24 +12,24 @@ blog_afficheOnePost:
 
 blog_AddPost:
     path:     /admin/add
-    defaults: { _controller: BlogBundle:Blog:addPost }
+    defaults: { _controller: BlogBundle:Admin:addPost }
 
 blog_EditPost:
     path:     /admin/Edit/{id}
-    defaults: { _controller: BlogBundle:Blog:editPost }
+    defaults: { _controller: BlogBundle:Admin:editPost }
 
 blog_DeletePost:
     path:     /admin/Delete/{id}
-    defaults: { _controller: BlogBundle:Blog:deletePost }
+    defaults: { _controller: BlogBundle:Admin:deletePost }
 
 blog_addAdmin:
     path:     /admin/addAdmin
-    defaults: { _controller: BlogBundle:Blog:addAdmin }
+    defaults: { _controller: BlogBundle:Admin:addAdmin }
 
 blog_EditComment:
     path:     /admin/EditComment/{id}
-    defaults: { _controller: BlogBundle:Blog:editComment }
+    defaults: { _controller: BlogBundle:Admin:editComment }
 
 blog_DeleteComment:
     path:     /admin/DeleteComment/{idP}/{id}
-    defaults: { _controller: BlogBundle:Blog:deleteComment }
+    defaults: { _controller: BlogBundle:Admin:deleteComment }
