@@ -79,6 +79,7 @@ class BlogController extends Controller
         $comment = new Comment();
         $formBuilder = $this->get('form.factory')->createBuilder('form',$comment);
         $formBuilder
+                ->setAction($this->generateUrl('blog_afficheOnePost',array('id' => $id)))/*Fix Validator W3C*/
                 ->add('commentaire', 'textarea', array('required' => true))
                 ->add('envoyer','submit');
         $form = $formBuilder->getForm();

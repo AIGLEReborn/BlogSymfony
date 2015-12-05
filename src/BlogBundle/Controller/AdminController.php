@@ -18,6 +18,7 @@ class AdminController extends Controller
         $post = new Post();
         $formBuilder = $this->get('form.factory')->createBuilder('form', $post);
         $formBuilder
+            ->setAction($this->generateUrl('admin_AddPost'))/*Fix Validator W3C*/
             ->add('titre', 'text', array('required' => true))
             ->add('contenu', 'textarea', array('required' => true))
             ->add('datePublication', 'datetime', array('date_widget' => "single_text", 'time_widget' => "single_text",'required' => true))
@@ -48,6 +49,7 @@ class AdminController extends Controller
 
         $formBuilder = $this->get('form.factory')->createBuilder('form', $post);
         $formBuilder
+            ->setAction($this->generateUrl('admin_EditPost'))/*Fix Validator W3C*/
             ->add('titre', 'text', array('required' => true, 'label' => $post->getTitre()))
             ->add('contenu', 'textarea', array('required' => true, 'label' => $post->getContenu()))
             ->add('datePublication', 'datetime', array('date_widget' => "single_text", 'time_widget' => "single_text",'required' => true, 'label' => $post->getDatePublication()))
@@ -97,6 +99,7 @@ class AdminController extends Controller
         //Faire le form
         $formBuilder = $this->get('form.factory')->createBuilder('form',$c);
         $formBuilder
+                ->setAction($this->generateUrl('admin_EditComment'))/*Fix Validator W3C*/
                 ->add('commentaire', 'textarea', array('required' => true))
                 ->add('add','submit');
         $form = $formBuilder->getForm();
@@ -135,9 +138,11 @@ class AdminController extends Controller
         return $this->redirect($this->generateUrl('blog_afficheOnePost', array('id'=>$idP)));
     }
 
+    /*SuperAdmin fonction*/
     public function addAdminAction(Request $request) {
         $data = array();
         $form = $this->createFormBuilder($data)
+        ->setAction($this->generateUrl('admin_AddAdmin'))/*Fix Validator W3C*/
         ->add('user', 'text')
         ->add('Valider', 'submit')
         ->getForm();

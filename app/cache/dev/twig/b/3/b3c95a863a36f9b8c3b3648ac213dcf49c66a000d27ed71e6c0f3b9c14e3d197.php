@@ -22,151 +22,158 @@ class __TwigTemplate_f7b320c847104ad35a5ba2eef4871667d3c468f0f22764a92da18686556
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_41faa82d57b3596165f547394adf09075cd641915b64cfe57e0cf69424c537e2 = $this->env->getExtension("native_profiler");
-        $__internal_41faa82d57b3596165f547394adf09075cd641915b64cfe57e0cf69424c537e2->enter($__internal_41faa82d57b3596165f547394adf09075cd641915b64cfe57e0cf69424c537e2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:addPost.html.twig"));
+        $__internal_0f66058d04d1902c91f09d2aadfcb779238b824c601c5dc10163dd24de6c0711 = $this->env->getExtension("native_profiler");
+        $__internal_0f66058d04d1902c91f09d2aadfcb779238b824c601c5dc10163dd24de6c0711->enter($__internal_0f66058d04d1902c91f09d2aadfcb779238b824c601c5dc10163dd24de6c0711_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:addPost.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_41faa82d57b3596165f547394adf09075cd641915b64cfe57e0cf69424c537e2->leave($__internal_41faa82d57b3596165f547394adf09075cd641915b64cfe57e0cf69424c537e2_prof);
+        $__internal_0f66058d04d1902c91f09d2aadfcb779238b824c601c5dc10163dd24de6c0711->leave($__internal_0f66058d04d1902c91f09d2aadfcb779238b824c601c5dc10163dd24de6c0711_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_01ed0e283111acd6a7a9d10b209cabda0eb1ca64d47804aa4f5e10ec59f5d9a1 = $this->env->getExtension("native_profiler");
-        $__internal_01ed0e283111acd6a7a9d10b209cabda0eb1ca64d47804aa4f5e10ec59f5d9a1->enter($__internal_01ed0e283111acd6a7a9d10b209cabda0eb1ca64d47804aa4f5e10ec59f5d9a1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_391390f2ed4b1b72bf1212101f23c5c2b30f7124152a0326678083c6b33bdbfb = $this->env->getExtension("native_profiler");
+        $__internal_391390f2ed4b1b72bf1212101f23c5c2b30f7124152a0326678083c6b33bdbfb->enter($__internal_391390f2ed4b1b72bf1212101f23c5c2b30f7124152a0326678083c6b33bdbfb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        echo " Accueil ";
+        echo " Ajout d'un article ";
         
-        $__internal_01ed0e283111acd6a7a9d10b209cabda0eb1ca64d47804aa4f5e10ec59f5d9a1->leave($__internal_01ed0e283111acd6a7a9d10b209cabda0eb1ca64d47804aa4f5e10ec59f5d9a1_prof);
+        $__internal_391390f2ed4b1b72bf1212101f23c5c2b30f7124152a0326678083c6b33bdbfb->leave($__internal_391390f2ed4b1b72bf1212101f23c5c2b30f7124152a0326678083c6b33bdbfb_prof);
 
     }
 
     // line 5
     public function block_corps($context, array $blocks = array())
     {
-        $__internal_1677c81d9ce3c55b0304524e99d801ecb568ef7ca3c88130770d8e8fd87711c1 = $this->env->getExtension("native_profiler");
-        $__internal_1677c81d9ce3c55b0304524e99d801ecb568ef7ca3c88130770d8e8fd87711c1->enter($__internal_1677c81d9ce3c55b0304524e99d801ecb568ef7ca3c88130770d8e8fd87711c1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
+        $__internal_945409b6e7b3944f9734d031d75672f836ca2edcf61bcf9c11a6b6d6dbf28520 = $this->env->getExtension("native_profiler");
+        $__internal_945409b6e7b3944f9734d031d75672f836ca2edcf61bcf9c11a6b6d6dbf28520->enter($__internal_945409b6e7b3944f9734d031d75672f836ca2edcf61bcf9c11a6b6d6dbf28520_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
 
         // line 6
-        echo "    \t<script type=\"text/javascript\" src=\"";
+        echo "<script type=\"text/javascript\" src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/BlogBundle/js/jquery.datetimepicker.js"), "html", null, true);
         echo "\"></script>
-\t<div class=\"row\">
-\t\t<div class=\"col-md-12\">
-\t\t\t<div class=\"panel panel-default\" style=\" margin-top: 10px;\">
-\t\t\t\t<div id=\"content\" style=\"margin-top: 10px;\">
-\t\t\t\t\t<center><h3> Inserer un article <h3></center>
-
-\t\t\t\t\t";
-        // line 13
+<section>
+\t<div class=\"container\">
+\t\t<div class=\"row\">
+\t\t\t<div class=\"col-md-12\">
+\t\t\t\t<article>
+\t\t\t\t\t<div class=\"panel panel-default\" style=\" margin-top: 10px;\">
+\t\t\t\t\t\t<div class = \"panel-heading\">
+\t\t\t\t\t\t\t<h3 class=\"text-center text-info\">
+\t\t\t\t\t\t\t\tInsérer un article
+\t\t\t\t\t\t\t</h3>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class = \"panel-body\">
+\t\t\t\t\t\t\t";
+        // line 19
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("attr" => array("class" => "form-horizontal")));
         echo "
 
-\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t";
-        // line 16
+\t\t\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t\t\t";
+        // line 22
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "titre", array()), 'label', array("label_attr" => array("class" => "col-sm-3 control-label"), "label" => "Titre de l'article"));
         echo "
-\t\t\t\t\t";
-        // line 17
+\t\t\t\t\t\t\t\t";
+        // line 23
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "titre", array()), 'errors');
         echo "
 
-\t\t\t\t\t\t<div class=\"col-sm-4\">
-\t\t\t\t\t\t\t";
-        // line 20
+\t\t\t\t\t\t\t\t<div class=\"col-sm-4\">
+\t\t\t\t\t\t\t\t\t";
+        // line 26
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "titre", array()), 'widget', array("attr" => array("class" => "form-control")));
         echo "
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
 
-\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t";
-        // line 25
+\t\t\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t\t\t";
+        // line 31
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "contenu", array()), 'label', array("label_attr" => array("class" => "col-sm-3 control-label"), "label" => "Contenu de l'article"));
         echo "
-\t\t\t\t\t";
-        // line 26
+\t\t\t\t\t\t\t\t";
+        // line 32
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "contenu", array()), 'errors');
         echo "
 
 
-\t\t\t\t\t\t<div class=\"col-sm-4\">
-\t\t\t\t\t\t\t";
-        // line 30
+\t\t\t\t\t\t\t\t<div class=\"col-sm-4\">
+\t\t\t\t\t\t\t\t\t";
+        // line 36
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "contenu", array()), 'widget', array("attr" => array("class" => "form-control")));
         echo "
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
 
-\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t";
-        // line 35
+\t\t\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t\t\t";
+        // line 41
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "datePublication", array()), 'label', array("label_attr" => array("class" => "col-sm-3 control-label"), "label" => "Date de l'article"));
         echo "
-\t\t\t\t\t\t\t";
-        // line 36
+\t\t\t\t\t\t\t\t";
+        // line 42
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "datePublication", array()), 'errors');
         echo "
 
-\t\t\t\t\t\t\t<div class=\"col-sm-4\">
-\t\t\t\t\t\t\t\t";
-        // line 39
+\t\t\t\t\t\t\t\t<div class=\"col-sm-4\">
+\t\t\t\t\t\t\t\t\t";
+        // line 45
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "datePublication", array()), 'widget', array("attr" => array("class" => "datetime")));
         echo "
+\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
 
-\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t";
-        // line 44
+\t\t\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t\t\t";
+        // line 50
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Valider", array()), 'label', array("label_attr" => array("class" => "col-sm-3 control-label"), "label" => "Enregistrer l'article"));
         echo "
-\t\t\t\t\t";
-        // line 45
+\t\t\t\t\t\t\t\t";
+        // line 51
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "titre", array()), 'errors');
         echo "
 
-\t\t\t\t\t\t<div class=\"col-sm-4\">
-\t\t\t\t\t\t\t";
-        // line 48
+\t\t\t\t\t\t\t\t<div class=\"col-sm-4\">
+\t\t\t\t\t\t\t\t\t";
+        // line 54
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Valider", array()), 'widget', array("attr" => array("class" => "btn btn-primary pull-right")));
         echo "
-\t\t\t\t\t\t</div>
-\t\t\t\t\t
-
-\t\t\t\t\t";
-        // line 52
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t";
+        // line 57
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
+\t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
-\t\t\t\t</div>
+\t\t\t\t</article>
 \t\t\t</div>
 \t\t</div>
-
-    \t<script>
-    \t\t\$(function(){
-\t\t\t    \$('#form_datePublication_date').datetimepicker({
-\t\t\t        format: \"dd/mm/yyyy\",
-\t\t\t        timepicker: false,
-\t\t\t        datepicker: true,
-\t\t\t    });
-\t\t\t    \$('#form_datePublication_time').datetimepicker({
-\t\t\t        format: \"H:i\",
-\t\t\t        timepicker: true,
-\t\t\t        datepicker: false,
-\t\t\t        step:5
-\t\t\t    });
-\t\t\t});
-    \t</script>
 \t</div>
+</section>
+<script>
+\$(function(){
+\t\$('#form_datePublication_date').datetimepicker({
+\t\tformat: \"dd/mm/yyyy\",
+\t\ttimepicker: false,
+\t\tdatepicker: true,
+\t});
+\t\$('#form_datePublication_time').datetimepicker({
+\t\tformat: \"H:i\",
+\t\ttimepicker: true,
+\t\tdatepicker: false,
+\t\tstep:5
+\t});
+});
+</script>
+
 
 
 ";
         
-        $__internal_1677c81d9ce3c55b0304524e99d801ecb568ef7ca3c88130770d8e8fd87711c1->leave($__internal_1677c81d9ce3c55b0304524e99d801ecb568ef7ca3c88130770d8e8fd87711c1_prof);
+        $__internal_945409b6e7b3944f9734d031d75672f836ca2edcf61bcf9c11a6b6d6dbf28520->leave($__internal_945409b6e7b3944f9734d031d75672f836ca2edcf61bcf9c11a6b6d6dbf28520_prof);
 
     }
 
@@ -182,82 +189,89 @@ class __TwigTemplate_f7b320c847104ad35a5ba2eef4871667d3c468f0f22764a92da18686556
 
     public function getDebugInfo()
     {
-        return array (  142 => 52,  135 => 48,  129 => 45,  125 => 44,  117 => 39,  111 => 36,  107 => 35,  99 => 30,  92 => 26,  88 => 25,  80 => 20,  74 => 17,  70 => 16,  64 => 13,  53 => 6,  47 => 5,  35 => 3,  11 => 1,);
+        return array (  147 => 57,  141 => 54,  135 => 51,  131 => 50,  123 => 45,  117 => 42,  113 => 41,  105 => 36,  98 => 32,  94 => 31,  86 => 26,  80 => 23,  76 => 22,  70 => 19,  53 => 6,  47 => 5,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends '::layout.html.twig' %}*/
 /* */
-/* {% block title %} Accueil {% endblock %}*/
+/* {% block title %} Ajout d'un article {% endblock %}*/
 /* */
 /* {% block corps %}*/
-/*     	<script type="text/javascript" src="{{ asset('bundles/BlogBundle/js/jquery.datetimepicker.js') }}"></script>*/
-/* 	<div class="row">*/
-/* 		<div class="col-md-12">*/
-/* 			<div class="panel panel-default" style=" margin-top: 10px;">*/
-/* 				<div id="content" style="margin-top: 10px;">*/
-/* 					<center><h3> Inserer un article <h3></center>*/
-/* */
-/* 					{{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}*/
-/* */
-/* 					<div class="form-group">*/
-/* 					{{ form_label(form.titre, "Titre de l'article", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}*/
-/* 					{{ form_errors(form.titre) }}*/
-/* */
-/* 						<div class="col-sm-4">*/
-/* 							{{ form_widget(form.titre, {'attr': {'class':'form-control'}}) }}*/
+/* <script type="text/javascript" src="{{ asset('bundles/BlogBundle/js/jquery.datetimepicker.js') }}"></script>*/
+/* <section>*/
+/* 	<div class="container">*/
+/* 		<div class="row">*/
+/* 			<div class="col-md-12">*/
+/* 				<article>*/
+/* 					<div class="panel panel-default" style=" margin-top: 10px;">*/
+/* 						<div class = "panel-heading">*/
+/* 							<h3 class="text-center text-info">*/
+/* 								Insérer un article*/
+/* 							</h3>*/
 /* 						</div>*/
-/* 					</div>*/
+/* 						<div class = "panel-body">*/
+/* 							{{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}*/
 /* */
-/* 					<div class="form-group">*/
-/* 					{{ form_label(form.contenu, "Contenu de l'article", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}*/
-/* 					{{ form_errors(form.contenu) }}*/
+/* 							<div class="form-group">*/
+/* 								{{ form_label(form.titre, "Titre de l'article", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}*/
+/* 								{{ form_errors(form.titre) }}*/
 /* */
-/* */
-/* 						<div class="col-sm-4">*/
-/* 							{{ form_widget(form.contenu, {'attr': {'class':'form-control'}}) }}*/
-/* 						</div>*/
-/* 					</div>*/
-/* */
-/* 					<div class="form-group">*/
-/* 							{{ form_label(form.datePublication, "Date de l'article", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}*/
-/* 							{{ form_errors(form.datePublication) }}*/
-/* */
-/* 							<div class="col-sm-4">*/
-/* 								{{ form_widget(form.datePublication,{'attr': {'class':'datetime'}}) }}*/
+/* 								<div class="col-sm-4">*/
+/* 									{{ form_widget(form.titre, {'attr': {'class':'form-control'}}) }}*/
+/* 								</div>*/
 /* 							</div>*/
-/* 					</div>*/
 /* */
-/* 					<div class="form-group">*/
-/* 					{{ form_label(form.Valider, "Enregistrer l'article", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}*/
-/* 					{{ form_errors(form.titre) }}*/
+/* 							<div class="form-group">*/
+/* 								{{ form_label(form.contenu, "Contenu de l'article", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}*/
+/* 								{{ form_errors(form.contenu) }}*/
 /* */
-/* 						<div class="col-sm-4">*/
-/* 							{{ form_widget(form.Valider, {'attr': {'class':'btn btn-primary pull-right'}}) }}*/
+/* */
+/* 								<div class="col-sm-4">*/
+/* 									{{ form_widget(form.contenu, {'attr': {'class':'form-control'}}) }}*/
+/* 								</div>*/
+/* 							</div>*/
+/* */
+/* 							<div class="form-group">*/
+/* 								{{ form_label(form.datePublication, "Date de l'article", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}*/
+/* 								{{ form_errors(form.datePublication) }}*/
+/* */
+/* 								<div class="col-sm-4">*/
+/* 									{{ form_widget(form.datePublication,{'attr': {'class':'datetime'}}) }}*/
+/* 								</div>*/
+/* 							</div>*/
+/* */
+/* 							<div class="form-group">*/
+/* 								{{ form_label(form.Valider, "Enregistrer l'article", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}*/
+/* 								{{ form_errors(form.titre) }}*/
+/* */
+/* 								<div class="col-sm-4">*/
+/* 									{{ form_widget(form.Valider, {'attr': {'class':'btn btn-primary pull-right'}}) }}*/
+/* 								</div>*/
+/* 							</div>*/
+/* 							{{ form_end(form) }}*/
 /* 						</div>*/
-/* 					*/
-/* */
-/* 					{{ form_end(form) }}*/
 /* 					</div>*/
-/* 				</div>*/
+/* 				</article>*/
 /* 			</div>*/
 /* 		</div>*/
-/* */
-/*     	<script>*/
-/*     		$(function(){*/
-/* 			    $('#form_datePublication_date').datetimepicker({*/
-/* 			        format: "dd/mm/yyyy",*/
-/* 			        timepicker: false,*/
-/* 			        datepicker: true,*/
-/* 			    });*/
-/* 			    $('#form_datePublication_time').datetimepicker({*/
-/* 			        format: "H:i",*/
-/* 			        timepicker: true,*/
-/* 			        datepicker: false,*/
-/* 			        step:5*/
-/* 			    });*/
-/* 			});*/
-/*     	</script>*/
 /* 	</div>*/
+/* </section>*/
+/* <script>*/
+/* $(function(){*/
+/* 	$('#form_datePublication_date').datetimepicker({*/
+/* 		format: "dd/mm/yyyy",*/
+/* 		timepicker: false,*/
+/* 		datepicker: true,*/
+/* 	});*/
+/* 	$('#form_datePublication_time').datetimepicker({*/
+/* 		format: "H:i",*/
+/* 		timepicker: true,*/
+/* 		datepicker: false,*/
+/* 		step:5*/
+/* 	});*/
+/* });*/
+/* </script>*/
+/* */
 /* */
 /* */
 /* {% endblock %}*/

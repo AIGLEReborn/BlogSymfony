@@ -18,12 +18,12 @@
 				   
 				   	<div class = "panel-body">
 					    <div class="alert alert-success">
-						  <strong><p>{{ 'Enregistrement confirmé'|trans({'%username%': user.username}) }}</p></strong> 
+					    <!--Fix Validator W3C : <p> avant <strong> -->
+						  <p><strong>{{ 'Enregistrement confirmé'|trans({'%username%': user.username}) }}</strong></p> 
 						</div>
 
-						<a href="{{path('blog_homepage')}}"><button type="submit" id="_submit" name="_submit" class="btn btn-default">
-							Retour a la page d'accueil
-						</button></a>
+						<!-- Fix Validator W3C -->
+						<a href="{{path('blog_homepage')}}" class="btn btn-default" role="button">Retour a la page d'accueil</a>
 				   </div>
 				</div>
 	        	</article>
