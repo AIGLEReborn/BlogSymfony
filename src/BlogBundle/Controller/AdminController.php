@@ -9,9 +9,9 @@ use Symfony\Component\HttpFoundation\Request;
 class AdminController extends Controller
 {
     public function indexAction()
-    {}
+    {
 
-
+    }
 
     public function addPostAction(Request $request) {
     	
@@ -29,7 +29,6 @@ class AdminController extends Controller
         if ($form->handleRequest($request)->isValid()) {
             
             $em = $this->getDoctrine()->getManager();
-            $post->setUrl('JSP');
             $user = $this->container->get('security.context')->getToken()->getUser();
             $post->setAuthor($user);
             $em->persist($post);
@@ -61,11 +60,8 @@ class AdminController extends Controller
             
             $em = $this->getDoctrine()->getManager();
             $em->flush();
-
             $request->getSession()->getFlashBag()->add('notice', 'Article modifié');
-
             return $this->redirectToRoute('blog_afficheOnePost', array('id' => $post->getId()));
-
         }
 
     	return $this->render('BlogBundle:Blog:editPost.html.twig', array('form' => $form->createView(), 'post' => $post));
@@ -90,10 +86,8 @@ class AdminController extends Controller
             FROM BlogBundle:Comment c
             WHERE c.id = :id'
             )->setParameter('id',$id);
-
         $comment = $query->getResult();
         $c = $comment[0];
-
 
         $formBuilder = $this->get('form.factory')->createBuilder('form',$c);
         $formBuilder
@@ -123,7 +117,6 @@ class AdminController extends Controller
             )->setParameter('id',$id);
 
         $comment = $query->getResult();
-        
         if (sizeof($comment) != 0) {
             $c = $comment[0];
             $em = $this->getDoctrine()->getManager();
@@ -143,7 +136,6 @@ class AdminController extends Controller
         ->getForm();
  
         if ($form->handleRequest($request)->isValid()) {
-
             $userManager = $this->get('fos_user.user_manager');
             $data = $form->getData();
             $user = $userManager->findUserByUsername($data['user']);

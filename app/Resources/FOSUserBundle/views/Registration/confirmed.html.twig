@@ -3,33 +3,34 @@
 {% block title %} Confirmation d'inscription {% endblock %}
 
 {% block corps %}
-<section>
-    <div class="container">
+	<section>
+	    <div class="container">
+	        <div class="row">
+	        	<div class="col-md-12">
+	        		<article>
+			        	<div class = "panel panel-default" style=" margin-top: 10px;">
+						  	<div class = "panel-heading">
+						        <h3 class="text-center text-info">
+									Confirmation d'enregistrement
+								</h3>
+						   	</div>
+						   
+						   	<div class = "panel-body">
+							    <div class="alert alert-success">
+							    <!--Fix Validator W3C : <p> avant <strong> -->
+									<p>
+								  		<strong>{{ 'Enregistrement confirmé'|trans({'%username%': user.username}) }}</strong>
+									</p> 
+								</div>
 
-        <div class="row">
-        	<div class="col-md-12">
-        		<article>
-	        	<div class = "panel panel-default" style=" margin-top: 10px;">
-				  	<div class = "panel-heading">
-				        <h3 class="text-center text-info">
-							Confirmation d'enregistrement
-						</h3>
-				   	</div>
-				   
-				   	<div class = "panel-body">
-					    <div class="alert alert-success">
-					    <!--Fix Validator W3C : <p> avant <strong> -->
-						  <p><strong>{{ 'Enregistrement confirmé'|trans({'%username%': user.username}) }}</strong></p> 
+								<!-- Fix Validator W3C -->
+								<a href="{{path('blog_homepage')}}" class="btn btn-default" role="button">Retour a la page d'accueil</a>
+						   </div>
 						</div>
-
-						<!-- Fix Validator W3C -->
-						<a href="{{path('blog_homepage')}}" class="btn btn-default" role="button">Retour a la page d'accueil</a>
-				   </div>
-				</div>
-	        	</article>
-				
-        	</div>
-        </div>
-    </div>
-</section>
+		        	</article>
+					
+	        	</div>
+	        </div>
+	    </div>
+	</section>
 {% endblock %}

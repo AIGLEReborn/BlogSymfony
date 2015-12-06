@@ -3,67 +3,66 @@
 {% block title %}Connexion{% endblock %}
 
 {% block corps %}
-<section>
-    <div class="container">
+	<section>
+	    <div class="container">
 
-        <div class="row">
-        	<div class="col-md-12">
-        		<article>
-	        	<div class = "panel panel-default" style=" margin-top: 10px;">
-				  	<div class = "panel-heading">
-				        <h3 class="text-center text-info">
-							Formulaire de connexion
-						</h3>
-				   	</div>
-				   
-				   	<div class = "panel-body">
-				     	{% if error %}
-    						<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-						{% endif %}
+	        <div class="row">
+	        	<div class="col-md-12">
+	        		<article>
+			        	<div class = "panel panel-default" style=" margin-top: 10px;">
+						  	<div class = "panel-heading">
+						        <h3 class="text-center text-info">
+									Formulaire de connexion
+								</h3>
+						   	</div>
+						   
+						   	<div class = "panel-body">
+						     	{% if error %}
+		    						<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+								{% endif %}
 
-				<form action="{{ path("fos_user_security_check") }}" class="form-horizontal" method="post">
-					<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-				    <div class="form-group"> 
-						<label for="username" class="col-sm-2 control-label">
-							{{ 'Pseudonyme '|trans }}
-						</label>
-						<div class="col-sm-10">
-							<input type="text" id="username" name="_username" value="{{ last_username }}" required="required" class="form-control" />
+								<form action="{{ path("fos_user_security_check") }}" class="form-horizontal" method="post">
+									<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+								    <div class="form-group"> 
+										<label for="username" class="col-sm-2 control-label">
+											{{ 'Pseudonyme '|trans }}
+										</label>
+										<div class="col-sm-10">
+											<input type="text" id="username" name="_username" value="{{ last_username }}" required="required" class="form-control" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="password" class="col-sm-2 control-label">
+											{{ 'Mot de passe '|trans }}
+										</label>
+										<div class="col-sm-10">
+											<input type="password" id="password" name="_password" required="required" class="form-control" />
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-offset-2 col-sm-10">
+											<div class="checkbox">
+												 
+												<label>
+													<input type="checkbox" id="remember_me" name="_remember_me" value="on" /> Se rappeller de moi
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-offset-2 col-sm-10">
+											 
+											<button type="submit" id="_submit" name="_submit" class="btn btn-default">
+												Valider
+											</button>
+										</div>
+									</div>
+								</form>
+						   </div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label for="password" class="col-sm-2 control-label">
-							{{ 'Mot de passe '|trans }}
-						</label>
-						<div class="col-sm-10">
-							<input type="password" id="password" name="_password" required="required" class="form-control" />
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10">
-							<div class="checkbox">
-								 
-								<label>
-									<input type="checkbox" id="remember_me" name="_remember_me" value="on" /> Se rappeller de moi
-								</label>
-							</div>
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10">
-							 
-							<button type="submit" id="_submit" name="_submit" class="btn btn-default">
-								Valider
-							</button>
-						</div>
-					</div>
-				</form>
-				   </div>
-				</div>
-	        	
-				</article>
-        	</div>
-        </div>
-    </div>
-</section>
+					</article>
+	        	</div>
+	        </div>
+	    </div>
+	</section>
 {% endblock %}

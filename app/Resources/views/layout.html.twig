@@ -16,7 +16,6 @@
     <!-- Custom CSS --> 
     <link href="{{asset('bundles/BlogBundle/css/blog-home.css') }}" rel="stylesheet">
     <link href="{{asset('bundles/BlogBundle/css/jquery.datetimepicker.css') }}" rel="stylesheet">
-    <!--<link href="http://176.149.93.213/jquery.datetimepicker.css" rel="stylesheet">-->
     <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
 
@@ -47,66 +46,40 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 {% if is_granted("ROLE_ADMIN") %}
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="{{path('admin_AddPost')}}">Ajouter un article</a>
-                    </li>
-                    {% if is_granted("ROLE_SUPER_ADMIN") %}
-                    <li>
-                        <a href="{{path('admin_AddAdmin')}}">Ajouter un administrateur</a>
-                    </li>
-                    {% endif %}
-                    <!--<li>
-                        <a href="#">Contact</a>
-                    </li>-->
-                </ul>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="{{path('admin_AddPost')}}">Ajouter un article</a>
+                        </li>
+                        {% if is_granted("ROLE_SUPER_ADMIN") %}
+                        <li>
+                            <a href="{{path('admin_AddAdmin')}}">Ajouter un administrateur</a>
+                        </li>
+                        {% endif %}
+                        <!--<li>
+                            <a href="#">Contact</a>
+                        </li>-->
+                    </ul>
                 {% endif %}
                 <ul class="nav navbar-nav navbar-right">
-
-
-							{% if is_granted("IS_AUTHENTICATED_FULLY") %}
-                                <li><a href="#" class="inactiveLink">{{app.user.username}}</a></li>
-                                <li>
-                                    <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
-                                </li>
-                            {% else %}
-                                <li><a href="{{path('fos_user_security_login') }}">Connexion</a></li>
-                                <li><a href="{{path('fos_user_registration_register') }}">Inscription</a></li>
-                            {% endif %}
-							
-							<!--<li class="dropdown">
-								 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu<strong class="caret"></strong></a>
-								<ul class="dropdown-menu">
-									<li>
-										<a href="{{ path('fos_user_security_logout') }}">Deconnection</a>
-									</li>
-									<li>
-										<a href="#">Another action</a>
-									</li>
-									<li>
-										<a href="#">Something else here</a>
-									</li>
-								</ul>
-							</li>-->
-						</ul>
+					{% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                        <li><a href="#" class="inactiveLink">{{app.user.username}}</a></li>
+                        <li>
+                            <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+                        </li>
+                    {% else %}
+                        <li><a href="{{path('fos_user_security_login') }}">Connexion</a></li>
+                        <li><a href="{{path('fos_user_registration_register') }}">Inscription</a></li>
+                    {% endif %}
+				</ul>
             </div>
-
-
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
     </nav>
     
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
     {% block corps %}{% endblock %}
 
-    <!-- footer -->
-    
-
-    <!-- Footer -->
     <footer>
-       
-        <!-- /.row -->
+
     </footer>
 </body>
 </html>

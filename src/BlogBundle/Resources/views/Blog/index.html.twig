@@ -3,50 +3,64 @@
 {% block title %} Accueil {% endblock %}
 
 {% block corps %}
-<section>
-<div class="container">
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" >
+                    {% for post in posts %}
+                        <article>
+                            <div class = "panel panel-default" style="margin-top: 10px;">
+                                <div class = "panel-heading">
+                                    <h2>
+                                        {{ post.titre }}
+                                        <small>, écrit par {{ post.author.username }}</small>
+                                    </h2>
+                                    <br />
+                                        {% if is_granted("ROLE_ADMIN") %}
+                                            <div class="pull-right">
 
-    <div class="row">
-        <div class="col-md-12" >
-            {% for post in posts %}
-            <article>
-                <div class = "panel panel-default" style="margin-top: 10px;">
-                    <div class = "panel-heading">
-                        <h2>
-                            {{ post.titre }}<small>, écrit par {{ post.author.username }}</small>
-                        </h2>
-                        <br />
-                        {% if is_granted("ROLE_ADMIN") %}
-                        <div class="pull-right">
+                                                <div class="btn">
+                                                    <a href={{path('admin_EditPost', {'id' : post.id})}}>
+                                                        <img src="https://cdn4.iconfinder.com/data/icons/32x32-free-design-icons/32/Pencil.png" height="10" width="10"/></a>
+                                                    </div> - 
+                                                    <div class="btn">
+                                                        <a href={{path('admin_DeletePost', {'id' : post.id})}}>
+                                                            <img src="http://www.andorrasportstraining.com/resources/images/Dialog-close.png" height="10" width="10"/>
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                        {% endif %}
 
-                            <div class="btn"><a href={{path('admin_EditPost', {'id' : post.id})}}><img src="https://cdn4.iconfinder.com/data/icons/32x32-free-design-icons/32/Pencil.png" height="10" width="10"/></a></div> - <div class="btn"><a href={{path('admin_DeletePost', {'id' : post.id})}}><img src="http://www.andorrasportstraining.com/resources/images/Dialog-close.png" height="10" width="10"/></a></div>
-                        </div>
-                        {% endif %}
+                                    <p><span class="glyphicon glyphicon-time"></span>
+                                        Ecrit le {{post.datePublication|date("d/m/Y")}} à {{post.datePublication|date("H:i:s")}}
+                                    </p>
+                                </div>
+                                <div class = "panel-body">
 
-                        <p><span class="glyphicon glyphicon-time"></span> Ecrit le {{post.datePublication|date("d/m/Y")}} à {{post.datePublication|date("H:i:s")}}</p>
-                    </div>
-                    <div class = "panel-body">
-
-                        {# {{ count }} commentaires #}
-
-                        <p> {{ countComms[post.id] }} commentaires <br> <br>
-                            <a class="btn btn-primary" href="{{path('blog_afficheOnePost', {'id' : post.id})}}">Lire et commenter <span class="glyphicon glyphicon-chevron-right"></span></a> <br>  </p>
-                    </div>
+                                    <p> {{ countComms[post.id] }} commentaires <br> <br>
+                                        <a class="btn btn-primary" href="{{path('blog_afficheOnePost', {'id' : post.id})}}">Lire et commenter 
+                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                        </a> 
+                                        <br>  
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    {% endfor %}   
                 </div>
-            </article>
-            {% endfor %}   
+            </div>
+
+            {% if pagination %}
+                <ul class="pagination">
+                    {% for i in 1..count %}
+
+                        <li>
+                            <a href={{path('blog_pageX', {'value' : i }) }} > {{ i }} </a> 
+                        </li>
+
+                    {% endfor %}
+                </ul>
+            {% endif %}
         </div>
-    </div>
-
-        {% if pagination %}
-        <ul class="pagination">
-            {% for i in 1..count %}
-
-            <li><a href={{path('blog_pageX', {'value' : i }) }} > {{ i }} </a> </li>
-
-            {% endfor %}
-        </ul>
-        {% endif %}
-</div>
-</section>
+    </section>
 {% endblock %}

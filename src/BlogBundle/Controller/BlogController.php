@@ -85,7 +85,6 @@ class BlogController extends Controller
 
         if($form->handleRequest($request)->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            //Récuppération du current user
             $currentUser = $this->container->get('security.context')->getToken()->getUser();
             if ($currentUser != 'anon.') {
                 $comment->setUser($currentUser);
@@ -98,14 +97,13 @@ class BlogController extends Controller
            
         }
 
-            return $this->render('BlogBundle:Blog:affiche.html.twig', array(
+        return $this->render('BlogBundle:Blog:affiche.html.twig', array(
             'post' => $post,
             'form'=>$form->createView(),
             'comments'=>$comments,
             'count' => $count
-            ));
+        ));
 
-    	
     }
 
 
