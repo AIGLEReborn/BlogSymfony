@@ -33,6 +33,7 @@ class AdminController extends Controller
             
             $em = $this->getDoctrine()->getManager();
             $user = $this->container->get('security.context')->getToken()->getUser();
+            $post->setUrl("#");
             $post->setAuthor($user);
             $em->persist($post);
             $em->flush();

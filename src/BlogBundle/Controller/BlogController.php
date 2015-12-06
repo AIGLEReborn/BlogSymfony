@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 class BlogController extends Controller
 {
     /**
+     * @Route("", name="blog_homepage")
      * @Route("/", name="blog_homepage")
      */
     public function indexAction()
