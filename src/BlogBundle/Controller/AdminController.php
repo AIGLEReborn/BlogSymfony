@@ -2,6 +2,7 @@
 
 namespace BlogBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use BlogBundle\Entity\Post;
 use Symfony\Component\HttpFoundation\Request;
@@ -9,19 +10,21 @@ use Symfony\Component\HttpFoundation\Request;
 class AdminController extends Controller
 {
     public function indexAction()
-    {
+    {}
 
-    }
 
+    /**
+     * @Route("/admin/add", name="admin_AddPost")
+     */
     public function addPostAction(Request $request) {
-    	
+        
         $post = new Post();
         $formBuilder = $this->get('form.factory')->createBuilder('form', $post);
         $formBuilder
             ->setAction($this->generateUrl('admin_AddPost'))/*Fix Validator W3C*/
             ->add('titre', 'text', array('required' => true))
             ->add('contenu', 'textarea', array('required' => true))
-            ->add('datePublication', 'datetime', array('read_only' => true,'date_widget' => "single_text", 'time_widget' => "single_text",'required' => true))
+            ->add('datePublication', 'datetime', array('date_widget' => "single_text", 'time_widget' => "single_text",'required' => true))
             ->add('Valider', 'submit');
 
         $form = $formBuilder->getForm();
@@ -38,11 +41,15 @@ class AdminController extends Controller
 
         }
 
-    	return $this->render('BlogBundle:Blog:addPost.html.twig', array('form' => $form->createView()));
+        return $this->render('BlogBundle:Blog:addPost.html.twig', array('form' => $form->createView()));
     }
 
+
+    /**
+     * @Route("/admin/Edit/{id}", name="admin_EditPost")
+     */
     public function editPostAction($id, Request $request) {
-    	
+        
         $repository = $this->getDoctrine()->getRepository('BlogBundle:Post');
         $post = $repository->find($id);
 
@@ -51,7 +58,7 @@ class AdminController extends Controller
             ->setAction($this->generateUrl('admin_EditPost'))/*Fix Validator W3C*/
             ->add('titre', 'text', array('required' => true, 'label' => $post->getTitre()))
             ->add('contenu', 'textarea', array('required' => true, 'label' => $post->getContenu()))
-            ->add('datePublication', 'datetime', array('read_only' => true,'date_widget' => "single_text", 'time_widget' => "single_text",'required' => true, 'label' => $post->getDatePublication()))
+            ->add('datePublication', 'datetime', array('date_widget' => "single_text", 'time_widget' => "single_text",'required' => true, 'label' => $post->getDatePublication()))
             ->add('Valider', 'submit');
 
         $form = $formBuilder->getForm();
@@ -60,23 +67,34 @@ class AdminController extends Controller
             
             $em = $this->getDoctrine()->getManager();
             $em->flush();
+
             $request->getSession()->getFlashBag()->add('notice', 'Article modifié');
+
             return $this->redirectToRoute('blog_afficheOnePost', array('id' => $post->getId()));
+
         }
 
-    	return $this->render('BlogBundle:Blog:editPost.html.twig', array('form' => $form->createView(), 'post' => $post));
+        return $this->render('BlogBundle:Blog:editPost.html.twig', array('form' => $form->createView(), 'post' => $post));
     }
 
+
+    /**
+     * @Route("/admin/Delete/{id}", name="admin_DeletePost")
+     */
     public function deletePostAction($id) {
         $em = $this->getDoctrine()->getManager();
-    	$repository = $this->getDoctrine()->getRepository('BlogBundle:Post');
+        $repository = $this->getDoctrine()->getRepository('BlogBundle:Post');
         $post = $repository->find($id);
         $em->remove($post);
         $em->flush();
 
-    	return $this->redirectToRoute('blog_homepage');
+        return $this->redirectToRoute('blog_homepage');
     }
 
+
+    /**
+     * @Route("/admin/EditComment/{idP}/{id}", name="admin_EditComment")
+     */
     public function editCommentAction($idP,$id, Request $request) {
 
         
@@ -86,6 +104,7 @@ class AdminController extends Controller
             FROM BlogBundle:Comment c
             WHERE c.id = :id'
             )->setParameter('id',$id);
+
         $comment = $query->getResult();
         $c = $comment[0];
 
@@ -101,12 +120,16 @@ class AdminController extends Controller
             $em->persist($c);
             $em->flush();
 
- 			return $this->redirect($this->generateUrl('blog_afficheOnePost', array('id'=>$idP)));
+            return $this->redirect($this->generateUrl('blog_afficheOnePost', array('id'=>$idP)));
         }
 
         return $this->render('BlogBundle:Blog:editComment.html.twig', array('form' => $form->createView()));
     }
 
+
+    /**
+     * @Route("/admin/DeleteComment/{idP}/{id}", name="admin_DeleteComment")
+     */
     public function deleteCommentAction($idP,$id, Request $request) {
 
         $manager = $this->getDoctrine()->getManager();
@@ -117,6 +140,7 @@ class AdminController extends Controller
             )->setParameter('id',$id);
 
         $comment = $query->getResult();
+        
         if (sizeof($comment) != 0) {
             $c = $comment[0];
             $em = $this->getDoctrine()->getManager();
@@ -125,8 +149,10 @@ class AdminController extends Controller
         }
         return $this->redirect($this->generateUrl('blog_afficheOnePost', array('id'=>$idP)));
     }
-
-    /*SuperAdmin fonction*/
+    
+    /**
+     * @Route("/admin/addAdmin", name="admin_AddAdmin")
+     */
     public function addAdminAction(Request $request) {
         $data = array();
         $form = $this->createFormBuilder($data)
@@ -136,6 +162,7 @@ class AdminController extends Controller
         ->getForm();
  
         if ($form->handleRequest($request)->isValid()) {
+
             $userManager = $this->get('fos_user.user_manager');
             $data = $form->getData();
             $user = $userManager->findUserByUsername($data['user']);

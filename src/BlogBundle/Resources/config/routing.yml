@@ -1,37 +1,10 @@
-blog_homepage:
-    path:     /
-    defaults: { _controller: BlogBundle:Blog:index }
+blog:
+    resource: "@BlogBundle/Controller/"
+    type:     annotation
 
-blog_pageX:
-    path:     /page/{value}
-    defaults: { _controller: BlogBundle:Blog:pageX }
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
 
-blog_afficheOnePost:
-    path:     /post/{id}
-    defaults: { _controller: BlogBundle:Blog:displayPost }
-
-
-
-admin_AddPost:
-    path:     /admin/add
-    defaults: { _controller: BlogBundle:Admin:addPost }
-
-admin_EditPost:
-    path:     /admin/Edit/{id}
-    defaults: { _controller: BlogBundle:Admin:editPost }
-
-admin_DeletePost:
-    path:     /admin/Delete/{id}
-    defaults: { _controller: BlogBundle:Admin:deletePost }
-
-admin_AddAdmin:
-    path:     /admin/addAdmin
-    defaults: { _controller: BlogBundle:Admin:addAdmin }
-
-admin_EditComment:
-    path:     /admin/EditComment/{idP}/{id}
-    defaults: { _controller: BlogBundle:Admin:editComment }
-
-admin_DeleteComment:
-    path:     /admin/DeleteComment/{idP}/{id}
-    defaults: { _controller: BlogBundle:Admin:deleteComment }
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

@@ -2,12 +2,16 @@
 
 namespace BlogBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use BlogBundle\Entity\Comment;
 use Symfony\Component\HttpFoundation\Request;
 
 class BlogController extends Controller
 {
+    /**
+     * @Route("/", name="blog_homepage")
+     */
     public function indexAction()
     {
         $repo = $this->getDoctrine()->getRepository('BlogBundle:Post');
@@ -37,6 +41,9 @@ class BlogController extends Controller
             'countComms' => $retour));
     }
 
+    /**
+     * @Route("/page/{value}", name="blog_pageX")
+    */
     public function pageXAction($value) {
 
         $depart = ($value-1) * 5;
@@ -69,6 +76,9 @@ class BlogController extends Controller
             'count' => $count));
     }
 
+    /**
+     * @Route("/post/{id}", name="blog_afficheOnePost")
+     */
     public function displayPostAction(Request $request,$id) {
         $repo = $this->getDoctrine()->getRepository('BlogBundle:Post');
         $post = $repo->find($id);
