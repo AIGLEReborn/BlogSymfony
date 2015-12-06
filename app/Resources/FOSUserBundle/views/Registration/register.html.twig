@@ -19,7 +19,7 @@
 				   	</div>
 				   
 				   	<div class = "panel-body">
-
+				   		{{ form_errors(form) }}
 						{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register form-horizontal'}}) }}
 
 							<div class="form-group">

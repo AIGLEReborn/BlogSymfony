@@ -1,6 +1,6 @@
 {% extends '::layout.html.twig' %}
 
-{% block title %}Demo Application{% endblock %}
+{% block title %}Connexion{% endblock %}
 
 {% block corps %}
 <section>
@@ -18,8 +18,8 @@
 				   
 				   	<div class = "panel-body">
 				     	{% if error %}
-				   	<div>{{ error|trans }}</div>
-				{% endif %}
+    						<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+						{% endif %}
 
 				<form action="{{ path("fos_user_security_check") }}" class="form-horizontal" method="post">
 					<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
