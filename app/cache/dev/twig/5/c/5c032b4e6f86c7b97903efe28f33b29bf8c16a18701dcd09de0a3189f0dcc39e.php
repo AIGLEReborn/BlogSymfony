@@ -17,8 +17,8 @@ class __TwigTemplate_b7804592fbc63008e40d124c9d49dba88d0963b86eafcefc4bf0b0ca923
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_abea4bc604ff86e6626aff7f74a25da3f556b395cb08474a5383d60de75b74c6 = $this->env->getExtension("native_profiler");
-        $__internal_abea4bc604ff86e6626aff7f74a25da3f556b395cb08474a5383d60de75b74c6->enter($__internal_abea4bc604ff86e6626aff7f74a25da3f556b395cb08474a5383d60de75b74c6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::layout.html.twig"));
+        $__internal_5a18c3d2aa2800dda9316a06fd104a9f71c2ccd3b54af9c426cfc73851bd282c = $this->env->getExtension("native_profiler");
+        $__internal_5a18c3d2aa2800dda9316a06fd104a9f71c2ccd3b54af9c426cfc73851bd282c->enter($__internal_5a18c3d2aa2800dda9316a06fd104a9f71c2ccd3b54af9c426cfc73851bd282c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::layout.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -47,16 +47,13 @@ class __TwigTemplate_b7804592fbc63008e40d124c9d49dba88d0963b86eafcefc4bf0b0ca923
         // line 17
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/BlogBundle/css/blog-home.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-    <!--<link href=\"";
+    <link href=\"";
         // line 18
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/BlogBundle/css/jquery.datetimepicker.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\">-->
-    <link href=\"http://176.149.93.213/jquery.datetimepicker.css\" rel=\"stylesheet\">
-
+        echo "\" rel=\"stylesheet\">
+    <!--<link href=\"http://176.149.93.213/jquery.datetimepicker.css\" rel=\"stylesheet\">-->
     <link href=\"http://getbootstrap.com/examples/dashboard/dashboard.css\" rel=\"stylesheet\">
     <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js\"></script>
-
-
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -81,72 +78,79 @@ class __TwigTemplate_b7804592fbc63008e40d124c9d49dba88d0963b86eafcefc4bf0b0ca923
                     <span class=\"icon-bar\"></span>
                 </button>
                 <a class=\"navbar-brand\" href=\"";
-        // line 48
+        // line 45
         echo $this->env->getExtension('routing')->getPath("blog_homepage");
         echo "\">Le blog de Groland</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
                 ";
-        // line 52
+        // line 49
         if ($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) {
-            // line 53
+            // line 50
             echo "                <ul class=\"nav navbar-nav\">
                     <li>
                         <a href=\"";
-            // line 55
+            // line 52
             echo $this->env->getExtension('routing')->getPath("admin_AddPost");
             echo "\">Ajouter un article</a>
                     </li>
-                    <li>
+                    ";
+            // line 54
+            if ($this->env->getExtension('security')->isGranted("ROLE_SUPER_ADMIN")) {
+                // line 55
+                echo "                    <li>
                         <a href=\"";
-            // line 58
-            echo $this->env->getExtension('routing')->getPath("admin_AddAdmin");
-            echo "\">Ajouter un administrateur</a>
+                // line 56
+                echo $this->env->getExtension('routing')->getPath("admin_AddAdmin");
+                echo "\">Ajouter un administrateur</a>
                     </li>
-                    <!--<li>
+                    ";
+            }
+            // line 59
+            echo "                    <!--<li>
                         <a href=\"#\">Contact</a>
                     </li>-->
                 </ul>
                 ";
         }
-        // line 65
+        // line 64
         echo "                <ul class=\"nav navbar-nav navbar-right\">
 
 
 \t\t\t\t\t\t\t";
-        // line 68
+        // line 67
         if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 69
+            // line 68
             echo "                                <li><a href=\"#\" class=\"inactiveLink\">";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
             echo "</a></li>
                                 <li>
                                     <a href=\"";
-            // line 71
+            // line 70
             echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
             echo "\">Déconnexion</a>
                                 </li>
                             ";
         } else {
-            // line 74
+            // line 73
             echo "                                <li><a href=\"";
             echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
             echo "\">Connexion</a></li>
                                 <li><a href=\"";
-            // line 75
+            // line 74
             echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
             echo "\">Inscription</a></li>
                             ";
         }
-        // line 77
+        // line 76
         echo "\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t<!--<li class=\"dropdown\">
 \t\t\t\t\t\t\t\t <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Menu<strong class=\"caret\"></strong></a>
 \t\t\t\t\t\t\t\t<ul class=\"dropdown-menu\">
 \t\t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t\t<a href=\"";
-        // line 82
+        // line 81
         echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
         echo "\">Deconnection</a>
 \t\t\t\t\t\t\t\t\t</li>
@@ -169,35 +173,44 @@ class __TwigTemplate_b7804592fbc63008e40d124c9d49dba88d0963b86eafcefc4bf0b0ca923
     
     <script src=\"http://getbootstrap.com/dist/js/bootstrap.min.js\"></script>
     ";
-        // line 102
+        // line 101
         $this->displayBlock('corps', $context, $blocks);
-        // line 103
-        echo "</body>
+        // line 102
+        echo "
+    <!-- footer -->
+    
+
+    <!-- Footer -->
+    <footer>
+       
+        <!-- /.row -->
+    </footer>
+</body>
 </html>";
         
-        $__internal_abea4bc604ff86e6626aff7f74a25da3f556b395cb08474a5383d60de75b74c6->leave($__internal_abea4bc604ff86e6626aff7f74a25da3f556b395cb08474a5383d60de75b74c6_prof);
+        $__internal_5a18c3d2aa2800dda9316a06fd104a9f71c2ccd3b54af9c426cfc73851bd282c->leave($__internal_5a18c3d2aa2800dda9316a06fd104a9f71c2ccd3b54af9c426cfc73851bd282c_prof);
 
     }
 
     // line 12
     public function block_title($context, array $blocks = array())
     {
-        $__internal_23bf2409756600c5b0b87e518d21b315bf81292bfdda63f1a5e3d5d8bae62b4f = $this->env->getExtension("native_profiler");
-        $__internal_23bf2409756600c5b0b87e518d21b315bf81292bfdda63f1a5e3d5d8bae62b4f->enter($__internal_23bf2409756600c5b0b87e518d21b315bf81292bfdda63f1a5e3d5d8bae62b4f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_bb5b3b6f8e951a4b74d417eb3f02d0e5250fde4742b95696b2fec2f2a75df5d9 = $this->env->getExtension("native_profiler");
+        $__internal_bb5b3b6f8e951a4b74d417eb3f02d0e5250fde4742b95696b2fec2f2a75df5d9->enter($__internal_bb5b3b6f8e951a4b74d417eb3f02d0e5250fde4742b95696b2fec2f2a75df5d9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         
-        $__internal_23bf2409756600c5b0b87e518d21b315bf81292bfdda63f1a5e3d5d8bae62b4f->leave($__internal_23bf2409756600c5b0b87e518d21b315bf81292bfdda63f1a5e3d5d8bae62b4f_prof);
+        $__internal_bb5b3b6f8e951a4b74d417eb3f02d0e5250fde4742b95696b2fec2f2a75df5d9->leave($__internal_bb5b3b6f8e951a4b74d417eb3f02d0e5250fde4742b95696b2fec2f2a75df5d9_prof);
 
     }
 
-    // line 102
+    // line 101
     public function block_corps($context, array $blocks = array())
     {
-        $__internal_52107eef6eef8881b36d2cd27286bef51ccdb74013de8b0ce3a118359337e164 = $this->env->getExtension("native_profiler");
-        $__internal_52107eef6eef8881b36d2cd27286bef51ccdb74013de8b0ce3a118359337e164->enter($__internal_52107eef6eef8881b36d2cd27286bef51ccdb74013de8b0ce3a118359337e164_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
+        $__internal_eb1c5dbfe875f05b38a6339a9b7a1f17ab37a8e369a6556641e89a11df052ea8 = $this->env->getExtension("native_profiler");
+        $__internal_eb1c5dbfe875f05b38a6339a9b7a1f17ab37a8e369a6556641e89a11df052ea8->enter($__internal_eb1c5dbfe875f05b38a6339a9b7a1f17ab37a8e369a6556641e89a11df052ea8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
 
         
-        $__internal_52107eef6eef8881b36d2cd27286bef51ccdb74013de8b0ce3a118359337e164->leave($__internal_52107eef6eef8881b36d2cd27286bef51ccdb74013de8b0ce3a118359337e164_prof);
+        $__internal_eb1c5dbfe875f05b38a6339a9b7a1f17ab37a8e369a6556641e89a11df052ea8->leave($__internal_eb1c5dbfe875f05b38a6339a9b7a1f17ab37a8e369a6556641e89a11df052ea8_prof);
 
     }
 
@@ -213,7 +226,7 @@ class __TwigTemplate_b7804592fbc63008e40d124c9d49dba88d0963b86eafcefc4bf0b0ca923
 
     public function getDebugInfo()
     {
-        return array (  194 => 102,  183 => 12,  175 => 103,  173 => 102,  150 => 82,  143 => 77,  138 => 75,  133 => 74,  127 => 71,  121 => 69,  119 => 68,  114 => 65,  104 => 58,  98 => 55,  94 => 53,  92 => 52,  85 => 48,  52 => 18,  48 => 17,  43 => 15,  37 => 12,  24 => 1,);
+        return array (  207 => 101,  196 => 12,  179 => 102,  177 => 101,  154 => 81,  147 => 76,  142 => 74,  137 => 73,  131 => 70,  125 => 68,  123 => 67,  118 => 64,  111 => 59,  105 => 56,  102 => 55,  100 => 54,  95 => 52,  91 => 50,  89 => 49,  82 => 45,  52 => 18,  48 => 17,  43 => 15,  37 => 12,  24 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -233,13 +246,10 @@ class __TwigTemplate_b7804592fbc63008e40d124c9d49dba88d0963b86eafcefc4bf0b0ca923
 /*     <link href="{{asset('bundles/BlogBundle/css/bootstrap.min.css') }}" rel="stylesheet">*/
 /*     <!-- Custom CSS --> */
 /*     <link href="{{asset('bundles/BlogBundle/css/blog-home.css') }}" rel="stylesheet">*/
-/*     <!--<link href="{{asset('bundles/BlogBundle/css/jquery.datetimepicker.css') }}" rel="stylesheet">-->*/
-/*     <link href="http://176.149.93.213/jquery.datetimepicker.css" rel="stylesheet">*/
-/* */
+/*     <link href="{{asset('bundles/BlogBundle/css/jquery.datetimepicker.css') }}" rel="stylesheet">*/
+/*     <!--<link href="http://176.149.93.213/jquery.datetimepicker.css" rel="stylesheet">-->*/
 /*     <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">*/
 /*     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>*/
-/* */
-/* */
 /* */
 /*     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->*/
 /*     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->*/
@@ -272,9 +282,11 @@ class __TwigTemplate_b7804592fbc63008e40d124c9d49dba88d0963b86eafcefc4bf0b0ca923
 /*                     <li>*/
 /*                         <a href="{{path('admin_AddPost')}}">Ajouter un article</a>*/
 /*                     </li>*/
+/*                     {% if is_granted("ROLE_SUPER_ADMIN") %}*/
 /*                     <li>*/
 /*                         <a href="{{path('admin_AddAdmin')}}">Ajouter un administrateur</a>*/
 /*                     </li>*/
+/*                     {% endif %}*/
 /*                     <!--<li>*/
 /*                         <a href="#">Contact</a>*/
 /*                     </li>-->*/
@@ -318,5 +330,14 @@ class __TwigTemplate_b7804592fbc63008e40d124c9d49dba88d0963b86eafcefc4bf0b0ca923
 /*     */
 /*     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>*/
 /*     {% block corps %}{% endblock %}*/
+/* */
+/*     <!-- footer -->*/
+/*     */
+/* */
+/*     <!-- Footer -->*/
+/*     <footer>*/
+/*        */
+/*         <!-- /.row -->*/
+/*     </footer>*/
 /* </body>*/
 /* </html>*/

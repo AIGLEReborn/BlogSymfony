@@ -38,7 +38,6 @@ class BlogController extends Controller
     }
 
     public function pageXAction($value) {
-        //Page/2, on prend de 11 a 20. Donc 2x10 = 20 -9 = 11
 
         $depart = ($value-1) * 5;
 

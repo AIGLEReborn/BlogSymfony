@@ -22,32 +22,32 @@ class __TwigTemplate_f4630e709ac187b26172d74282a1dcd2c93fb648fd4224a5b25035e17c8
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_5185de2d01c4c2490cc9b491b16617b88463b8380cfbaaa4cf897c5314eb611c = $this->env->getExtension("native_profiler");
-        $__internal_5185de2d01c4c2490cc9b491b16617b88463b8380cfbaaa4cf897c5314eb611c->enter($__internal_5185de2d01c4c2490cc9b491b16617b88463b8380cfbaaa4cf897c5314eb611c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:index.html.twig"));
+        $__internal_975e890f4db0f2d89012d3f54787bc245ea3fe6346f29d3f5496f7f7a31e8af8 = $this->env->getExtension("native_profiler");
+        $__internal_975e890f4db0f2d89012d3f54787bc245ea3fe6346f29d3f5496f7f7a31e8af8->enter($__internal_975e890f4db0f2d89012d3f54787bc245ea3fe6346f29d3f5496f7f7a31e8af8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "BlogBundle:Blog:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_5185de2d01c4c2490cc9b491b16617b88463b8380cfbaaa4cf897c5314eb611c->leave($__internal_5185de2d01c4c2490cc9b491b16617b88463b8380cfbaaa4cf897c5314eb611c_prof);
+        $__internal_975e890f4db0f2d89012d3f54787bc245ea3fe6346f29d3f5496f7f7a31e8af8->leave($__internal_975e890f4db0f2d89012d3f54787bc245ea3fe6346f29d3f5496f7f7a31e8af8_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_8b1f122ef0c61f6ac9008ae3e1ed19824e2117466b8502f2614679e60aa9e6c6 = $this->env->getExtension("native_profiler");
-        $__internal_8b1f122ef0c61f6ac9008ae3e1ed19824e2117466b8502f2614679e60aa9e6c6->enter($__internal_8b1f122ef0c61f6ac9008ae3e1ed19824e2117466b8502f2614679e60aa9e6c6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_53454636984592d5f6b1e101942e687009f5234432ed5ccd08be28117cebe37b = $this->env->getExtension("native_profiler");
+        $__internal_53454636984592d5f6b1e101942e687009f5234432ed5ccd08be28117cebe37b->enter($__internal_53454636984592d5f6b1e101942e687009f5234432ed5ccd08be28117cebe37b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo " Accueil ";
         
-        $__internal_8b1f122ef0c61f6ac9008ae3e1ed19824e2117466b8502f2614679e60aa9e6c6->leave($__internal_8b1f122ef0c61f6ac9008ae3e1ed19824e2117466b8502f2614679e60aa9e6c6_prof);
+        $__internal_53454636984592d5f6b1e101942e687009f5234432ed5ccd08be28117cebe37b->leave($__internal_53454636984592d5f6b1e101942e687009f5234432ed5ccd08be28117cebe37b_prof);
 
     }
 
     // line 5
     public function block_corps($context, array $blocks = array())
     {
-        $__internal_48c73bccadaa746d607cf0bbf5752281a1bdb6d360c36c8695e51ed0a5ec2ba4 = $this->env->getExtension("native_profiler");
-        $__internal_48c73bccadaa746d607cf0bbf5752281a1bdb6d360c36c8695e51ed0a5ec2ba4->enter($__internal_48c73bccadaa746d607cf0bbf5752281a1bdb6d360c36c8695e51ed0a5ec2ba4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
+        $__internal_510bcdb6e398982c547688cc59117b66a941faeff0b14b464d19af4f576e47eb = $this->env->getExtension("native_profiler");
+        $__internal_510bcdb6e398982c547688cc59117b66a941faeff0b14b464d19af4f576e47eb->enter($__internal_510bcdb6e398982c547688cc59117b66a941faeff0b14b464d19af4f576e47eb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "corps"));
 
         // line 6
         echo "<section>
@@ -156,7 +156,7 @@ class __TwigTemplate_f4630e709ac187b26172d74282a1dcd2c93fb648fd4224a5b25035e17c8
 </section>
 ";
         
-        $__internal_48c73bccadaa746d607cf0bbf5752281a1bdb6d360c36c8695e51ed0a5ec2ba4->leave($__internal_48c73bccadaa746d607cf0bbf5752281a1bdb6d360c36c8695e51ed0a5ec2ba4_prof);
+        $__internal_510bcdb6e398982c547688cc59117b66a941faeff0b14b464d19af4f576e47eb->leave($__internal_510bcdb6e398982c547688cc59117b66a941faeff0b14b464d19af4f576e47eb_prof);
 
     }
 

@@ -34,16 +34,16 @@ class AdminController extends Controller
             $post->setAuthor($user);
             $em->persist($post);
             $em->flush();
-            //return $this->render('BlogBundle:Blog:affiche.html.twig', array('post' => $post));
+
             return $this->redirectToRoute('blog_afficheOnePost', array('id' => $post->getId()));
-            //return $this->redirect($this->generateUrl('blog_afficheOnePost', array('id'=>$post->getId())));
+
         }
 
     	return $this->render('BlogBundle:Blog:addPost.html.twig', array('form' => $form->createView()));
     }
 
     public function editPostAction($id, Request $request) {
-    	//get de lu post actuel via l'id
+    	
         $repository = $this->getDoctrine()->getRepository('BlogBundle:Post');
         $post = $repository->find($id);
 
@@ -58,7 +58,7 @@ class AdminController extends Controller
         $form = $formBuilder->getForm();
 
         if ($form->handleRequest($request)->isValid()) {
-            //Callback sur le submit
+            
             $em = $this->getDoctrine()->getManager();
             $em->flush();
 
@@ -83,7 +83,7 @@ class AdminController extends Controller
 
     public function editCommentAction($idP,$id, Request $request) {
 
-        //Get du comm via l'id
+        
         $manager = $this->getDoctrine()->getManager();
         $query = $manager->createQuery(
             ' SELECT c
@@ -95,24 +95,19 @@ class AdminController extends Controller
         $c = $comment[0];
 
 
-
-        //Faire le form
         $formBuilder = $this->get('form.factory')->createBuilder('form',$c);
         $formBuilder
-                ->setAction($this->generateUrl('admin_EditComment'))/*Fix Validator W3C*/
+                ->setAction($this->generateUrl('admin_EditComment',array('idP' => $idP,'id' => $id)))/*Fix Validator W3C*/
                 ->add('commentaire', 'textarea', array('required' => true))
                 ->add('add','submit');
         $form = $formBuilder->getForm();
 
         if ($form->handleRequest($request)->isValid()) {
-            //Callback sur le submit
             $em = $this->getDoctrine()->getManager();
             $em->persist($c);
             $em->flush();
 
-            //$request->getSession()->getFlashBag()->add('notice', 'Article modifié');
  			return $this->redirect($this->generateUrl('blog_afficheOnePost', array('id'=>$idP)));
-            //return $this->redirectToRoute('blog_homepage');
         }
 
         return $this->render('BlogBundle:Blog:editComment.html.twig', array('form' => $form->createView()));
@@ -148,7 +143,7 @@ class AdminController extends Controller
         ->getForm();
  
         if ($form->handleRequest($request)->isValid()) {
-            //Callback sur le submit
+
             $userManager = $this->get('fos_user.user_manager');
             $data = $form->getData();
             $user = $userManager->findUserByUsername($data['user']);

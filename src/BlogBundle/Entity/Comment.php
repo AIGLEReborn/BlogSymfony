@@ -46,7 +46,7 @@ class Comment
     
     /**
      *
-     * @ORM\Column(name="commentaire", type="string", length=255)
+     * @ORM\Column(name="commentaire", type="text")
      */
     private $commentaire;
 
@@ -113,29 +113,7 @@ class Comment
         return $this->$post;
     }
 
-    /**
-     * Set commentaire
-     *
-     * @param string $commentaire
-     *
-     * @return Comment
-     */
-    public function setCommentaire($commentaire)
-    {
-        $this->commentaire = $commentaire;
-    
-        return $this;
-    }
 
-    /**
-     * Get commentaire
-     *
-     * @return string
-     */
-    public function getCommentaire()
-    {
-        return $this->commentaire;
-    }
 
     /**
      * Set datePublication
@@ -159,5 +137,29 @@ class Comment
     public function getDatePublication()
     {
         return $this->datePublication;
+    }
+
+    /**
+     * Set commentaire
+     *
+     * @param string $commentaire
+     *
+     * @return Comment
+     */
+    public function setCommentaire($commentaire)
+    {
+        $this->commentaire = $commentaire;
+    
+        return $this;
+    }
+
+    /**
+     * Get commentaire
+     *
+     * @return string
+     */
+    public function getCommentaire()
+    {
+        return $this->commentaire;
     }
 }

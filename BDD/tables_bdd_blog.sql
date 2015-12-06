@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 06 Décembre 2015 à 14:22
+-- Généré le :  Dim 06 Décembre 2015 à 15:22
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
   `post_id` int(11) DEFAULT NULL,
-  `commentaire` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `commentaire` longtext COLLATE utf8_unicode_ci NOT NULL,
   `datePublication` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_9474526C4B89032C` (`post_id`),
@@ -47,8 +47,7 @@ INSERT INTO `comment` (`id`, `user_id`, `post_id`, `commentaire`, `datePublicati
 (54, 7, 45, 'Mais oui tu m''étonnes !', '2015-12-06 14:06:18'),
 (55, 7, 44, 'Trop trop trop trop trop sexy la chiara quoi !', '2015-12-06 14:08:38'),
 (56, 7, 46, 'Je pense que c''est totalement dans l''air du temps. QUe chacun défend son gagne pain.', '2015-12-06 14:11:20'),
-(57, 5, 46, 'Ou tu as totallement raison. Mais bon je pense aussi que :Résumons-nous : ce qui nous est dit relève de l''imposture:\r\n\r\n-les EPI LCA ne pourront être créées parce que les professeurs de latin et de grec sont les seuls à ne pas avoir d''heures-matières dédi', '2015-12-06 14:14:00'),
-(58, 5, 47, 'Venez nombreux ! +1 +1', '2015-12-06 14:20:44');
+(57, 5, 46, 'Ou tu as totallement raison. Mais bon je pense aussi que :Résumons-nous : ce qui nous est dit relève de l''imposture:\r\n\r\nLe Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l''imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n''a pas fait que survivre cinq siècles, mais s''est aussi adapté à la bureautique informatique, sans que son contenu n''en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.\r\n\r\nJe voulais juste troll.', '2015-12-06 14:14:00');
 
 -- --------------------------------------------------------
 
@@ -115,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`id`, `username`, `username_canonical`, `email`, `email_canonical`, `enabled`, `salt`, `password`, `last_login`, `locked`, `expired`, `expires_at`, `confirmation_token`, `password_requested_at`, `roles`, `credentials_expired`, `credentials_expire_at`) VALUES
 (5, 'Groland', 'groland', 'groland.blog@symfony.com', 'groland.blog@symfony.com', 1, '6904r47wsjk044w0oscggo84coo8k0g', '$2y$13$6904r47wsjk044w0oscggenbHUmyQ6N29yAqzZDUWztcMI43TWQy6', '2015-12-06 14:12:13', 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:16:"ROLE_SUPER_ADMIN";}', 0, NULL),
-(6, 'AdminExemple', 'adminexemple', 'exempleadmin@symfony.com', 'exempleadmin@symfony.com', 1, 'sddtnj3d0pccow0g48k4kco8k044cwc', '$2y$13$sddtnj3d0pccow0g48k4kOS5OLYxEIOiUQQkHUbgauqdTOrDWmwIe', '2015-12-06 14:21:50', 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:10:"ROLE_ADMIN";}', 0, NULL),
+(6, 'AdminExemple', 'adminexemple', 'exempleadmin@symfony.com', 'exempleadmin@symfony.com', 1, 'sddtnj3d0pccow0g48k4kco8k044cwc', '$2y$13$sddtnj3d0pccow0g48k4kOS5OLYxEIOiUQQkHUbgauqdTOrDWmwIe', '2015-12-06 14:49:17', 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:10:"ROLE_ADMIN";}', 0, NULL),
 (7, 'UserExemple', 'userexemple', 'userexemple@symfony.com', 'userexemple@symfony.com', 1, 'o0hr3dq9no08ok0wsk0o8408wkkg8gw', '$2y$13$o0hr3dq9no08ok0wsk0o8uf2sXNmk3v8wJpilT8WjGf/nqvTgUmca', '2015-12-06 14:10:52', 0, 0, NULL, NULL, NULL, 'a:0:{}', 0, NULL);
 
 --
